@@ -33,8 +33,21 @@ const RentalAgreement = () => {
         html2canvas: { scale: 2 },
         jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
       };
-  
-      html2pdf().from(element).set(opt).save();
+
+      const downloadButton = document.getElementById('downloadBtn');
+    downloadButton.style.display = 'none';
+
+    const formcontainer = document.getElementById('form_container');
+    formcontainer.style.display = 'none';
+
+    const previewcontainer = document.getElementById('preview');
+    previewcontainer.style.width = '90%';
+
+      html2pdf().from(element).set(opt).save().then(() => {
+      downloadButton.style.display = 'block';
+      formcontainer.style.display = 'block';
+      previewcontainer.style.width = '48%';
+    });   
     };
   
     //To display date in dd-mmm-yyyy format
@@ -51,7 +64,7 @@ const RentalAgreement = () => {
     //To dynamically display input fields from formData taking values from const RentalAgreement
     return (
       <div className="container">
-        <div className="form-container">
+        <div className="form-container" id="form_container">
           <h2>Rental Agreement Form</h2>
           <form id="rentalForm">
             {Object.keys(formData).map((key) => (
@@ -86,10 +99,10 @@ const RentalAgreement = () => {
           <p className="preview-text">The Landlord agrees to use the leased property as per the terms and conditions of this Agreement.</p>
           
           <h3 className="preview-text">3.Utilities</h3>
-          <p>The Tenant agrees to pay for the utilities and other services used in the Property<br/>during the term of this Agreement.</p>
+          <p>The Tenant agrees to pay for the utilities and other services used in the Property during the term of this Agreement.</p>
           
           <h3 className="preview-text">4.Repairs and damages</h3>
-          <p>Any losses and damages to fixture furnishing shall be defrayed by the Tenant. If any<br/>reasonable repair is necessary for the fixture furnishing, the Tenant shall notify it to the<br/>Landlord. The Landlord shall defray reasonable repair costs of fixture furnishing.</p>
+          <p>Any losses and damages to fixture furnishing shall be defrayed by the Tenant. If any reasonable repair is necessary for the fixture furnishing, the Tenant shall notify it to the Landlord. The Landlord shall defray reasonable repair costs of fixture furnishing.</p>
           
           <h3 className="preview-text">5. Termination</h3>
           <p>This Agreement automatically expires at the end of the specified period above.<br/>However, this Agreement shall be terminated with mutual written consent of the</p>

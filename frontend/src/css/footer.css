@@ -41,3 +41,11 @@ body {
 .app__content {
     flex: 1; /* Allow content to take available space */
 }
+
+.app__copyright{
+    text-align: center;
+    padding: 20px 10px;
+    background-color: bisque;
+    margin-top: auto;
+
+}
