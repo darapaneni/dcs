@@ -1,23 +1,36 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React from 'react';
 import Footer from './components/footer/footer.jsx';
 import Header from './components/header/header.jsx';
-import RichTextEditorTest from './pages/RichTextEditor/RichTextEditor_test';  // Path to your RichTextEditor component
+import Rental_agreement from './components/agreements/Rental_agreement.jsx';
+import RichTextEditorTest from './pages/RichTextEditor/RichTextEditor_test';
 
-//STATE = How to write a variable in React
+// Wrapper Component
+const RentalAgreementWrapper = ({ onInputChange }) => {
+  return <Rental_agreement onInputChange={onInputChange} />;
+};
 
 function App() {
+  const handleInputChange = (field, value) => {
+    console.log(`${field}: ${value}`);
+    // Handle state updates or other logic here
+  };
+
   return (
     <div className="app">
       <Router>
-      <Header />
-      <div>
-      <Routes>
+        <Header />
+        <div>
+          <Routes>
             <Route path="/RichTextEditor" element={<RichTextEditorTest />} />
-      </Routes>
-      <Footer />
-      </div>
+            <Route 
+              path="/Rental_agreement" 
+              element={<RentalAgreementWrapper onInputChange={handleInputChange} />} 
+            />
+          </Routes>
+        </div>
+        <Footer />
       </Router>
     </div>
   );

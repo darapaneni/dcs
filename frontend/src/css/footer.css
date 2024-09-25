@@ -1,0 +1,43 @@
+.app__footer {
+    margin-top: auto; /* Push the footer to the bottom */
+    background-color: #f5f5dc; /* Light bisque background */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space sections evenly */
+    padding: 20px; /* Consistent padding */
+}
+
+.app__contact,
+.app__navigations,
+.app__terms {
+    flex: 1; /* Each section takes equal space */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 10px; /* Space between items */
+    padding: 0 10px; /* Add horizontal padding */
+}
+
+h3 {
+    margin-left: 20px; /* Move heading to the right */
+}
+
+a {
+    text-decoration: none; /* Remove underline from links */
+    color: black; /* Link color */
+    font-weight: 600; /* Bold links */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+a:hover {
+    color: #007BFF; /* Change color on hover */
+}
+
+/* Ensure the footer is the next element after body */
+body {
+    display: flex; /* Use flex layout */
+    flex-direction: column; /* Column layout */
+    min-height: 100vh; /* Full viewport height */
+}
+
+.app__content {
+    flex: 1; /* Allow content to take available space */
+}
