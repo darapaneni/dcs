@@ -231,27 +231,6 @@
 				</textElement>
 				<text><![CDATA[BETWEEN]]></text>
 			</staticText>
-			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement x="342" y="10" width="100" height="30" uuid="b30bfc18-8aba-4183-8066-ecad645468b0"/>
-				<textElement>
-					<font size="12" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{day}]]></textFieldExpression>
-			</textField>
-			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement x="440" y="11" width="100" height="30" uuid="676c50e1-7da9-4a1b-adbc-c15128fc7b54"/>
-				<textElement>
-					<font size="12" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{month}]]></textFieldExpression>
-			</textField>
-			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement x="92" y="20" width="100" height="30" uuid="f9e8754e-3d4a-4d14-be7a-40739e991147"/>
-				<textElement>
-					<font size="12" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{year}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement x="2" y="170" width="550" height="80" uuid="55854f5f-8f2c-4afe-b69a-1e0f4a07eef8">
 					<printWhenExpression><![CDATA[$P{seller_type}.equals( "builder" )]]></printWhenExpression>
@@ -262,7 +241,7 @@
 				<text><![CDATA[Builder __________________________________ , Registered with registration number : __________________ , having its registered office at full address____________________________________________ (hereinafter referred to as the “SELLER”).]]></text>
 			</staticText>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement x="72" y="172" width="100" height="30" uuid="b70d8ee3-6e88-4687-9f8a-5037922d3dc1">
+				<reportElement x="72" y="172" width="185" height="30" uuid="b70d8ee3-6e88-4687-9f8a-5037922d3dc1">
 					<printWhenExpression><![CDATA[$P{seller_type}.equals( "builder" )]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -271,16 +250,7 @@
 				<textFieldExpression><![CDATA[$P{seller_builder_name}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement x="65" y="189" width="209" height="30" uuid="74d5d2cd-1535-4b82-a326-a61f9c99513e">
-					<printWhenExpression><![CDATA[$P{seller_type}.equals( "builder" )]]></printWhenExpression>
-				</reportElement>
-				<textElement>
-					<font size="12" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{seller_builder_reg_num}]]></textFieldExpression>
-			</textField>
-			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement isPrintRepeatedValues="false" x="110" y="205" width="240" height="30" uuid="4ec1ecb9-afa2-4d29-a54f-a1bdfe68b279">
+				<reportElement isPrintRepeatedValues="false" x="110" y="202" width="240" height="33" uuid="4ec1ecb9-afa2-4d29-a54f-a1bdfe68b279">
 					<printWhenExpression><![CDATA[$P{seller_type}.equals( "builder" )]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -289,14 +259,14 @@
 				<textFieldExpression><![CDATA[$P{seller_builer_fulladdress}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="204" y="480" width="70" height="20" uuid="1e01c97a-79e7-40cb-bef5-9e0f72600275"/>
+				<reportElement x="236" y="400" width="70" height="20" uuid="1e01c97a-79e7-40cb-bef5-9e0f72600275"/>
 				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[AND]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="1" y="360" width="550" height="110" uuid="8925baf3-f72f-4c80-b8d9-fa13776c221e">
+				<reportElement x="1" y="290" width="550" height="110" uuid="8925baf3-f72f-4c80-b8d9-fa13776c221e">
 					<printWhenExpression><![CDATA[$P{purchaser_type}.equals( "person" )]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -315,7 +285,7 @@
 				</reportElement>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="Seller" uuid="74990fdd-6c72-45b6-9acf-b78bd8c9c46d">
-						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("sellers") ]]></dataSourceExpression>
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("sellers")]]></dataSourceExpression>
 					</datasetRun>
 					<jr:column width="110" uuid="081d90a8-bffa-413e-bbb9-0ad36bdf8a0c">
 						<jr:columnHeader style="Table 1_CH" height="30">
@@ -403,6 +373,34 @@
 					</jr:column>
 				</jr:table>
 			</componentElement>
+			<textField>
+				<reportElement x="278" y="11" width="100" height="30" uuid="be373333-657a-4ccc-be12-27ae39f10b66"/>
+				<textElement>
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{day}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="374" y="13" width="100" height="30" uuid="142879da-4a2e-4a7a-8e8a-c27a24bb5a6b"/>
+				<textElement>
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{month}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="28" width="100" height="30" uuid="267fd634-97ff-4c2a-a682-cec0c93823e8"/>
+				<textElement>
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{year}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="3" y="188" width="125" height="30" uuid="281a7f88-716d-4eb9-b3d1-70e06df12cfe"/>
+				<textElement>
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{seller_builder_reg_num}]]></textFieldExpression>
+			</textField>
 		</band>
 		<band height="547">
 			<staticText>
@@ -632,7 +630,7 @@
 				<text><![CDATA[Builder __________________________________, Registered with registration number : __________________ , having its registered office at full address____________________________________________ (hereinafter referred to as the "PURCHASER").]]></text>
 			</staticText>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement x="88" y="180" width="151" height="30" uuid="1aee5e12-adab-4872-88f1-a8062454594e">
+				<reportElement x="60" y="180" width="179" height="30" uuid="1aee5e12-adab-4872-88f1-a8062454594e">
 					<printWhenExpression><![CDATA[$P{purchaser_type}.equals( "builder" )]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -641,7 +639,7 @@
 				<textFieldExpression><![CDATA[$P{purchaser_builder_name}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement x="54" y="198" width="97" height="30" uuid="b52b2c29-6587-4d61-bf4e-c1d07bfc50f8">
+				<reportElement x="8" y="198" width="143" height="30" uuid="b52b2c29-6587-4d61-bf4e-c1d07bfc50f8">
 					<printWhenExpression><![CDATA[$P{purchaser_type}.equals( "builder" )]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -650,7 +648,7 @@
 				<textFieldExpression><![CDATA[$P{purchaser_builder_reg_num}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement x="155" y="214" width="178" height="30" uuid="e847fd58-548f-4a6d-af47-13ed29915ddd">
+				<reportElement x="128" y="214" width="205" height="30" uuid="e847fd58-548f-4a6d-af47-13ed29915ddd">
 					<printWhenExpression><![CDATA[$P{purchaser_type}.equals( "builder" )]]></printWhenExpression>
 				</reportElement>
 				<textElement>
@@ -679,7 +677,7 @@ The  SELLER and the PURCHASER are hereinafter referred collectively as parties a
 				</reportElement>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="Purchasers" uuid="1200a867-8ba5-4c1a-9518-f1401b757b97">
-						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("purchasers") ]]></dataSourceExpression>
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JsonDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("purchasers")]]></dataSourceExpression>
 					</datasetRun>
 					<jr:column width="70" uuid="aeeee403-9bd7-41ad-b943-5cb0fcb9e2c4">
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
@@ -816,9 +814,9 @@ The  SELLER and the PURCHASER are hereinafter referred collectively as parties a
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<text><![CDATA[ANDWHEREAS the SCHEDULE PROPERTY was the self acquired property of  __________, deceased father of the SELLER and he purchased the same from Sri __________________, son of _____________ of _________________________________, by virtue of a Sale Deed dated ________________, registered in the office of the _____________________________, in Book 1,  Volume No. ____, Pages ____ to _____, Being Number ___________ for the Year _____.
-ANDWHEREAS the said _________ died in-estate on _________ leaving behind his only son namely, Sri _______________, the SELLER herein, as the only legal heir.
-ANDWHEREAS the SELLER herein, as the only legal heirs of the deceased ____________, have become the absolute owner of the SCHEDULE PROPERTY since the death of his father _____________ on and he has been enjoying the same with absolute right, title and interest sice then and he has clear and marketable title to the SCHEDULE PROPERTY.
+				<text><![CDATA[ANDWHEREAS the SCHEDULE PROPERTY was the self acquired property of  deceased father of the SELLER and he purchased the same from Sri __________________, son of _____________ of _________________________________, by virtue of a Sale Deed dated ________________, registered in the office of the _____________________________, in Book 1,  Volume No. ____, Pages ____ to _____, Being Number ___________ for the Year _____.
+ANDWHEREAS the said _________ died in-estate on _________ leaving behind his only son namely, Sri _______________, the SELLER herein, as the legal heir.
+ANDWHEREAS the SELLER herein, as the legal heirs of the deceased ____________, have become the owner/owners of the SCHEDULE PROPERTY since the death of his father _____________ on and he has been enjoying the same with absolute right, title and interest since then and he/they has clear and marketable title to the SCHEDULE PROPERTY.
 ANDWHEREAS the SELLER being in need of funds to meet his personal commitments and family expenses have decided to sell the SCHEDULE PROPERTY and the PURCHASER has agreed to purchase the same.
 ANDWHEREAS the SELLER agreed to sell, convey and transfer the SCHEDULE PROPERTY to the PURCHASER for a total consideration of  Rs._________ (Rupees                        ___________________________) only and the PURCHASER herein agreed to purchase the same for the aforesaid consideration and to that effect the parties entered into an agreement on the _________________ .
 NOW THIS DEED OF SALE WITNESSETH:
@@ -915,7 +913,7 @@ vii.	That the SELLER do hereby covenants and assures that the PURCHASER is entit
 				<textFieldExpression><![CDATA[$P{amount}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement x="1" y="285" width="100" height="30" uuid="af10d616-82c7-4a09-acf3-caf9dc23b806"/>
+				<reportElement x="1" y="285" width="177" height="30" uuid="af10d616-82c7-4a09-acf3-caf9dc23b806"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -929,7 +927,7 @@ vii.	That the SELLER do hereby covenants and assures that the PURCHASER is entit
 				<textFieldExpression><![CDATA[$P{agreement_date}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-				<reportElement x="128" y="356" width="100" height="30" uuid="0ef7f2fa-8460-49e0-9d78-a6c37d23ca0b"/>
+				<reportElement x="128" y="356" width="169" height="30" uuid="0ef7f2fa-8460-49e0-9d78-a6c37d23ca0b"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
