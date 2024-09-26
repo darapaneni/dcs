@@ -291,13 +291,17 @@
 						<jr:columnHeader style="Table 1_CH" height="30">
 							<staticText>
 								<reportElement x="0" y="0" width="110" height="30" uuid="c400ba2a-a405-46cf-a89b-0e821d32382d"/>
-								<text><![CDATA[seller_address]]></text>
+								<textElement textAlignment="Center">
+									<font size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Name]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table 1_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="110" height="30" uuid="478147a8-0a10-4bc6-aee6-ca878a301515"/>
-								<textFieldExpression><![CDATA[$F{seller_address}]]></textFieldExpression>
+								<reportElement x="0" y="0" width="110" height="30" uuid="57a334f2-8753-4c5d-a308-fc83233a18fa"/>
+								<textElement textAlignment="Left"/>
+								<textFieldExpression><![CDATA[$F{seller_name}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -305,13 +309,17 @@
 						<jr:columnHeader style="Table 1_CH" height="30">
 							<staticText>
 								<reportElement x="0" y="0" width="100" height="30" uuid="99a5ce8f-ffef-4f73-869b-5ab2e86c9af5"/>
-								<text><![CDATA[seller_age]]></text>
+								<textElement textAlignment="Center">
+									<font size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Father's Name]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table 1_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="100" height="30" uuid="4c255e1b-2366-410e-b026-552f95d6057e"/>
-								<textFieldExpression><![CDATA[$F{seller_age}]]></textFieldExpression>
+								<reportElement x="0" y="0" width="100" height="30" uuid="e8613cfb-c8d3-4c10-ba66-87b4ce2d2593"/>
+								<textElement textAlignment="Left"/>
+								<textFieldExpression><![CDATA[$F{seller_fathhus}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -319,13 +327,17 @@
 						<jr:columnHeader style="Table 1_CH" height="30">
 							<staticText>
 								<reportElement x="0" y="0" width="110" height="30" uuid="4e4b9524-3669-4f42-9056-75efce3dd287"/>
-								<text><![CDATA[seller_caste]]></text>
+								<textElement textAlignment="Center">
+									<font size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Age]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table 1_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="110" height="30" uuid="ba93b5e6-6e41-415b-b36d-86546f56ac75"/>
-								<textFieldExpression><![CDATA[$F{seller_caste}]]></textFieldExpression>
+								<reportElement x="0" y="0" width="110" height="30" uuid="4c255e1b-2366-410e-b026-552f95d6057e"/>
+								<textElement textAlignment="Left"/>
+								<textFieldExpression><![CDATA[$F{seller_age}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -333,13 +345,17 @@
 						<jr:columnHeader style="Table 1_CH" height="30">
 							<staticText>
 								<reportElement x="0" y="0" width="70" height="30" uuid="c755d89d-22ab-4c24-b9a7-419e57f4e9b7"/>
-								<text><![CDATA[seller_fathhus]]></text>
+								<textElement textAlignment="Center">
+									<font size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Caste]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table 1_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="70" height="30" uuid="e8613cfb-c8d3-4c10-ba66-87b4ce2d2593"/>
-								<textFieldExpression><![CDATA[$F{seller_fathhus}]]></textFieldExpression>
+								<reportElement x="0" y="0" width="70" height="30" uuid="ba93b5e6-6e41-415b-b36d-86546f56ac75"/>
+								<textElement textAlignment="Left"/>
+								<textFieldExpression><![CDATA[$F{seller_caste}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
@@ -347,27 +363,35 @@
 						<jr:columnHeader style="Table 1_CH" height="30">
 							<staticText>
 								<reportElement x="0" y="0" width="60" height="30" uuid="fff6f19b-d972-4e00-8860-9ebbacda34c8"/>
-								<text><![CDATA[seller_name]]></text>
+								<textElement textAlignment="Center">
+									<font size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[PAN]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table 1_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="60" height="30" uuid="57a334f2-8753-4c5d-a308-fc83233a18fa"/>
-								<textFieldExpression><![CDATA[$F{seller_name}]]></textFieldExpression>
+								<reportElement x="0" y="0" width="60" height="30" uuid="78e8b5a0-bdda-45ef-8e82-bd501517e25b"/>
+								<textElement textAlignment="Left"/>
+								<textFieldExpression><![CDATA[$F{seller_pan}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="80" uuid="0e255a7b-7688-48b4-a52d-47140dbf3829">
+					<jr:column width="87" uuid="0e255a7b-7688-48b4-a52d-47140dbf3829">
 						<jr:columnHeader style="Table 1_CH" height="30">
 							<staticText>
-								<reportElement x="0" y="0" width="80" height="30" uuid="5a92517e-e673-4971-9a7f-51eaa2557987"/>
-								<text><![CDATA[seller_pan]]></text>
+								<reportElement x="0" y="0" width="87" height="30" uuid="5a92517e-e673-4971-9a7f-51eaa2557987"/>
+								<textElement textAlignment="Center">
+									<font size="12" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Address]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:detailCell style="Table 1_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="80" height="30" uuid="78e8b5a0-bdda-45ef-8e82-bd501517e25b"/>
-								<textFieldExpression><![CDATA[$F{seller_pan}]]></textFieldExpression>
+								<reportElement x="0" y="0" width="87" height="30" uuid="478147a8-0a10-4bc6-aee6-ca878a301515"/>
+								<textElement textAlignment="Left"/>
+								<textFieldExpression><![CDATA[$F{seller_address}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
