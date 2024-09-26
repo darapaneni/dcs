@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Select, MenuItem, FormControl } from '@mui/material';
-import './dashboard.css';
+import '../../css/dashboard.css';
 import '../saleDeed/saleDeed.jsx';
 
 function Dashboard() {

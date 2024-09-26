@@ -1,34 +1,40 @@
 import './App.css';
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import Home from './components/home/home.jsx';
 import Signup from './components/modal/signup/signup.jsx';
 import Dashboard from './pages/Dashboard/dashboard.jsx';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import necessary React Router components
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './components/modal/login/login.jsx';
 import RichTextEditorTest from './pages/RichTextEditor/RichTextEditor_test';
 import SessionWarningModal from './SessionWarningModal.jsx';
-  // Path to your RichTextEditor component
+import Rental_agreement from './pages/Agreements/Rental_agreement.jsx';
 
-//STATE = How to write a variable in React
-
-// Session timeouts (in milliseconds)
 const SESSION_DURATION = 5 * 60 * 1000; // 5 minutes
 const WARNING_DURATION = 1 * 60 * 1000;  // 1 minute before session expires
 
+const handleInputChange = (field, value) => {
+  console.log(`${field}: ${value}`);
+  // Handle state updates or other logic here
+};
+
+// Wrapper Component
+const RentalAgreementWrapper = ({ onInputChange }) => {
+  return <Rental_agreement onInputChange={onInputChange} />;
+};
+
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(true); // Simulate login status
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
   const [isSessionWarningVisible, setIsSessionWarningVisible] = useState(false);
   const [sessionTimeout, setSessionTimeout] = useState(null);
   const [sessionWarningTimeout, setSessionWarningTimeout] = useState(null);
-  const navigate = useNavigate(); // For redirecting the user to login on logout
+  const navigate = useNavigate();
 
   const logout = useCallback(() => {
     alert('Session expired. Logging out...');
     setIsAuthenticated(false);
     clearTimeout(sessionTimeout);
     clearTimeout(sessionWarningTimeout);
-    navigate('/signin'); // Redirect to login page on logout
+    navigate('/signin');
   }, [sessionTimeout, sessionWarningTimeout, navigate]);
 
   const resetSession = useCallback(() => {
@@ -46,35 +52,34 @@ function App() {
 
     setSessionWarningTimeout(newWarningTimeout);
     setSessionTimeout(newSessionTimeout);
-  }, [logout]);
+  }, [logout, sessionTimeout, sessionWarningTimeout]);
 
   useEffect(() => {
     if (isAuthenticated) {
       resetSession();
     }
+
     return () => {
       clearTimeout(sessionTimeout);
       clearTimeout(sessionWarningTimeout);
     };
-  }, [isAuthenticated, resetSession, sessionTimeout, sessionWarningTimeout]);
+  }, [isAuthenticated, resetSession]); // Make sure resetSession is memoized correctly
 
   const handleUserActivity = () => {
-    resetSession(); // Reset session timer on any user activity
+    resetSession();
   };
 
   return (
     <div className="app" onClick={handleUserActivity} onKeyDown={handleUserActivity}>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={isAuthenticated ? <Dashboard /> : <Login />} />
-          <Route path="/saleDeed" element={isAuthenticated ? <SaleDeed /> : <Login />} />
-          <Route path="/signin" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/RichTextEditor" element={isAuthenticated ? <RichTextEditorTest /> : <Login />} />
-          <Route path="*" element={<Login />} /> {/* Default to Login if no match */}
-        </Routes>
-      </Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={isAuthenticated ? <Dashboard /> : <Login />} />
+        <Route path="/signin" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/RichTextEditor" element={isAuthenticated ? <RichTextEditorTest /> : <Login />} />
+        <Route path="/Rental_agreement" element={<RentalAgreementWrapper onInputChange={handleInputChange} />} />
+        <Route path="*" element={<Login />} />
+      </Routes>
       {isSessionWarningVisible && (
         <SessionWarningModal onContinue={resetSession} onLogout={logout} />
       )}

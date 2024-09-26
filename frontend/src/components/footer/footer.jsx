@@ -1,34 +1,56 @@
 import React from "react";
-import './footer.css';
 import { Link } from 'react-router-dom';
-
+import '../../css/footer.css';
 
 /**
  * Represents Footer Code
  */
-const Footer=()=>{
-    return(
+const Footer = () => {
+    return (
         <footer className="main__footer">
             <div className="app__footer">
-                <div className="footer__support">
-                    <p>support@dcs.com</p>
-                    <a href = "mailto:support@dcs.com">support@dcs.com</a>
-                </div>
-                <div className="app__navigations">
-                    <Link to="/RichTextEditor">Test Rich Text Editor</Link>
-                </div>
-                <div className="footer__privacy__terms">
-                    <a href="/privacypolicy">Privacy Policy | </a>
-                    <a href="termsandconditions">Terms and Conditions</a>
-                </div>
                 <div className="app__contact">
-                    <a href = "tel:080-69169760">080-69169760</a>
+                    <h3>Contacts</h3>
+                    <ul>
+                        <li>
+                            Email: <a href="mailto:support@dcs.com">support@dcs.com</a>
+                        </li>
+                        <li>
+                            Contact: <a href="tel:080-69169760">080-69169760</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div className="app__navigations">
+                    <h3>Navigations</h3>
+                    <ul>
+                        <li>
+                            <Link to="/RichTextEditor">Test Rich Text Editor</Link>
+                        </li>
+                        <li>
+                            <Link to="/Rental_agreement">Rental Agreement</Link>
+                        </li>
+                    </ul>
+                </div>
+
+                <div className="app__terms">
+                    <h3>Terms</h3>
+                    <ul>
+                        <li>
+                            <Link to="/privacypolicy">Privacy Policy</Link>
+                        </li>
+                        <li>
+                            <Link to="/termsandconditions">Terms and Conditions</Link>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div className="app__copyright"><p>Copyright 2024 by DCS.com. All Rights Reserved</p></div>
+            <hr />
+            <div className="app__copyright">
+                <p>Copyright 2024 by DCS.com. All Rights Reserved</p>
+            </div>
         </footer>
-    )
-
-}
+    );
+};
 
 export default Footer;

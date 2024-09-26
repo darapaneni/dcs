@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './signup.css'; // Import CSS for styling
+import '../../../css/signup.css'; // Import CSS for styling
 import Login from '../login/login';
 
 const Signup = ({onClose}) => {
