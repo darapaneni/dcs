@@ -3,9 +3,6 @@ import html2pdf from 'html2pdf.js';
 import '../../css/Rental_agreement.css';
 import emblem from '../../images/emblem.jpeg'
 
-import Header from '../../components/header/header';
-import Footer from '../../components/footer/footer';
-
 // Step 1: Define the Document component input required
 const RentalAgreement = () => {
     const [formData, setFormData] = useState({

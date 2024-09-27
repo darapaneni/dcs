@@ -1,53 +1,17 @@
-.app__header {
+.app__header{
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Flexbox alignment */
-    background-color: bisque;
-    padding: 20px; /* Padding around the header */
-    flex-wrap: wrap; /* Allow wrapping for responsiveness */
+    margin-bottom: 1px;
+    justify-content: space-evenly;
+    background-color: #1976d2;
 }
 
-.app__header h1 {
-    flex: 1; /* Allow the title to take available space */
-    margin: 0; /* Remove default margin */
+
+
+.app__login{
+    margin-left: 400px !important;
 }
-
-.app__controls {
-    display: flex; /* Flex container for login and signup */
-    gap: 20px; /* Space between login and signup links */
-}
-
-.app__login,
-.app__signup {
-    text-decoration: none; /* Remove underline */
-    padding: 20px 35px; /* Padding for clickable area */
-    border-radius: 10px; /* Rounded corners */
-    transition: background-color 0.3s; /* Smooth background color transition */
-    font-size: medium;
-    font-weight: bold;
-    color: black;
-}
-
-.app__login:hover,
-.app__signup:hover {
-    background-color: #e0e0e0; /* Hover effect */
-}
-
-/* Media queries for responsiveness - for logo if added */
-@media (max-width: 768px) {
-    .app__header {
-        flex-direction: column; /* Stack elements vertically on small screens */
-        align-items: center; /* Center items */
-        text-align: center; /* Center the text */
-    }
-
-    .app__controls {
-        flex-direction: column; 
-        gap: 10px; 
-    }
-
-    .app__login,
-    .app__signup {
-        width: 100%; 
-    }
+  
+.app__signup{
+    margin-right: 50px !important;
 }

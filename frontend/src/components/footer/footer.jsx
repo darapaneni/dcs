@@ -47,7 +47,7 @@ const links = [
     {
         name: 'Rental Agreement',
         iconName: 'edit_note',
-        href: '/RentalAgreement',
+        href: '/Rental_agreement',
         seq: 6
     }
 ];
