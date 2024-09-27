@@ -24,18 +24,11 @@ COPY . /template
 
 WORKDIR /template
 
-RUN pip install --upgrade pip
-# Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose the Flask port
-EXPOSE 5000
+EXPOSE 8000
 
+CMD ["sh", "-c", "python3 -m http.server"]
 
-
-EXPOSE 8080
-# Run main.py when the container launches and Start a simple HTTP server on port 8080
-CMD ["python3", "-m", "http.server", "8080"] && ["python3", "main.py"] 
 
 
 
