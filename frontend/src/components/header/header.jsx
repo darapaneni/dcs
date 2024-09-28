@@ -5,8 +5,23 @@ import Login from '../modal/login/login.jsx'; // Adjust the import path as neces
 import Signup from '../modal/signup/signup.jsx'; // Adjust the import path as necessary
 
 /**
+ * Header component for the Documents Consultancy Services application.
  * 
- * @returns 
+ * This component serves as the navigation header for the application,
+ * providing links for users to log in or sign up. It manages the state
+ * to control which modal (Login or Signup) is displayed based on user
+ * interactions.
+ * 
+ * The component maintains internal state to track the active screen:
+ * - 'signup': Displays the Signup component
+ * - 'login': Displays the Login component
+ * 
+ * @component
+ * @returns {JSX.Element} The rendered header element containing navigation links and modals.
+ * 
+ * @example
+ * // Example usage:
+ * <Header />
  */
 const Header = () => {
     const [activeScreen, setActiveScreen] = useState('signup'); // 'signup'

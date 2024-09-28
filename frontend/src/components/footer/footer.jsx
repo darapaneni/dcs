@@ -4,7 +4,29 @@ import { Link } from 'react-router-dom';
 
 
 /**
- * Represents Footer Code
+ * Footer component for the DCS application.
+ * 
+ * This component is used to display the footer at the bottom of every page.
+ * It includes several sections: support contact, navigation links, 
+ * privacy policy and terms of use, and the company contact number.
+ * It also displays copyright information.
+ * 
+ * The component consists of the following sections:
+ * 
+ * - **Support Section**: Shows the support email address.
+ * - **Navigation Section**: Contains navigation links, such as to a Rich Text Editor page.
+ * - **Privacy and Terms Section**: Displays links for the privacy policy and terms and conditions.
+ * - **Contact Section**: Shows the customer support contact number.
+ * - **Copyright Section**: Displays copyright information.
+ *
+ * @component
+ * @returns {JSX.Element} JSX code to render the footer for the DCS application.
+ * 
+ * @example
+ * // Example usage of the Footer component in an App component
+ * return (
+ *   <Footer />
+ * )
  */
 const Footer=()=>{
     return(
