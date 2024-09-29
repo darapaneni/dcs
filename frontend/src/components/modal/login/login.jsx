@@ -4,6 +4,7 @@ import Signup from '../signup/signup';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import Dashboard from '../../../pages/Dashboard/dashboard';
+// import { setToken } from './auth/auth.js';
 
 const Login = ({onClose}) => {
   const [email, setEmail] = useState('');
@@ -26,6 +27,7 @@ const Login = ({onClose}) => {
     }
 
     if (email === 'adsingh@example.com' && password === 'adsingh123') {
+      // setToken("AuthToken"); // Replace AuthToken with API Response token
       alert('Login successful!');
       navigate('/dashboard'); // Navigate to the dashboard
       return;
@@ -40,6 +42,7 @@ const Login = ({onClose}) => {
 
       // Assuming the response contains a success message or token
       if (response.data.success) {
+        // setToken("AuthToken"); // Replace AuthToken with API Response token
         // Redirect to dashboard
         navigate('/dashboard');
       } else {

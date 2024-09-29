@@ -8,6 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './components/modal/login/login.jsx';
 import RichTextEditorTest from './pages/RichTextEditor/RichTextEditor_test';
 import SessionWarningModal from './SessionWarningModal.jsx';
+// import { setToken } from './auth/auth.js';
+// import { removeToken } from './auth/auth.js';
   // Path to your RichTextEditor component
 
 //STATE = How to write a variable in React
@@ -24,6 +26,7 @@ function App() {
   const navigate = useNavigate(); // For redirecting the user to login on logout
 
   const logout = useCallback(() => {
+    // removeToken() // Remove AuthToken
     alert('Session expired. Logging out...');
     setIsAuthenticated(false);
     clearTimeout(sessionTimeout);
