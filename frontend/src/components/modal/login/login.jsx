@@ -26,10 +26,24 @@ const Login = ({onClose}) => {
     }
 
     if (email === 'adsingh@example.com' && password === 'adsingh123') {
-      alert('Login successful!');
+      // Set admin role in localStorage --> 
+      /* for existing funtionality to work i have hardcoded the role, 
+      line 60 will work in integration phase so we can delete this section from here that time
+      */
+      localStorage.setItem('role', 'admin');
+      localStorage.setItem('isAuthenticated', 'true');
+      alert('Admin login successful!');
       navigate('/dashboard'); // Navigate to the dashboard
       return;
-    } /*else {
+    }
+    else if (email === 'user@example.com' && password === 'user123') {
+      // Set user role in localStorage -> This should be removed at integration phase
+      localStorage.setItem('role', 'user');
+      localStorage.setItem('isAuthenticated', 'true');
+      alert('User login successful!');
+      navigate('/dashboard');
+    }
+     /*else {
       alert('Invalid email or password.');
     } */
     
@@ -40,6 +54,14 @@ const Login = ({onClose}) => {
 
       // Assuming the response contains a success message or token
       if (response.data.success) {
+
+        const token = response.data.token;
+        const role = response.data.role; 
+        
+        // Store token and role in localStorage
+        localStorage.setItem('token', token);
+        localStorage.setItem('role', role);
+
         // Redirect to dashboard
         navigate('/dashboard');
       } else {

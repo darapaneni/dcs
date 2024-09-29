@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import { Select, MenuItem, FormControl } from '@mui/material';
 import './dashboard.css';
 import '../saleDeed/saleDeed.jsx';
@@ -6,6 +6,13 @@ import '../saleDeed/saleDeed.jsx';
 function Dashboard() {
   const [selectedValue, setSelectedValue] = useState('');
   const [Component, setComponent] = useState(null);
+  const [role, setRole] = useState('');
+
+  useEffect(() => {
+    // Retrieve the user's role from localStorage
+    const userRole = localStorage.getItem('role');
+    setRole(userRole);
+  }, []); // This effect runs only once, when the component mounts
 
   const handleChange = async (event) => {
     const value = event.target.value;
@@ -40,7 +47,9 @@ function Dashboard() {
             Select an option
           </MenuItem>
           <MenuItem value="option1">Sale Deed</MenuItem>
-          <MenuItem value="option2">Rental Agreement</MenuItem>
+          {(role === 'admin' || role === 'user') ? /* Both admin and user sees this option */
+            <MenuItem value="option2">Rental Agreement</MenuItem>
+          : null}
         </Select>
       </FormControl>
       {Component && <Component />} {/* Render the component if it exists */}
