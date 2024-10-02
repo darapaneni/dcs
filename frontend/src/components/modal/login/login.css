@@ -44,5 +44,8 @@ button:hover {
 }
 
 .app__link{
-    font-size: smaller;
+    font-size: 14px;
+}
+.error__message{
+    color: red;
 }

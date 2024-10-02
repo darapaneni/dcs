@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './userprofile.css';
+import '../../css/userprofile.css';
 
 const userprofile = () => {
   const [userInfo, setUserInfo] = useState({

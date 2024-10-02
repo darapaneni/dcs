@@ -1,4 +1,5 @@
 import React from 'react'
+import '../../css/saleDeed.css'
 
 function saleDeed() {
   return (

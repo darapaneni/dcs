@@ -1,5 +1,5 @@
+import '../../css/header.css';
 import React, { useState } from "react";
-import './header.css';
 import { FormControl } from '@mui/material';
 import Login from '../modal/login/login.jsx'; // Adjust the import path as necessary */
 import Signup from '../modal/signup/signup.jsx'; // Adjust the import path as necessary
