@@ -1,18 +1,70 @@
-# ** Dependencies **
-1. React 
-- React is a JavaScript library for building user interfaces, UI components and manage the state and lifecycle of these components.
-- React-DOM is a package that provides DOM-specific methods for React. It is responsible for rendering React components to the browser's DOM and handling the interaction between React and the web browser.
-- From installation perspective, React-DOM will be used to attach your React application to a specific DOM element in your HTML.
-- React provides the core functionality for building UI components, while React-DOM connects those components to the web page, rendering them into the DOM.
+# Getting Started with Create React App
 
-2. React-Scripts
-- React-Scripts is a set of scripts used by Create React App (CRA) to simplify the development process. It provides a set of pre-configured scripts for common tasks like starting the development server, building the app for production, running tests, and ejecting configurations.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-- React-Scripts helps streamline and automate common tasks in a React development environment. It does not directly interact with React or React-DOM but facilitates their use by handling build processes and development utilities.
+## Available Scripts
 
-3. Axios
-- Axios is a promise-based HTTP client for making HTTP requests from a web application. It allows you to fetch data from APIs and handle responses.
-- From Installation perspective, we include Axios in your project to perform network requests to external services or APIs.
-- Axios is not directly related to React, React-DOM, or React-Scripts. Instead, it is used within React components to perform data fetching or send data to a server. React components can utilize Axios to retrieve or submit data as part of their functionality.
+In the project directory, you can run:
 
-In essence, React and React-DOM work together to create and render your UI, React-Scripts manages your development environment, and Axios handles data fetching.
+### `npm start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

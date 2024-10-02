@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+<title>Page 1</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<style type="text/css">
+<!--
+	p {margin: 0; padding: 0;}	.ft00{font-size:15px;font-family:Helvetica;color:#000000;}
+	.ft01{font-size:33px;font-family:Helvetica;color:#0d0202;}
+	.ft02{font-size:18px;font-family:Helvetica;color:#000000;}
+	.ft03{font-size:21px;font-family:Helvetica;color:#000000;}
+	.ft04{font-size:18px;line-height:22px;font-family:Helvetica;color:#000000;}
+-->
+</style>
+<script>
+
+window.addEventListener("DOMContentLoaded", (event) => {
+const el = document.getElementById('myform');
+if (el) {
+	el.addEventListener('submit', async function(event) {
+	event.preventDefault(); // Prevent the default form submission
+
+	const form = event.target;
+	const formData = new FormData(form);
+
+	  // Convert FormData to JSON
+	const jsonData = {};
+	formData.forEach((value, key) => {
+	jsonData[key] = value;
+	
+	}
+	);
+	try {
+	const response =await fetch('http://127.0.0.1:5000/generateHRD', {
+	  method: "POST",
+	  mode:"cors",
+	  headers: {
+	"Content-Type": "application/json",
+"accept": "application/json"
+
+
+
+
+},
+
+	  body: JSON.stringify(jsonData)
+	})
+	if(response.ok){
+		//parent.document.getElementById("preview").style.visibility="visible";
+		const targetFrame=window.parent.document.getElementById('preview').contentWindow;
+		targetFrame.postMessage('changeStyle', '*');
+	}
+		  } catch (error) {
+		console.error('Error:', error);
+		  }
+	});
+}
+});
+</script>	
+</head>
+<body>
+
+<form id="myform" method="post">
+<div id="page1-div" style="position:relative;width:892px;height:1263px;">
+<img width="80" height="100" src="..
+
+/resources/emblem.jpeg" alt="emblem"/>
+<p style="position:absolute;top:41px;left:465px;white-space:nowrap" class="ft01">Rent Agreement</p>
+<p style="position:absolute;top:279px;left:60px;white-space:nowrap" class="ft02">Landlord Name</p>
+<p style="position:absolute;top:278px;left:210px;white-space:nowrap" class="ft00"><input id="myinput" name="lname" type="text"></input></p>
+<p style="position:absolute;top:324px;left:60px;white-space:nowrap" class="ft02">Tenant Name</p>
+<p style="position:absolute;top:323px;left:210px;white-space:nowrap" class="ft00"><input name="tname" type="text"></input></p>
+<p style="position:absolute;top:179px;left:30px;white-space:nowrap" class="ft03">1. Parties, Leased Procperty, Terms and Payment</p>
+<p style="position:absolute;top:234px;left:30px;white-space:nowrap" class="ft02">This Agreement is made by and between :</p>
+<p style="position:absolute;top:388px;left:30px;white-space:nowrap" class="ft02">The landlord hereby agrees to rent property located at:</p>
+<p style="position:absolute;top:417px;left:0px;white-space:nowrap"  class="ft00"><input name='address' type="textarea"></input></p>
+<p style="position:absolute;top:463px;left:30px;white-space:nowrap" class="ft02">The lease period shall be</p>
+<p style="position:absolute;top:462px;left:240px;white-space:nowrap" class="ft00"><input type="text" name='leaseperiod'></input></p>
+<p style="position:absolute;top:463px;left:345px;white-space:nowrap" class="ft02">, starting from</p>
+<p style="position:absolute;top:461px;left:480px;white-space:nowrap" class="ft00"><input type="text" name="fromDt"></input></p>
+<p style="position:absolute;top:463px;left:555px;white-space:nowrap" class="ft02">and shall end &amp; may renew</p>
+<p style="position:absolute;top:492px;left:30px;white-space:nowrap" class="ft00"><input name="to" type="text"></input></p>
+<p style="position:absolute;top:493px;left:135px;white-space:nowrap" class="ft02">&#160;thereafter, on the agreed amount of Rs</p>
+<p style="position:absolute;top:494px;left:465px;white-space:nowrap" class="ft00"><input name="monthlyrent" type="text"></input></p>
+<p style="position:absolute;top:493px;left:510px;white-space:nowrap" class="ft02">to be paid monthly &amp; the amt of</p>
+<p style="position:absolute;top:522px;left:30px;white-space:nowrap" class="ft00"><input name="deposit" type="text"></input></p>
+<p style="position:absolute;top:523px;left:210px;white-space:nowrap" class="ft02">&#160;deposit to be paid upon the execution of this Agreement.</p>
+<p style="position:absolute;top:554px;left:30px;white-space:nowrap" class="ft03">2. Use of Property</p>
+<p style="position:absolute;top:627px;left:30px;white-space:nowrap" class="ft04">The Tenant shall use the Property only for residential purposes. During the term of this<br/>Agreement, the Tenant shall act with care and prudence to prevent damage to the<br/>Property at all times.</p>
+<p style="position:absolute;top:719px;left:29px;white-space:nowrap" class="ft03">3.Utilities</p>
+<p style="position:absolute;top:763px;left:29px;white-space:nowrap" class="ft04">The Tenant agrees to pay for the utilities and other services used in the Property<br/>during the term of this Agreement.</p>
+<p style="position:absolute;top:824px;left:30px;white-space:nowrap" class="ft03">4.Repairs and damages</p>
+<p style="position:absolute;top:883px;left:29px;white-space:nowrap" class="ft04">Any losses and damages to fixture furnishing shall be defrayed by the Tenant. If any<br/>reasonable repair is necessary for the fixture furnishing, the Tenant shall notify it to the<br/>Landlord. The Landlord shall defray reasonable repair costs of fixture furnishing.</p>
+<p style="position:absolute;top:974px;left:29px;white-space:nowrap" class="ft03">5. Termination</p>
+<p style="position:absolute;top:1033px;left:29px;white-space:nowrap" class="ft04">This Agreement automatically expires at the end of the specified period above.<br/>However, this Agreement shall be terminated with mutual written consent of the</p>
+<p style="position:absolute;top:1093px;left:29px;white-space:nowrap" class="ft02">Signed on:</p>
+<p style="position:absolute;top:1092px;left:210px;white-space:nowrap" class="ft00">August 28, 2024</p>
+<p style="position:absolute;top:1123px;left:30px;white-space:nowrap" class="ft02">Landlord</p>
+<p style="position:absolute;top:1183px;left:20px;white-space:nowrap" class="ft02"><input type="text"></input></p>
+<p style="position:absolute;top:1123px;left:330px;white-space:nowrap" class="ft02">Tenant</p>
+<p style="position:absolute;top:1183px;left:20px;white-space:nowrap" class="ft02"><input type="text"></input></p>
+
+</div>
+<div><input type="submit"></input></div>
+</form>
+</body>
+</html>

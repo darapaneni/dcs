@@ -1,0 +1,2740 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <style type="text/css">
+    a {text-decoration: none}
+  </style>
+  <script>
+
+    window.addEventListener("DOMContentLoaded", (event) => {
+    const el = document.getElementById('myform');
+    if (el) {
+      el.addEventListener('submit', async function(event) {
+      event.preventDefault(); // Prevent the default form submission
+    
+      const form = event.target;
+      const formData = new FormData(form);
+    
+        // Convert FormData to JSON
+      const jsonData = {};
+      formData.forEach((value, key) => {
+      jsonData[key] = value;
+      
+      }
+      );
+      try {
+      const response =await fetch('http://127.0.0.1:5000/generateSDD', {
+        method: "POST",
+        mode:"cors",
+        headers: {
+      "Content-Type": "application/json",
+    "accept": "application/json"
+    
+    
+    
+    
+    },
+    
+        body: JSON.stringify(jsonData)
+      })
+      if(response.ok){
+        //parent.document.getElementById("preview").style.visibility="visible";
+        const targetFrame=window.parent.document.getElementById('preview').contentWindow;
+        targetFrame.postMessage('changeStyle', '*');
+      }
+          } catch (error) {
+        console.error('Error:', error);
+          }
+      });
+    }
+    });
+    </script>	
+</head>
+<body text="#000000" link="#000000" alink="#000000" vlink="#000000">
+  <form id="myform" method="post">
+<table role="none" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td width="50%">&nbsp;</td><td align="center">
+
+<table id="JR_PAGE_ANCHOR_0_1" role="none" class="jrPage" data-jr-height="842" cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 610px; border-collapse: collapse; background-color: white;">
+<style type="text/css">
+  #JR_PAGE_ANCHOR_0_1 th {font-weight: normal;}
+  #JR_PAGE_ANCHOR_0_1 ul {list-style-type: disc; padding-inline-start: 40px; margin: 0px;}
+  #JR_PAGE_ANCHOR_0_1 ol {list-style-type: decimal; padding-inline-start: 40px; margin: 0px;}
+</style>
+<tr role="none" valign="top" style="height:0">
+<td style="width:20px"></td>
+<td style="width:1px"></td>
+<td style="width:189px"></td>
+<td style="width:60px"></td>
+<td style="width:70px"></td>
+<td style="width:30px"></td>
+<td style="width:30px"></td>
+<td style="width:170px"></td>
+<td style="width:2px"></td>
+<td style="width:38px"></td>
+</tr>
+<tr valign="top" style="height:20px">
+<td colspan="10">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td colspan="4">
+</td>
+<td colspan="2" style="text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px; line-height: 1.2578125;">1</span></td>
+<td colspan="4">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td colspan="3">
+</td>
+<td colspan="4" style="text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 14px; line-height: 1.2578125; font-weight: bold; text-decoration: underline;">DEED OF ABSOLUTE SALE</span></td>
+<td colspan="3">
+</td>
+</tr>
+<tr valign="top" style="height:29px">
+<td colspan="10">
+</td>
+</tr>
+<tr valign="top" style="height:60px">
+<td>
+</td>
+<td colspan="7">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:550px"></td>
+</tr>
+<tr valign="top" style="height:40px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125;">This DEED OF ABSOLUTE SALE is made and executed on this <input type="text" name='day'></input> day of <input type="text" name='month'></input>, Two Thousand <input type="text" name='year'></input><br/></span></td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:101px"></td>
+<td style="width:100px"></td>
+<td style="width:39px"></td>
+<td style="width:70px"></td>
+<td style="width:32px"></td>
+<td style="width:198px"></td>
+<td style="width:10px"></td>
+</tr>
+<tr valign="top" style="height:17px">
+<td colspan="5">
+</td>
+<td rowspan="2">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:98px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:98px"></td>
+<td style="width:100px"></td>
+</tr>
+<tr valign="top" style="height:1px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:14px">
+<td>
+</td>
+<td rowspan="3" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td colspan="3">
+</td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:9px">
+<td>
+</td>
+<td colspan="5">
+</td>
+</tr>
+<tr valign="top" style="height:7px">
+<td>
+</td>
+<td>
+</td>
+<td rowspan="2" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;">BETWEEN</span></td>
+<td colspan="3">
+</td>
+</tr>
+<tr valign="top" style="height:13px">
+<td colspan="3">
+</td>
+<td colspan="3">
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:80px">
+<td>
+</td>
+<td colspan="9">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:550px"></td>
+<td style="width:40px"></td>
+</tr>
+<tr valign="top" style="height:80px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125;">Sri <input type="text" name='seller_name'></input>, son/wife/daughter of Sri/Late <input type="text" name='seller_fathhus'></input>, aged about <input type="text" name='seller_age'></input> years, holding PAN <input type="text" name='seller_pan'></input>, by Caste <input type="text" name='seller_caste'></input>, by Nationality Indian, residing at <input type="text" name='seller_address'></input>, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; hereinafter called the &quot;SELLER&quot; (which expression shall mean and include his legal heirs, successors, successors-in-interest, executors, administrators, legal representatives and assigns) of the ONE PART</span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:1px"></td>
+<td style="width:589px"></td>
+</tr>
+<tr valign="top" style="height:63px">
+<td>
+</td>
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:33px"></td>
+<td style="width:100px"></td>
+<td style="width:188px"></td>
+<td style="width:125px"></td>
+<td style="width:43px"></td>
+<td style="width:100px"></td>
+</tr>
+<tr valign="top" style="height:1px">
+<td>
+</td>
+<td rowspan="2" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td colspan="3">
+</td>
+<td rowspan="2" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+<tr valign="top" style="height:29px">
+<td>
+</td>
+<td>
+</td>
+<td rowspan="2" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:1px">
+<td colspan="3">
+</td>
+<td colspan="2">
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:546px"></td>
+<td style="width:43px"></td>
+</tr>
+<tr valign="top" style="height:16px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:47px">
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:115px"></td>
+<td style="width:100px"></td>
+<td style="width:331px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:546px"></td>
+</tr>
+<tr valign="top" style="height:1px">
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:46px">
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:251px"></td>
+<td style="width:100px"></td>
+<td style="width:195px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:546px"></td>
+</tr>
+<tr valign="top" style="height:16px">
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+<tr valign="top" style="height:17px">
+<td colspan="2">
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+<tr valign="top" style="height:20px">
+<td colspan="4">
+</td>
+<td style="text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;">AND</span></td>
+<td colspan="5">
+</td>
+</tr>
+<tr valign="top" style="height:9px">
+<td colspan="10">
+</td>
+</tr>
+<tr valign="top" style="height:91px">
+<td>
+</td>
+<td colspan="7">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:550px"></td>
+</tr>
+<tr valign="top" style="height:1px">
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:90px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125;">Sri <input type="text" name='purchaser_name'></input>, son of &nbsp;<input type="text" name='purchaser_father'></input>, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;aged about <input type="text" name='purchaser_age'></input> years, by Caste <input type="text" name='purchaser_caste'></input>, by Nationality Indian, &nbsp;holding PAN <input type="text" name='purchaser_pan'></input>, residing at <input type="text" name='purchaser_address'></input>, &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;hereinafter called the &quot;PURCHASER&quot; (which expression shall mean and include his legal heirs, successors, successors-in-interest, executors, administrators, legal representatives and assigns) of the &nbsp;</span></td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:2px"></td>
+<td style="width:545px"></td>
+<td style="width:3px"></td>
+</tr>
+<tr valign="top" style="height:64px">
+<td>
+</td>
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:23px"></td>
+<td style="width:208px"></td>
+<td style="width:72px"></td>
+<td style="width:215px"></td>
+<td style="width:27px"></td>
+</tr>
+<tr valign="top" style="height:1px">
+<td colspan="3">
+</td>
+<td rowspan="2" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:29px">
+<td>
+</td>
+<td rowspan="2" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:1px">
+<td>
+</td>
+<td colspan="3">
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:545px"></td>
+</tr>
+<tr valign="top" style="height:18px">
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:46px">
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:63px"></td>
+<td style="width:155px"></td>
+<td style="width:327px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:56px"></td>
+<td style="width:389px"></td>
+</tr>
+<tr valign="top" style="height:1px">
+<td colspan="3">
+</td>
+</tr>
+<tr valign="top" style="height:13px">
+<td colspan="2">
+</td>
+<td rowspan="3">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:44px"></td>
+<td style="width:148px"></td>
+<td style="width:197px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:389px"></td>
+</tr>
+<tr valign="top" style="height:15px">
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:2px">
+<td colspan="2">
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:27px">
+<td colspan="3">
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:120px">
+<td>
+</td>
+<td colspan="7">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:550px"></td>
+</tr>
+<tr valign="top" style="height:120px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125;">WHEREAS the SELLER is the absolute owner, in possession and enjoyment of the piece and parcel of <input type="text" name='land'></input> land measuring about <input type="text" name='land_size'></input> decimal, lying and situated in R.S. Plot Number <input type="text" name='rs_plotnum'></input>, corresponding L.R. Plot Number <input type="text" name='lr_plotnum'></input>, Recorded in R.S. Khatian Number <input type="text" name='rs_khaitnanum'></input> and L.R. Khatian Number <input type="text" name='lr_khaitannum'></input>, at Mouza <input type="text" name='moza'></input>, J.L. Number <input type="text" name='jlnum'></input>, Touzi Number <input type="text" name='touzinum'></input>, under Police Station <input type="text" name='policastation'></input>, Registration Sub-District <input type="text" name='subdistrict'></input>, in the district of <input type="text" name='district'></input>, more fully and particularly described in the schedule here under written and hereafter referred to as the SCHEDULE PROPERTY</span></td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:343px"></td>
+<td style="width:17px"></td>
+<td style="width:187px"></td>
+<td style="width:3px"></td>
+</tr>
+<tr valign="top" style="height:17px">
+<td colspan="4">
+</td>
+</tr>
+<tr valign="top" style="height:73px">
+<td rowspan="2">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:64px"></td>
+<td style="width:100px"></td>
+<td style="width:79px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:343px"></td>
+</tr>
+<tr valign="top" style="height:15px">
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:61px">
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:176px"></td>
+<td style="width:100px"></td>
+<td style="width:67px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:343px"></td>
+</tr>
+<tr valign="top" style="height:14px">
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:47px">
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:46px"></td>
+<td style="width:100px"></td>
+<td style="width:197px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:33px"></td>
+<td style="width:210px"></td>
+</tr>
+<tr valign="top" style="height:15px">
+<td colspan="2">
+</td>
+<td rowspan="3">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:110px"></td>
+</tr>
+<tr valign="top" style="height:1px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:73px"></td>
+<td style="width:137px"></td>
+</tr>
+<tr valign="top" style="height:47px">
+<td>
+</td>
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:37px"></td>
+<td style="width:100px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:37px"></td>
+</tr>
+<tr valign="top" style="height:17px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:2px">
+<td colspan="2">
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td>
+</td>
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:87px"></td>
+<td style="width:100px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:136px"></td>
+<td style="width:51px"></td>
+</tr>
+<tr valign="top" style="height:16px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:57px">
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:36px"></td>
+<td style="width:100px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:101px"></td>
+<td style="width:35px"></td>
+</tr>
+<tr valign="top" style="height:13px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:44px">
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:1px"></td>
+<td style="width:100px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:1px"></td>
+</tr>
+<tr valign="top" style="height:14px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:3px">
+<td colspan="3">
+</td>
+</tr>
+<tr valign="top" style="height:27px">
+<td colspan="4">
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:20px">
+<td colspan="4">
+</td>
+<td style="text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;">OR</span></td>
+<td colspan="5">
+</td>
+</tr>
+<tr valign="top" style="height:10px">
+<td colspan="10">
+</td>
+</tr>
+<tr valign="top" style="height:130px">
+<td colspan="2">
+</td>
+<td colspan="7">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:1px"></td>
+<td style="width:550px"></td>
+</tr>
+<tr valign="top" style="height:130px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125;">WHEREAS the SELLER herein is the sole and absolute owner of immovable property being Flat / Apartment No.<input type="text" name='flatnumber'></input> on the <input type="text" name='floorno'></input> Floor of the building known as <input type="text" name='society'></input>situated at <input type="text" name='location'></input>and bearing Corporation No.<input type="text" name='corporation'></input>, <input type="text" name='road'></input>Road, Division No.<input type="text" name='division'></input>, with a supe built-up area of <input type="text" name='supersqfeet'></input> sq.ft. together with <input type="text" name='percentage'></input>% share of undivided interest in the land equivalent to <input type="text" name='landsqfeet'></input> sq.ft. along with common areas and facilities including car parking lot in the basement, which Flat / Apartment is morefully described in the schedule hereunder and hereinafter called the SCHEDULE PROPERTY</span></td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:469px"></td>
+<td style="width:82px"></td>
+</tr>
+<tr valign="top" style="height:17px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:75px">
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:79px"></td>
+<td style="width:100px"></td>
+<td style="width:290px"></td>
+</tr>
+<tr valign="top" style="height:1px">
+<td colspan="3">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:158px"></td>
+<td style="width:100px"></td>
+<td style="width:111px"></td>
+<td style="width:100px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:462px"></td>
+<td style="width:7px"></td>
+</tr>
+<tr valign="top" style="height:15px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:60px">
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:362px"></td>
+</tr>
+<tr valign="top" style="height:15px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:1px"></td>
+<td style="width:461px"></td>
+</tr>
+<tr valign="top" style="height:60px">
+<td>
+</td>
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:361px"></td>
+</tr>
+<tr valign="top" style="height:1px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:97px"></td>
+<td style="width:364px"></td>
+</tr>
+<tr valign="top" style="height:60px">
+<td>
+</td>
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:168px"></td>
+<td style="width:100px"></td>
+<td style="width:96px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:192px"></td>
+<td style="width:36px"></td>
+<td style="width:136px"></td>
+</tr>
+<tr valign="top" style="height:1px">
+<td colspan="3">
+</td>
+</tr>
+<tr valign="top" style="height:15px">
+<td colspan="2">
+</td>
+<td rowspan="2">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:36px"></td>
+<td style="width:100px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:36px"></td>
+</tr>
+<tr valign="top" style="height:16px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+<tr valign="top" style="height:31px">
+<td rowspan="2">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:92px"></td>
+<td style="width:100px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:92px"></td>
+</tr>
+<tr valign="top" style="height:14px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:13px">
+<td colspan="2">
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:38px">
+<td colspan="2">
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:193px">
+<td colspan="10">
+</td>
+</tr>
+</table>
+<br/>
+<br/>
+
+<table id="JR_PAGE_ANCHOR_0_2" role="none" class="jrPage" data-jr-height="842" cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 608px; border-collapse: collapse; background-color: white;">
+<style type="text/css">
+  #JR_PAGE_ANCHOR_0_2 th {font-weight: normal;}
+  #JR_PAGE_ANCHOR_0_2 ul {list-style-type: disc; padding-inline-start: 40px; margin: 0px;}
+  #JR_PAGE_ANCHOR_0_2 ol {list-style-type: decimal; padding-inline-start: 40px; margin: 0px;}
+</style>
+<tr role="none" valign="top" style="height:0">
+<td style="width:20px"></td>
+<td style="width:588px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:769px">
+<td>
+</td>
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:1px"></td>
+<td style="width:550px"></td>
+<td style="width:37px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td colspan="3">
+</td>
+</tr>
+<tr valign="top" style="height:730px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1; *line-height: normal;">ANDWHEREAS the SCHEDULE PROPERTY was the self acquired property of &nbsp;_______, deceased father of the SELLER and he purchased the same from Sri <input type="text" name='previous_owner'></input>, son of <input type="text" name='father_previous_owner'></input> of <input type="text" name='father_previous_owner_det'></input>, by virtue of a Sale Deed dated <input type="text" name='previous_sale_deed'>, registered in the office of the <input type="text" name='reg_office'></input>, in Book 1, &nbsp;Volume No. <input type="text" name='volume'></input>, Pages <input type="text" name='frompage'></input> to <input type="text" name='topage'></input>, Being Number <input type="text" name='beingno'> for the Year <input type="text" name='year_prev_saledeed'>.<br/>ANDWHEREAS the said _______ died in-estate on <input type="text" name='inestate'> leaving behind his only son namely, Sri ______, the SELLER herein, as the only legal heir.<br/>ANDWHEREAS the SELLER herein, as the only legal heirs of the deceased __________, have become the absolute owner of the SCHEDULE PROPERTY since the death of his father <input type="text" name='seller_father_deathdate'> on and he has been enjoying the same with absolute right, title and interest sice then and he has clear and marketable title to the SCHEDULE PROPERTY.<br/>ANDWHEREAS the SELLER being in need of funds to meet his personal commitments and family expenses have decided to sell the SCHEDULE PROPERTY and the PURCHASER has agreed to purchase the same.<br/>ANDWHEREAS the SELLER agreed to sell, convey and transfer the SCHEDULE PROPERTY to the PURCHASER for a total consideration of &nbsp;Rs.<input type="text" name='amount'></input> (Rupees &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;_________) only and the PURCHASER herein agreed to purchase the same for the aforesaid consideration and to that effect the parties entered into an agreement on the <input type="text" name='agreement_date'></input> .<br/>NOW THIS DEED OF SALE WITNESSETH:<br/>1.	THAT in pursuance of the aforesaid agreement and in consideration of a sum of Rs.________ (Rupees &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" name='recieved_money'></input>) only received by the SELLER in cash/cheque/bankdraft and upon receipt of the said entire consideration of Rs._________________________ (Rupees &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" name='amount_in_words'></input>) only (the SELLER doth hereby admit, acknowledge, acquit, release and discharge the PURCHASER from making further payment thereof) the SELLER doth hereby sells, conveys, transfers, and assigns unto and to the use of the PURCHASER the SCHEDULE PROPERTY together with the water ways, easements, advantages and appurtenances, and all estate, rights, title and interest of the SELLER to and upon the SCHEDULE PROPERTY TO HAVE AND TO HOLD the SCHEDULE PROPERTY hereby conveyed unto the PURCHASER absolutely and forever.<br/>2.	THAT THE SELLER DOTH HEREBY COVENANT WITH THE PURCHASER AS FOLLOWS:<br/>i.	That the SCHEDULE PROPERTY shall be quietly and peacefully entered into and held and enjoyed by the PURCHASER without any interference, interruption, or disturbance from the SELLER or any person claiming through or under him.<br/>ii.	That the SELLER have absolute &nbsp;right, title and full power to sell, convey and transfer unto the PURCHASER by way of absolute sale and that the SELLER have not done anything or knowingly suffered anything whereby their right and power to sell and convey the SCHEDULE PROPERTY to the PURCHASER is diminished. <br/>iii.	That the property is not subjected to any encumbrances, mortgages, charges, lien, attachments, claim, demand, acquisition proceedings by Government or any kind whatsoever and should thereby and the SELLER shall discharge the same from and out of his own fund and keep the PURCHASER indemnified.<br/>iv.	That the SELLER hereby declares with the PURCHASER that the SELLER have paid all the taxes, rates and other outgoings due to local bodies, revenue, urban and other authorities in respect of the SCHEDULE PROPERTY up to the date of execution of this sale deed and the PURCHASER shall bear and pay the same hereafter. &nbsp;If any arrears are found due for the earlier period, the same shall be discharged/borne by the SELLER.<br/>.	That the SELLER have handed over the vacant possession of the SCHEDULE PROPERTY to the PURCHASER on &nbsp;<input type="text" name='property_handover_date'></input> and delivered the connected original title document in respect of </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:1px"></td>
+<td style="width:4px"></td>
+<td style="width:95px"></td>
+<td style="width:2px"></td>
+<td style="width:16px"></td>
+<td style="width:10px"></td>
+<td style="width:90px"></td>
+<td style="width:10px"></td>
+<td style="width:16px"></td>
+<td style="width:100px"></td>
+<td style="width:78px"></td>
+<td style="width:66px"></td>
+<td style="width:34px"></td>
+<td style="width:22px"></td>
+<td style="width:44px"></td>
+</tr>
+<tr valign="top" style="height:168px">
+<td colspan="2">
+</td>
+<td colspan="12">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:245px"></td>
+<td style="width:100px"></td>
+<td style="width:194px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px; line-height: 1.2578125;">2</span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:539px"></td>
+</tr>
+<tr valign="top" style="height:29px">
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:139px">
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:425px"></td>
+<td style="width:100px"></td>
+<td style="width:14px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:539px"></td>
+</tr>
+<tr valign="top" style="height:17px">
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:122px">
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:376px"></td>
+<td style="width:100px"></td>
+<td style="width:63px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:395px"></td>
+<td style="width:14px"></td>
+<td style="width:30px"></td>
+<td style="width:70px"></td>
+<td style="width:30px"></td>
+</tr>
+<tr valign="top" style="height:17px">
+<td colspan="5">
+</td>
+</tr>
+<tr valign="top" style="height:28px">
+<td rowspan="4">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:295px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:18px"></td>
+<td style="width:377px"></td>
+</tr>
+<tr valign="top" style="height:90px">
+<td>
+</td>
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:87px"></td>
+<td style="width:217px"></td>
+<td style="width:73px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:264px"></td>
+<td style="width:6px"></td>
+<td style="width:107px"></td>
+</tr>
+<tr valign="top" style="height:28px">
+<td colspan="3">
+</td>
+</tr>
+<tr valign="top" style="height:45px">
+<td rowspan="2">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:43px"></td>
+<td style="width:100px"></td>
+<td style="width:121px"></td>
+</tr>
+<tr valign="top" style="height:2px">
+<td colspan="3">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:13px"></td>
+<td style="width:151px"></td>
+</tr>
+<tr valign="top" style="height:32px">
+<td colspan="2">
+</td>
+<td rowspan="2">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:51px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:151px"></td>
+</tr>
+<tr valign="top" style="height:2px">
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:43px">
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:51px"></td>
+<td style="width:100px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:51px"></td>
+</tr>
+<tr valign="top" style="height:13px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+<tr valign="top" style="height:13px">
+<td rowspan="2" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:17px">
+<td colspan="2">
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td>
+</td>
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:7px"></td>
+<td style="width:100px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:7px"></td>
+</tr>
+<tr valign="top" style="height:15px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+<tr valign="top" style="height:17px">
+<td colspan="2">
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td colspan="4">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td colspan="2">
+</td>
+<td colspan="2" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+<tr valign="top" style="height:17px">
+<td colspan="4">
+</td>
+</tr>
+<tr valign="top" style="height:15px">
+<td>
+</td>
+<td colspan="2" rowspan="2" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:15px">
+<td colspan="2">
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td colspan="3" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td colspan="12">
+</td>
+</tr>
+<tr valign="top" style="height:62px">
+<td colspan="15">
+</td>
+</tr>
+<tr valign="top" style="height:15px">
+<td colspan="9">
+</td>
+<td rowspan="2" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td colspan="5">
+</td>
+</tr>
+<tr valign="top" style="height:15px">
+<td>
+</td>
+<td colspan="3" rowspan="3">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:1px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:1px"></td>
+<td style="width:100px"></td>
+</tr>
+<tr valign="top" style="height:29px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td colspan="5">
+</td>
+<td colspan="5">
+</td>
+</tr>
+<tr valign="top" style="height:42px">
+<td>
+</td>
+<td colspan="11">
+</td>
+</tr>
+<tr valign="top" style="height:2px">
+<td>
+</td>
+<td colspan="8">
+</td>
+<td colspan="3" rowspan="3" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+<tr valign="top" style="height:12px">
+<td colspan="12">
+</td>
+</tr>
+<tr valign="top" style="height:16px">
+<td colspan="6">
+</td>
+<td colspan="2" rowspan="3" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td colspan="4">
+</td>
+</tr>
+<tr valign="top" style="height:1px">
+<td colspan="6">
+</td>
+<td colspan="7">
+</td>
+</tr>
+<tr valign="top" style="height:13px">
+<td colspan="6">
+</td>
+<td colspan="3">
+</td>
+<td colspan="2" rowspan="3" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:3px">
+<td colspan="11">
+</td>
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:14px">
+<td colspan="3" rowspan="2" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td colspan="8">
+</td>
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:16px">
+<td colspan="12">
+</td>
+</tr>
+<tr valign="top" style="height:330px">
+<td colspan="15">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td colspan="5">
+</td>
+<td colspan="2" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td colspan="8">
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+<tr valign="top" style="height:43px">
+<td colspan="2">
+</td>
+</tr>
+</table>
+<br/>
+<br/>
+
+<table id="JR_PAGE_ANCHOR_0_3" role="none" class="jrPage" data-jr-height="842" cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 595px; border-collapse: collapse; background-color: white;">
+<style type="text/css">
+  #JR_PAGE_ANCHOR_0_3 th {font-weight: normal;}
+  #JR_PAGE_ANCHOR_0_3 ul {list-style-type: disc; padding-inline-start: 40px; margin: 0px;}
+  #JR_PAGE_ANCHOR_0_3 ol {list-style-type: decimal; padding-inline-start: 40px; margin: 0px;}
+</style>
+<tr role="none" valign="top" style="height:0">
+<td style="width:20px"></td>
+<td style="width:1px"></td>
+<td style="width:1px"></td>
+<td style="width:197px"></td>
+<td style="width:168px"></td>
+<td style="width:183px"></td>
+<td style="width:2px"></td>
+<td style="width:21px"></td>
+<td style="width:2px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td colspan="9">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td colspan="4">
+</td>
+<td style="text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;">SCHEDULE &nbsp;OF PROPERTY</span></td>
+<td colspan="4">
+</td>
+</tr>
+<tr valign="top" style="height:20px">
+<td colspan="9">
+</td>
+</tr>
+<tr valign="top" style="height:100px">
+<td colspan="2">
+</td>
+<td colspan="6">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:551px"></td>
+<td style="width:21px"></td>
+</tr>
+<tr valign="top" style="height:70px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125;">All that piece and parcel of _____ land measuring about _____ decimal, lying and situated in R.S. Plot Number ____, corresponding L.R. plot Number ____, Recorded in R.S. Khatian Number ____ and L.R. Khatian Number ____, at Mouza _____, J.L. Number ____, Touzi Number _______, under Police Station ______, Registration Sub-District ______, in the district of ____________, butted and bounded </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:41px"></td>
+<td style="width:531px"></td>
+</tr>
+<tr valign="top" style="height:1px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:99px">
+<td>
+</td>
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:188px"></td>
+<td style="width:100px"></td>
+<td style="width:243px"></td>
+</tr>
+<tr valign="top" style="height:69px">
+<td colspan="3">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: center;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;">OR</span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:531px"></td>
+</tr>
+<tr valign="top" style="height:76px">
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:104px"></td>
+<td style="width:100px"></td>
+<td style="width:57px"></td>
+<td style="width:100px"></td>
+<td style="width:170px"></td>
+</tr>
+<tr valign="top" style="height:1px">
+<td colspan="3">
+</td>
+<td rowspan="2" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:29px">
+<td>
+</td>
+<td rowspan="2" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:1px">
+<td>
+</td>
+<td colspan="3">
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:531px"></td>
+</tr>
+<tr valign="top" style="height:16px">
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:60px">
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:4px"></td>
+<td style="width:100px"></td>
+<td style="width:105px"></td>
+<td style="width:100px"></td>
+<td style="width:222px"></td>
+</tr>
+<tr valign="top" style="height:2px">
+<td colspan="3">
+</td>
+<td rowspan="2" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:28px">
+<td>
+</td>
+<td rowspan="2" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:2px">
+<td>
+</td>
+<td colspan="3">
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:531px"></td>
+</tr>
+<tr valign="top" style="height:1px">
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:59px">
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:431px"></td>
+<td style="width:100px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:455px"></td>
+<td style="width:76px"></td>
+</tr>
+<tr valign="top" style="height:14px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:45px">
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:48px"></td>
+<td style="width:100px"></td>
+<td style="width:307px"></td>
+</tr>
+<tr valign="top" style="height:2px">
+<td colspan="3">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:32px"></td>
+<td style="width:323px"></td>
+</tr>
+<tr valign="top" style="height:13px">
+<td colspan="2">
+</td>
+<td rowspan="3">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:223px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:47px"></td>
+<td style="width:276px"></td>
+</tr>
+<tr valign="top" style="height:45px">
+<td>
+</td>
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:66px"></td>
+<td style="width:100px"></td>
+<td style="width:110px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:32px"></td>
+<td style="width:144px"></td>
+</tr>
+<tr valign="top" style="height:1px">
+<td colspan="3">
+</td>
+</tr>
+<tr valign="top" style="height:14px">
+<td colspan="2">
+</td>
+<td rowspan="2">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:44px"></td>
+<td style="width:100px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:44px"></td>
+</tr>
+<tr valign="top" style="height:12px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+<tr valign="top" style="height:28px">
+<td rowspan="2" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:2px">
+<td colspan="2">
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:2px">
+<td colspan="2">
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+<tr valign="top" style="height:23px">
+<td>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:9px">
+<td colspan="9">
+</td>
+</tr>
+<tr valign="top" style="height:81px">
+<td>
+</td>
+<td colspan="6">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:552px"></td>
+</tr>
+<tr valign="top" style="height:1px">
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:80px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125;">&quot;Flat / Apartment No.______ on the _______Floor of the building known as ________________situated at _________________and bearing Corporation No.________, _________________Road, Division No._____, with a super built-up area of _____ sq.ft. together with _____% share of undivided interest in the land equivalent to _______ sq.ft. along with common areas and facilities including car parking lot in the basement,butted and bounded by:&quot;</span></td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:504px"></td>
+<td style="width:48px"></td>
+</tr>
+<tr valign="top" style="height:79px">
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:113px"></td>
+<td style="width:100px"></td>
+<td style="width:291px"></td>
+</tr>
+<tr valign="top" style="height:1px">
+<td colspan="3">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:192px"></td>
+<td style="width:100px"></td>
+<td style="width:112px"></td>
+<td style="width:100px"></td>
+</tr>
+<tr valign="top" style="height:3px">
+<td colspan="3">
+</td>
+<td rowspan="2" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+<tr valign="top" style="height:27px">
+<td>
+</td>
+<td rowspan="2" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:3px">
+<td>
+</td>
+<td colspan="2">
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:494px"></td>
+<td style="width:10px"></td>
+</tr>
+<tr valign="top" style="height:18px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:61px">
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:280px"></td>
+<td style="width:100px"></td>
+<td style="width:114px"></td>
+</tr>
+<tr valign="top" style="height:3px">
+<td colspan="3">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:293px"></td>
+<td style="width:36px"></td>
+<td style="width:165px"></td>
+</tr>
+<tr valign="top" style="height:2px">
+<td colspan="2">
+</td>
+<td rowspan="2">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:65px"></td>
+<td style="width:100px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:65px"></td>
+</tr>
+<tr valign="top" style="height:16px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+<tr valign="top" style="height:44px">
+<td rowspan="2">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:24px"></td>
+<td style="width:100px"></td>
+<td style="width:169px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:293px"></td>
+</tr>
+<tr valign="top" style="height:14px">
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:45px">
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:193px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:98px"></td>
+<td style="width:195px"></td>
+</tr>
+<tr valign="top" style="height:45px">
+<td>
+</td>
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:95px"></td>
+<td style="width:100px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:95px"></td>
+</tr>
+<tr valign="top" style="height:15px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:15px">
+<td colspan="2">
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:2px">
+<td colspan="2">
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:110px">
+<td>
+</td>
+<td colspan="5">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:550px"></td>
+</tr>
+<tr valign="top" style="height:110px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1; *line-height: normal;">On the North	:<input type="text" name='onNorth'></input><br/>On the South	:<input type="text" name='onSouth'></input><br/>On the East	:<input type="text" name='onEast'></input><br/>On the West	:<input type="text" name='onWest'></input><br/>&nbsp;	 IN WITNESS WHEREOF the SELLER and the PURCHASER have set their signatures on the day month and year first above written.<br/></span></td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:87px"></td>
+<td style="width:101px"></td>
+<td style="width:362px"></td>
+</tr>
+<tr valign="top" style="height:75px">
+<td>
+</td>
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:1px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:101px"></td>
+</tr>
+<tr valign="top" style="height:16px">
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:59px">
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:1px"></td>
+<td style="width:100px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:101px"></td>
+</tr>
+<tr valign="top" style="height:15px">
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:44px">
+<td>
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:100px"></td>
+<td style="width:1px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:1px"></td>
+<td style="width:100px"></td>
+</tr>
+<tr valign="top" style="height:14px">
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:35px">
+<td colspan="3">
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td colspan="3">
+</td>
+</tr>
+<tr valign="top" style="height:140px">
+<td colspan="3">
+</td>
+<td colspan="4">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:550px"></td>
+</tr>
+<tr valign="top" style="height:140px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1; *line-height: normal;">SELLER			<br/>&nbsp;						 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>PURCHASER &nbsp; &nbsp; &nbsp;______<br/>						 &nbsp; &nbsp; &nbsp; &nbsp;<br/>WITNESSES:<br/>1.<input type="text" name='witness1'></input><br/><br/>2.<input type="text" name='witness2'></input> <br/></span></td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:18px"></td>
+<td style="width:105px"></td>
+<td style="width:6px"></td>
+<td style="width:94px"></td>
+<td style="width:6px"></td>
+<td style="width:321px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td colspan="3">
+</td>
+<td colspan="2" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td colspan="2">
+</td>
+<td colspan="2" style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:20px">
+<td colspan="6">
+</td>
+</tr>
+<tr valign="top" style="height:57px">
+<td>
+</td>
+<td colspan="5">
+<div style="width: 100%; height: 100%; position: relative;">
+<div style="position: absolute; overflow: hidden; width: 100%; height: 100%; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:5px"></td>
+<td style="width:526px"></td>
+<td style="width:1px"></td>
+</tr>
+<tr valign="top" style="height:30px">
+<td>
+</td>
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+<td>
+</td>
+</tr>
+</table>
+</div>
+<div style="position: relative; width: 100%; height: 100%; pointer-events: none; ">
+<table cellpadding="0" cellspacing="0" border="0" style="empty-cells: show; width: 100%; border-collapse: collapse;">
+<tr role="none" valign="top" style="height:0">
+<td style="width:532px"></td>
+</tr>
+<tr valign="top" style="height:27px">
+<td>
+</td>
+</tr>
+<tr valign="top" style="height:30px">
+<td style="pointer-events: auto; text-indent: 0px; text-align: left;">
+<span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 12px; line-height: 1.2578125; font-weight: bold;"> </span></td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+</tr>
+<tr valign="top" style="height:3px">
+<td colspan="6">
+</td>
+</tr>
+</table>
+</div>
+</div>
+</td>
+<td colspan="2">
+</td>
+</tr>
+<tr valign="top" style="height:322px">
+<td colspan="9">
+</td>
+</tr>
+</table>
+
+</td><td width="50%">&nbsp;</td></tr>
+</table>
+
+<div><input type="submit"></input></div>
+</form>
+</body>
+</html>
