@@ -1,60 +1,132 @@
-import '../../css/header.css';
 import React, { useState } from "react";
-import { FormControl } from '@mui/material';
-import Login from '../modal/login/login.jsx'; // Adjust the import path as necessary */
-import Signup from '../modal/signup/signup.jsx'; // Adjust the import path as necessary
+import { useLocation, useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { AppBar, Avatar, Box, Button, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography } from '@mui/material';
+import DcsConfirmationDialog from '../confirmation-dialog/DcsConfirmationDialog';
+import useAuthStore from '../../store/authStore';
+import Cookies from 'js-cookie';
+const Header = ( { title = "Documents Consultancy Services" } ) =>
+{
+    const location = useLocation();
+    console.log( location );
+    const settings = [ 'Profile', 'Logout' ];
+    const navigate = useNavigate();
+    const { isAuthenticated, logout } = useAuthStore();
+    const [ dialogOpen, setDialogOpen ] = useState( false );
+    const [ anchorElUser, setAnchorElUser ] = React.useState( null );
+    const storedUser = Cookies.get( 'user' );
+    const initialUser = storedUser ? JSON.parse( storedUser ) : null;
 
-/**
- * 
- * @returns 
- */
-const Header = () => {
-    const [activeScreen, setActiveScreen] = useState('signup'); // 'signup'
-    //const [activeModal, setActiveModal] = useState(null); // 'login' or 'signup'
-    //const [showLogin, setShowLogin] = useState(false);
-    //const [showSignup, setShowSignup] = useState(false);
-
-    const handleLoginClick = (event) => {
-        event.preventDefault();
-        //setShowLogin(true);
-        setActiveScreen('login');
-
-    }
-
-    /*const handleSignupClick = (event) => {
-        event.preventDefault();
-        //setShowSignup(true);
-        setActiveModal('signup');
-    }
-
-    const closeSignupModal = () => {
-        setShowSignup(false);
-    } */
-       
-    /*const closeLoginModal = () => {
-        setShowLogin(false);
-    }*/
-
-    const closeLoginModal = () => {
-        setActiveScreen('signup');
+    const handleOpenUserMenu = ( event ) =>
+    {
+        setAnchorElUser( event.currentTarget );
     };
 
-    /*const closeModal = () => {
-        setActiveModal(null);
-    }; */
+    const handleCloseUserMenu = ( event ) =>
+    {
+        let logout = event.currentTarget.innerText;
+        setAnchorElUser( null );
+        console.log( logout );
+        if ( logout === 'Logout' )
+        {
+            setDialogOpen( true );
+        }
+        if ( logout === "Profile" )
+        {
+            setDialogOpen( false );
+        }
+    };
+    const handleLogInClick = ( event ) =>
+    {
+        event.preventDefault();
+
+        navigate( '/' );
+    };
+    const handleSignupClick = ( event ) =>
+    {
+        event.preventDefault();
+        navigate( '/signup' );
+    };
+    const handleCloseDialog = () =>
+    {
+        setDialogOpen( false );
+    };
+    const handleConfirm = () =>
+    {
+        handleCloseDialog();
+        logout();
+        navigate( '/' );
+    };
 
     return (
-        <div>
-            <div className='app__header'>
-                <h4>Documents Consultancy Services</h4>
-                <FormControl>
-                    <a href='#' className='app__login' onClick={handleLoginClick}>Log In</a>
-                    {/*<a href='#' className='app__signup' onClick={handleSignupClick}>Sign Up</a>*/}
-                </FormControl>
-            </div>
-            {activeScreen === 'login' ? ( <Login onClose={closeLoginModal} />) : (<Signup />)}
-        </div>
+        <AppBar position="static" size="small">
+            <Toolbar style={ {
+                minHeight: '42px',
+                flexDirection: 'row',
+                paddingRight: '8px'
+            } }  >
+                <Typography variant="h6" component="div" sx={ { flexGrow: 1 } } >
+                    { title }
+                </Typography>
+                <Box sx={ { display: 'flex', alignItems: 'center' } }>
+                    { !isAuthenticated ? (
+                        <div>
+                            { location.pathname === "/" ?
+                                ( <Button size="small" color="inherit" onClick={ handleSignupClick } >Sign up</Button> )
+                                :
+                                ( <Button size="small" color="inherit" onClick={ handleLogInClick } >Sign in</Button> )
+                            }
+                        </div>
+                    ) : (
+                        <Box sx={ { display: 'flex', flexDirection: 'row', gap: 1 } }>
+                            <div>
+                                <Typography variant="caption" sx={ {
+                                    paddingRight: '4px'
+                                } }>
+                                    Welcome,  { initialUser?.email }
+                                </Typography>
+                                <Tooltip title="Open settings">
+                                    <IconButton onClick={ handleOpenUserMenu } sx={ { p: 0 } }>
+                                        <Avatar alt="Remy Sharp" src="2.jpg" />
+                                    </IconButton>
+                                </Tooltip>
+                                <Menu
+                                    sx={ { mt: '28px' } }
+                                    id="menu-appbar"
+                                    anchorEl={ anchorElUser }
+                                    anchorOrigin={ {
+                                        vertical: 'top',
+                                        horizontal: 'right',
+                                    } }
+                                    keepMounted
+                                    transformOrigin={ {
+                                        vertical: 'top',
+                                        horizontal: 'right',
+                                    } }
+                                    open={ Boolean( anchorElUser ) }
+                                    onClose={ handleCloseUserMenu }
+                                >
+                                    { settings.map( ( setting ) => (
+                                        <MenuItem key={ setting } onClick={ handleCloseUserMenu }>
+                                            <Typography sx={ { textAlign: 'center' } }>{ setting }</Typography>
+                                        </MenuItem>
+                                    ) ) }
+                                </Menu>
+                            </div>
+                        </Box>
+                    )
+                    }
+                </Box>
+            </Toolbar>
+            <DcsConfirmationDialog
+                open={ dialogOpen }
+                onClose={ handleCloseDialog }
+                onConfirm={ handleConfirm }
+            />
+        </AppBar>
     );
-}
-
+};
+Header.propTypes = {
+    title: PropTypes.string,
+};
 export default Header;

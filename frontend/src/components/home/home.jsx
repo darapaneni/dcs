@@ -1,14 +1,20 @@
-import React from 'react'
-import Header from '../header/header.jsx'
-import Footer from '../footer/footer.jsx'
+import React, { useState } from 'react';
+import Header from '../header/header.jsx';
+import Footer from '../footer/footer.jsx';
+import { Box } from '@mui/material';
+import { Outlet } from 'react-router-dom';
 
-function Home() {
+function Home ()
+{
   return (
-    <div className='home'>
-        <Header />
-        <Footer />    
+    <div >
+      <Header title={ "Documents Consultancy Services" } />
+      <Box sx={ { flexDirection: 'row', } }>
+        <Outlet />
+      </Box>
+      <Footer />
     </div>
-  )
+  );
 }
 
 export default Home;
