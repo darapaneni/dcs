@@ -1,39 +1,42 @@
 import React, { useState } from 'react';
-import '../../css/userprofile.css';
+import './userprofile.css';
 
-const userprofile = () => {
-  const [userInfo, setUserInfo] = useState({
+const UserProfile = () =>
+{
+  const [ userInfo, setUserInfo ] = useState( {
     fullName: '',
     username: '',
     email: '',
     phone: '',
     dob: '',
-  });
+  } );
 
-  const [editing, setEditing] = useState(false);
+  const [ editing, setEditing ] = useState( false );
 
-  const handleChange = (e) => {
-    setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
+  const handleChange = ( e ) =>
+  {
+    setUserInfo( { ...userInfo, [ e.target.name ]: e.target.value } );
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = ( e ) =>
+  {
     e.preventDefault();
-    console.log('User Info Submitted:', userInfo);
-    setEditing(false);
+    console.log( 'User Info Submitted:', userInfo );
+    setEditing( false );
   };
 
   return (
     <div className="user-profile">
       <h2>User Profile</h2>
-      {editing ? (
-        <form onSubmit={handleSubmit}>
+      { editing ? (
+        <form onSubmit={ handleSubmit }>
           <label>
             Full Name:
             <input
               type="text"
               name="fullName"
-              value={userInfo.fullName}
-              onChange={handleChange}
+              value={ userInfo.fullName }
+              onChange={ handleChange }
               required
             />
           </label>
@@ -42,8 +45,8 @@ const userprofile = () => {
             <input
               type="text"
               name="username"
-              value={userInfo.username}
-              onChange={handleChange}
+              value={ userInfo.username }
+              onChange={ handleChange }
               required
             />
           </label>
@@ -52,8 +55,8 @@ const userprofile = () => {
             <input
               type="email"
               name="email"
-              value={userInfo.email}
-              onChange={handleChange}
+              value={ userInfo.email }
+              onChange={ handleChange }
               required
             />
           </label>
@@ -62,8 +65,8 @@ const userprofile = () => {
             <input
               type="tel"
               name="phone"
-              value={userInfo.phone}
-              onChange={handleChange}
+              value={ userInfo.phone }
+              onChange={ handleChange }
               required
             />
           </label>
@@ -72,28 +75,28 @@ const userprofile = () => {
             <input
               type="date"
               name="dob"
-              value={userInfo.dob}
-              onChange={handleChange}
+              value={ userInfo.dob }
+              onChange={ handleChange }
               required
             />
           </label>
           <button type="submit">Save</button>
-          <button type="button" onClick={() => setEditing(false)}>
+          <button type="button" onClick={ () => setEditing( false ) }>
             Cancel
           </button>
         </form>
       ) : (
         <div>
-          <p>Full Name: {userInfo.fullName || 'Not provided'}</p>
-          <p>Username: {userInfo.username || 'Not provided'}</p>
-          <p>Email Address: {userInfo.email || 'Not provided'}</p>
-          <p>Phone Number: {userInfo.phone || 'Not provided'}</p>
-          <p>Date of Birth: {userInfo.dob || 'Not provided'}</p>
-          <button onClick={() => setEditing(true)}>Edit</button>
+          <p>Full Name: { userInfo.fullName || 'Not provided' }</p>
+          <p>Username: { userInfo.username || 'Not provided' }</p>
+          <p>Email Address: { userInfo.email || 'Not provided' }</p>
+          <p>Phone Number: { userInfo.phone || 'Not provided' }</p>
+          <p>Date of Birth: { userInfo.dob || 'Not provided' }</p>
+          <button onClick={ () => setEditing( true ) }>Edit</button>
         </div>
-      )}
+      ) }
     </div>
   );
 };
 
-export default userprofile;
+export default UserProfile;

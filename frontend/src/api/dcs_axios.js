@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { API_NOTIFICATION_MESSAGES, SERVICE_URLS } from '../constants/config';
 import { getAccessToken, getRefreshToken, setAccessToken, getType } from '../utils/common-utils';
+import { create } from 'zustand';
 
 const API_URL = 'http://localhost:8000';
 
@@ -159,3 +160,6 @@ for ( const [ key, value ] of Object.entries( SERVICE_URLS ) )
 }
 
 export { API };
+export default axios.create( {
+    baseURL: 'http://localhost:3500'
+} );

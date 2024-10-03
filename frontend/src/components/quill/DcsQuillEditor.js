@@ -1,9 +1,20 @@
 'use client';
-import React from 'react';
+import React, { useRef } from 'react';
 import 'react-quill/dist/quill.snow.css';
-import { Card, CardHeader, CardContent, Box, Divider, IconButton, styled } from '@mui/material';
-import { PropTypes } from "prop-types";
+import PdfConverter from '../../components/pdf-converter/PdfConverter';
+import
+{
+    Card,
+    CardHeader,
+    CardContent,
+    Box,
+    Divider,
+    styled,
+} from '@mui/material';
+import SaveAsIcon from '@mui/icons-material/SaveAs';
 import AssignmentIcon from '@mui/icons-material/Assignment';
+import { PropTypes } from "prop-types";
+import DcsTooltip from '../tooltip/DcsTooltip';
 const CustomCardHeader = styled( CardHeader )( ( { theme } ) => ( {
     // backgroundColor: '#2196f3', // Custom background color
     // color: 'white', // Text color
@@ -11,6 +22,7 @@ const CustomCardHeader = styled( CardHeader )( ( { theme } ) => ( {
 } ) );
 const DcsQuillEditor = ( { templateName, templateContent } ) =>
 {
+    const pdfConverterRef = useRef( null );
     return (
         <Box sx={ { paddingTop: 2 } }>
             <Card raised={ true }>
@@ -23,9 +35,18 @@ const DcsQuillEditor = ( { templateName, templateContent } ) =>
                     paddingTop: 1
                 } }
                     action={
-                        <IconButton aria-label="Generate  Preview" onClick={ () => alert( 'Edit clicked' ) }>
-                            <AssignmentIcon />
-                        </IconButton>
+                        <>
+                            <DcsTooltip
+                                title={ "Save as draft" }
+                                icon={ <SaveAsIcon /> }
+                                onclick={ () => { alert( 'Yet To Implement..' ); } }
+                            > </DcsTooltip>
+                            <DcsTooltip
+                                title={ "Save and generate  preview" }
+                                icon={ <AssignmentIcon /> }
+                                onclick={ () => { alert( 'Yet To Implement..' ); } }
+                            ></DcsTooltip>
+                        </>
                     }
                 >
                 </CustomCardHeader>
@@ -46,10 +67,12 @@ const DcsQuillEditor = ( { templateName, templateContent } ) =>
                         </Button>
                     </div> */}
                     <Box>
-                        <div
+                        {/* <div
                             style={ { border: '1px solid #ccc', padding: '10px' } }
                             dangerouslySetInnerHTML={ { __html: templateContent } }
-                        /></Box>
+                        /> */}
+                        <PdfConverter ref={ pdfConverterRef } content={ templateContent } />
+                    </Box>
                 </CardContent>
 
             </Card>
