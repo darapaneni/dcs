@@ -28,7 +28,7 @@
     box-sizing: border-box;
 }
   
-button {
+/* .button {
     width: 100%;
     padding: 10px;
     margin-bottom: 5px;
@@ -39,9 +39,9 @@ button {
     cursor: pointer;
 }
   
-button:hover {
+.button:hover {
     background-color: #0056b3;
-}
+} */
 
 .app__link{
     font-size: 14px;
