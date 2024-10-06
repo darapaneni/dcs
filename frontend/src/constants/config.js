@@ -23,15 +23,38 @@ export const API_NOTIFICATION_MESSAGES = {
 
 export const SERVICE_URLS = {
     userLogin: { url: '/login', method: 'POST' },
-    userSignup: { url: '/signup', method: 'POST' },
-    getAllPosts: { url: '/posts', method: 'GET', params: true },
+    userSignup: { url: '/register', method: 'POST' },
+    forgotPassword: { url: '/forgot-password', method: 'POST' },
     getRefreshToken: { url: '/token', method: 'POST' },
-    uploadFile: { url: 'file/upload', method: 'POST' },
-    createPost: { url: 'create', method: 'POST' },
-    deletePost: { url: 'delete', method: 'DELETE', query: true },
-    getPostById: { url: 'post', method: 'GET', query: true },
-    newComment: { url: '/comment/new', method: 'POST' },
-    getAllComments: { url: 'comments', method: 'GET', query: true },
-    deleteComment: { url: 'comment/delete', method: 'DELETE', query: true },
-    updatePost: { url: 'update', method: 'PUT', query: true }
 };
+
+export const SIGNUP_ERROR_MESSAGES={
+    emailExists: {
+            title: "Error!",
+            message: "Email already exists. Please use a different email or login."
+        },
+    firstname:{
+        title: "Error!",
+        message: "First name is required"
+    },
+    lastname:{
+        title: "Error!",
+        message: "Last name is required"
+    },
+    email:{
+        title: "Error!",
+        message: "Email is required"
+    },
+    password:{
+        title: "Error!",
+        message: "Password is required"
+    },
+    confirmPasswordMatch:{
+        title: "Error!",
+        message: "Confirm Passwords do not match"
+    },
+    confirmPassword:{
+        title: "Error!",
+        message: "Confirm Password is required"
+    }
+}

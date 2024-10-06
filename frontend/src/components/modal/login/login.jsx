@@ -1,89 +1,127 @@
 import React, { useState } from 'react';
-import '../../../css/login.css';
-import Signup from '../signup/signup';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
-import Dashboard from '../../../pages/Dashboard/dashboard';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import useAuthStore from '../../../store/authStore';
+import { useNavigate } from 'react-router-dom';
+import DcsMicroLoader from './../../loader/DcsMicroLoader';
+import { TextField, Button, Link, Divider, Box, Typography } from '@mui/material';
+import ForgotPassword from '../../forgot-password/ForgotPassword';
+import DcsCustomLink from '../../link/DcsCustomLink';
 
-const Login = ({onClose}) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [showSignup, setShowSignup] = useState(false);
-  const [error, setError] = useState('');
+// const Login = ({onClose}) => {
+const schema = z.object( {
+  email: z.string().min( 1, 'Email is required' ).email( 'Invalid email address' ),
+  password: z.string().min( 6, { message: "Must be 6 or more characters long" } )
+} );
+
+const Login = (  ) =>
+{
+  const { login } = useAuthStore();
+  const [ error, setError ] = useState( '' );
+
+
   const navigate = useNavigate();
+  const [ open, setOpen ] = React.useState( false );
 
-  const handleSignUpClick = (event) => {
-    event.preventDefault();
-    setShowSignup(true);
-  }
-
-  const handleSubmit = async(event) => {
-    event.preventDefault();
- 
-    if (!email || !password) {
-      setError('Please enter both email and password');
-      return;
+  const { register, getValues, handleSubmit, formState: { errors, isSubmitting } } = useForm( {
+    resolver: zodResolver( schema )
+  } );
+  const onSubmit = async ( data ) =>
+  {
+    setError( '' );
+    try
+    {
+      const formData = getValues();
+      await login( formData.email, formData.password );
+      navigate( "/user/welcome" );
     }
-
-    if (email === 'adsingh@example.com' && password === 'adsingh123') {
-      alert('Login successful!');
-      navigate('/dashboard'); // Navigate to the dashboard
-      return;
-    } /*else {
-      alert('Invalid email or password.');
-    } */
-    
-
-    setError('');
-    try {
-      const response = await axios.post('http://localhost:3301/', { email, password });
-
-      // Assuming the response contains a success message or token
-      if (response.data.success) {
-        // Redirect to dashboard
-        navigate('/dashboard');
-      } else {
-        setError(response.data.message || 'Login failed');
-      }
-    } catch (err) {
-      setError(err.response?.data?.message || 'An error occurred');
+    catch ( error )
+    {
+      console.log(error)
+      setError( 'Invalid credentials. Please try again.' );
     }
-  }; 
+  };
 
+  const handleClose = () =>
+  {
+    setOpen( false );
+  };
+  const handleClickOpen = () =>
+  {
+    setOpen( true );
+  };
   return (
     <div className="auth-container">
-      {!showSignup ? (
-        <div className="login-box">
-        <span className="close-button" onClick={onClose}>&times;</span> {/* Close button */}
+      <div className="login-box">
         <h2>Sign In</h2>
-        {error && <p className="error__message">{error}</p>}
-        <form onSubmit={handleSubmit}>
-          <div className="input-group">
-            <input
-              type="email"
-              id="email"
-              placeholder='Email'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className="input-group">
-            <input
-              type="password"
-              id="password"
-              placeholder='Password'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          <button type="submit">Sign In</button>
-          <p className="app__link">Not registered with us yet?&nbsp;<a href="/signup" className="app__link" onClick={handleSignUpClick}>Sign Up</a>&nbsp;&nbsp;&nbsp;<a href="/forgot-password" className="app__link">Forgot Password?</a></p>
+        { error && <Typography color="error">{ error }</Typography> }
+        <form onSubmit={ handleSubmit( onSubmit ) } noValidate >
+          <TextField
+            { ...register( "email" ) }
+            error={ !!errors.email }
+            helperText={ errors.email ? errors.email.message : '' }
+            margin="normal"
+            size='small'
+            fullWidth
+            id="email"
+            label="Email Address"
+            name="email"
+            autoComplete="off"
+          />
+          { errors.name && <p>{ errors.name.message }</p> }
+          <TextField
+            { ...register( 'password' ) }
+            error={ !!errors.password }
+            helperText={ errors.password ? errors.password.message : '' }
+            margin="normal"
+            size='small'
+            fullWidth
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+            autoComplete="off"
+          />
+          <Divider></Divider>
+          <Button type="submit" variant="contained" fullWidth disabled={ isSubmitting }>
+            { isSubmitting ? (
+              <span>
+                <DcsMicroLoader size={ 16 } showLabel={ false } color={ 'primary' } />
+              </span>
+            ) : (
+              'Sign in'
+            ) }
+          </Button>
+          <Box sx={ { paddingTop: 2 } } className="app__link">
+            <Typography variant="caption" gutterBottom >
+              Not registered with us yet?&nbsp;
+              <DcsCustomLink
+                linkText={ "Sign Up" }
+                targetPath={ 'signup' }
+                color={ "#1976d2" }
+                variant={ "body3" }
+                key={ "signup" }
+              />
+              |
+              <Link
+                sx={ {
+                  marginLeft: 1,
+                  alignSelf: 'baseline',
+                  '&:hover': { backgroundColor: 'lightgray', }
+                } }
+                href="#"
+                onClick={ handleClickOpen }
+                variant="body3"
+                underline="none">  Forgot password? </Link>
+            </Typography>
+          </Box>
+          <ForgotPassword
+            open={ open }
+            handleClose={ handleClose } > Forgot Password? </ForgotPassword>
         </form>
       </div>
-      ) : (<Signup />)}
-    </div>   
+    </div>
   );
 };
 
