@@ -4,10 +4,9 @@ import Cookies from "js-cookie";
 import {useNavigate} from "react-router-dom";
 import RecentDocuments from "./RecentDocuments";
 
-const storedUser = Cookies.get('user');
-const initialUser = storedUser ? JSON.parse(storedUser) : null;
-
-function WelcomePage() {
+const WelcomePage=()=> {
+    const storedUser = Cookies.get('user');
+    const initialUser = storedUser ? JSON.parse(storedUser) : null;
     const navigate = useNavigate();
     const handleOnNewClick = () => {
         navigate('/user/pricing')

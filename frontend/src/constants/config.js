@@ -1,4 +1,5 @@
-export const API_NOTIFICATION_MESSAGES = {
+
+const API_NOTIFICATION_MESSAGES = {
     loading: {
         title: "Loading...",
         message: "Data is being loaded. Please wait"
@@ -18,21 +19,34 @@ export const API_NOTIFICATION_MESSAGES = {
     networkError: {
         title: "Error!",
         message: "Unable to connect to the server. Please check internet connectivity and try again."
+    },
+    githubError: {
+        title: "Error!",
+        message:"GitHub login was canceled or denied."
     }
 };
 
-export const SERVICE_URLS = {
-    userLogin: { url: '/login', method: 'POST' },
-    userSignup: { url: '/register', method: 'POST' },
+const SERVICE_URLS = {
+    userLogin: { url: '/auth/login', method: 'POST' },
+    userSignup: { url: '/auth/register', method: 'POST' },
+    userDetailByEmail: { url: '/auth/users', method: 'POST' },
     forgotPassword: { url: '/forgot-password', method: 'POST' },
     getRefreshToken: { url: '/token', method: 'POST' },
 };
 
-export const SIGNUP_ERROR_MESSAGES={
+const SIGNUP_ERROR_MESSAGES={
     emailExists: {
             title: "Error!",
             message: "Email already exists. Please use a different email or login."
         },
+    emailInvalid: {
+        title: "Error!",
+        message: "Invalid email address."
+    },
+    email:{
+        title: "Error!",
+        message: "Email is required"
+    },
     firstname:{
         title: "Error!",
         message: "First name is required"
@@ -40,10 +54,6 @@ export const SIGNUP_ERROR_MESSAGES={
     lastname:{
         title: "Error!",
         message: "Last name is required"
-    },
-    email:{
-        title: "Error!",
-        message: "Email is required"
     },
     password:{
         title: "Error!",
@@ -58,3 +68,9 @@ export const SIGNUP_ERROR_MESSAGES={
         message: "Confirm Password is required"
     }
 }
+const MESSAGES = {
+    API_NOTIFICATION_MESSAGES,
+    SERVICE_URLS,
+    SIGNUP_ERROR_MESSAGES
+};
+export default MESSAGES;

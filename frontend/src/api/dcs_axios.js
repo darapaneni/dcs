@@ -5,7 +5,6 @@ import dayjs from "dayjs";
 let accessToken=localStorage.getItem('token') ? JSON.parse(localStorage.getItem('token')) : ""
 let refresh_token=localStorage.getItem('refresh_token') ? JSON.parse(localStorage.getItem('refresh_token')) : ""
 
-console.log('access: ',accessToken)
 const baseURL= 'http://localhost:8000/api/v1/'
 const DcsAxiosInstance = axios.create({
     baseURL:baseURL,

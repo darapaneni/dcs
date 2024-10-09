@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { CircularProgress, Box, Typography, LinearProgress } from '@mui/material';
-const DcsMicroLoader = ( { message = "Please wait......", size = 48, isCircular = 'true', showLabel = true, color = 'inherit' } ) =>
+const DcsMicroLoader = ( {
+                             message = "Please wait......",
+                             size = 48,
+                             isCircular = 'true',
+                             showLabel = true,
+                             color = 'inherit' } ) =>
 {
     return (
         <Box variant="contained" sx={ { flexGrow: 1, flexDirection: 'row' } } >
@@ -12,7 +17,7 @@ const DcsMicroLoader = ( { message = "Please wait......", size = 48, isCircular 
                 <CircularProgress size={ size } color={ color } thickness={ 6 } />
             }
             { showLabel && (
-                <Typography >
+                <Typography fontSize={size}>
                     { message }
                 </Typography>
             ) }
