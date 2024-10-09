@@ -20,7 +20,6 @@ import Cookies from 'js-cookie';
 
 const Header = ({title = "Documents Consultancy Services"}) => {
     const location = useLocation();
-    console.log(location);
     const settings = ['Dashboard', 'Profile', 'Change Password', 'Logout'];
     const navigate = useNavigate();
     const {isAuthenticated, logout} = useAuthStore();
@@ -77,7 +76,10 @@ const Header = ({title = "Documents Consultancy Services"}) => {
                 flexDirection: 'row',
                 paddingRight: '8px'
             }}>
-                <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
+                {/*<Avatar sx={{mb: 0, bgcolor: 'primary.main'}}>*/}
+                {/*    <DCSLogo/>*/}
+                {/*</Avatar>*/}
+                <Typography variant="h6" component="div" sx={{flexGrow: 1,flexDirection:'row'}}>
                     {title}
                 </Typography>
                 <Box sx={{display: 'flex', alignItems: 'center'}}>
@@ -99,7 +101,24 @@ const Header = ({title = "Documents Consultancy Services"}) => {
                                 </Typography>
                                 <Tooltip title="Open settings">
                                     <IconButton onClick={handleOpenUserMenu} sx={{p: 0}}>
-                                        <Avatar alt={initialUser?.names} src="2.jpg"/>
+                                        <Avatar
+                                            alt={initialUser?.names}
+                                            src="../2.jpg"
+                                            sx={{
+                                                width: {
+                                                    xs: 8,  // small size on extra-small screens
+                                                    sm: 16,  // medium size on small screens
+                                                    md: 24,  // large size on medium screens
+                                                    lg: 32, // larger size on large screens
+                                                },
+                                                height: {
+                                                    xs: 8,
+                                                    sm: 16,
+                                                    md: 24,
+                                                    lg: 32,
+                                                }
+                                            }}
+                                        />
                                     </IconButton>
                                 </Tooltip>
                                 <Menu

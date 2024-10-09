@@ -2,7 +2,7 @@ import React from 'react';
 import {Box, Typography, Paper, Grid2} from '@mui/material';
 
 // function RecentDocuments({ searchQuery, filter }) { //TODO : Global search for recent documents- yet to impelempent
-function RecentDocuments() {
+const RecentDocuments=()=> {
     const documents = [
         {title: 'Project Proposal', date: '2024-10-04'},
         {title: 'Marketing Plan', date: '2024-10-03'},
@@ -26,11 +26,11 @@ function RecentDocuments() {
             </Typography>
             <Grid2 container spacing={3} justifyContent="center">
                 {documents.map((doc, index) => (
-                    <Grid2 item xs={12} sm={4} key={index}>
+                    <Grid2   xs={12} sm={4} key={index}>
                         <Paper sx={{p: 2}}>
-                            <Typography variant="h6">{doc.title}</Typography>
+                            <Typography variant="h6">{doc?.title}</Typography>
                             <Typography variant="body2" color="textSecondary">
-                                Last edited: {doc.date}
+                                Last edited: {doc?.date}
                             </Typography>
                         </Paper>
                     </Grid2>

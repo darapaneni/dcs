@@ -34,8 +34,12 @@ const Footer = () =>
 {
     const currentYear = new Date().getFullYear();
     return (
-        <>
-            <Paper sx={ { position: 'fixed', bottom: 0, left: 0, right: 0, flexGrow: 1, bgcolor: 'primary.main', color: 'white', py: 0.5 } }   >
+            <Paper sx={ {
+                position: 'fixed',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                flexGrow: 1  } }   >
                 <Grid2 container size={ 12 }>
                     <Grid2 size={ 9 }>
 
@@ -47,12 +51,17 @@ const Footer = () =>
                             />
                         ) ) }
                     </Grid2>
-                    <Grid2 size={ 3 }>
+                    <Grid2    size={ 3 } sx={{
+                        display: 'flex',
+                        justifyItems:'flex-end',
+                        justifyContent:'flex-end',
+                        alignItems:'flex-end',
+                        alignContent:'flex-end',
+                    }}>
                         <Copyright year={ currentYear } />
                     </Grid2>
                 </Grid2>
             </Paper >
-        </>
     );
 };
 export default Footer;

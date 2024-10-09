@@ -88,7 +88,7 @@ function Dashboard ()
         Welcome, { initialUser?.names }
       </Typography>
       <Typography color="primary" size="small">
-        Selected Plan: {selectedPricing.title}
+        Selected Plan: {selectedPricing?.title}
       </Typography>
       <Grid2 spacing={ 2 } container sx={ { paddingTop: 3 } }>
         <Grid2 size={ 12 }>

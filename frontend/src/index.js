@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
+import CssBaseline from '@mui/material/CssBaseline';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
@@ -26,6 +27,7 @@ root.render(
     <Suspense fallback={ <DcsPageLoader /> }>
       <React.StrictMode>
         <BrowserRouter>
+            <CssBaseline/>
           <App />
           {/* <Routes>
             <Route path="/" element={ <App /> }>

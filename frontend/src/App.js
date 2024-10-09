@@ -1,5 +1,5 @@
-import './App.css';
 import React, { useEffect, useState } from 'react';
+import './App.css';
 import Login from './components/modal/login/login.jsx';
 import { Route, Routes } from 'react-router-dom';
 import DcsPageLoader from './components/loader/DcsPageLoader.js';
@@ -15,6 +15,8 @@ import UserProfile from "./components/userProfile/userprofile";
 import WelcomePage from "./components/Welcome/WelcomePage";
 import PricingPage from "./components/pricing/PricingPage";
 import ChangePassword from "./components/userProfile/ChangePassword";
+import GitHubCallback from "./components/github/GitHubCallback";
+import ResetPassword from "./components/reset-password/ResetPassword";
 
 function App () 
 {
@@ -43,6 +45,8 @@ function App ()
         <Route path="mail-confirmation" element={<MailSendConfirmation />} />
         <Route path="mail-error" element={<MailSendError />} />
         <Route path='/otp/verify' element={<VerifyEmail/>}/>
+        <Route path="/auth/callback" element={<GitHubCallback />} />
+        <Route path="api/v1/auth/password-reset-confirm/:uid/:token" element={<ResetPassword />} />
       </Route>
       <Route path="/user" element={ <ProtectedLayout /> }>
         <Route path="welcome" element={ <WelcomePage /> } />

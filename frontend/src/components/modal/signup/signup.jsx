@@ -1,7 +1,7 @@
-import React, {useEffect,useCallback} from 'react';
+import React, {useEffect, useCallback} from 'react';
+import axios from 'axios';
 import {toast} from "react-toastify";
 import {useForm} from "react-hook-form";
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Avatar from '@mui/material/Avatar';
 import {Button, Link, Box, Typography, TextField, Container} from '@mui/material';
 import Card from '@mui/material/Card';
@@ -9,29 +9,36 @@ import CardContent from '@mui/material/CardContent';
 import GoogleIcon from '@mui/icons-material/Google';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Divider from '@mui/material/Divider';
+import MESSAGES from '../../../constants/config.js'
 import {z} from 'zod';
 import {zodResolver} from '@hookform/resolvers/zod';
-import axios from 'axios';
 import './signup.css'; // Import CSS for styling
 import DcsCustomLink from '../../link/DcsCustomLink';
 import DcsMicroLoader from "../../loader/DcsMicroLoader";
 import {useNavigate, useSearchParams} from "react-router-dom";
 import DcsAxiosInstance from "../../../api/dcs_axios";
+import {DCSLogo} from "../../logo/DCSLogo";
 // Constants
-const GITHUB_CLIENT_ID = "env.REACT_APP_GITHUB_CLIENT_ID;"//TODO: It should come from env file
+const GITHUB_CLIENT_ID = process.env.REACT_APP_GITHUB_CLIENT_ID;
+const GITHUB_REDIRECT_URL = process.env.REACT_APP_GITHUB_REDIRECT_URL;
+const REACT_APP_DCS_API_BASE_URL = process.env.REACT_APP_DCS_API_BASE_URL;
 // const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID; //TODO :
 
 axios.defaults.withCredentials = true
 const signupSchema = z.object({
-    email: z.string().min(1, 'Email is required').email('Invalid email address'),
-    first_name: z.string().min(1, 'First name is required'),
-    last_name: z.string().min(1, 'Last name is required'),
-    password: z.string().min(6, {message: "Must be 6 or more characters long"}),
+    email: z.string().min(1, MESSAGES.SIGNUP_ERROR_MESSAGES.email).email(MESSAGES.SIGNUP_ERROR_MESSAGES.emailInvalid),
+    first_name: z.string().min(1, MESSAGES.SIGNUP_ERROR_MESSAGES.firstname),
+    last_name: z.string().min(1, MESSAGES.SIGNUP_ERROR_MESSAGES.lastname),
+    password: z.string().min(6, MESSAGES.SIGNUP_ERROR_MESSAGES.password).refine(
+        (value) => /^[a-zA-Z0-9_.-]*$/.test(value ?? ''),
+        'password should contain only alphabets and numbers'
+    ),
     confirm_password: z.string()
-}).superRefine(({confirm_password, password}, ctx) => {
-    if (confirm_password !== password) {
+}).superRefine((data, ctx) => {
+
+    if (data.confirm_password !== data.password) {
         ctx.addIssue({
-            code: "custom",
+            code: z.ZodIssueCode.custom,
             message: "The passwords did not match",
             path: ['confirm_password']
         });
@@ -53,7 +60,7 @@ const Signup = () => {
     } = useForm({
         resolver: zodResolver(signupSchema)
     });
-    const handleServerResponse =useCallback( (resp) => {
+    const handleServerResponse = useCallback((resp) => {
         if (resp.status === 200) {
             const user = {
                 'email': resp.data.email,
@@ -65,35 +72,38 @@ const Signup = () => {
             navigate('/dashboard');
             toast.success('Login successful');
         }
-    },[navigate]);
+    }, [navigate]);
 
-    const handleServerError =useCallback( (error) => {
+    const handleServerError = useCallback((error) => {
         if (error.response) {
             console.log(error.response.data);
             toast.error(error.response.data.detail);
         }
-    },[]);
+    }, []);
 
     const handleGithubLogin = () => {
-        window.location.assign(`https://github.com/login/oauth/authorize/?client_id=${GITHUB_CLIENT_ID}`);
+        // window.location.assign(`https://github.com/login/oauth/authorize/?client_id=${GITHUB_CLIENT_ID}`);
+        const githubLoginUrl = `https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&redirect_uri=${GITHUB_REDIRECT_URL}`;
+        window.location.href = githubLoginUrl;
     };
+
     const sendGithubCodeToServer = useCallback(async () => {
         const urlParam = searchParams.get('code');
         if (urlParam) {
             try {
-                const resp = await DcsAxiosInstance.post('auth/github/', { 'code': urlParam });
+                const resp = await DcsAxiosInstance.post('auth/github/', {'code': urlParam});
                 handleServerResponse(resp);
             } catch (error) {
                 handleServerError(error);
             }
         }
-    },[searchParams,handleServerResponse,handleServerError]);
+    }, [searchParams, handleServerResponse, handleServerError]);
     useEffect(() => {
         const code = searchParams.get('code');
         if (code) {
             sendGithubCodeToServer();
         }
-    }, [searchParams,sendGithubCodeToServer]);
+    }, [searchParams, sendGithubCodeToServer]);
 
     const onSubmit = async (data) => {
 
@@ -106,7 +116,7 @@ const Signup = () => {
             "password2": data.confirm_password
         }
         try {
-            const res = await axios.post('http://127.0.0.1:8000/api/v1/auth/register/', dataToSend);
+            const res = await axios.post( `${REACT_APP_DCS_API_BASE_URL}auth/register/` , dataToSend);
             console.log(res);
             const status = res.status;
             if (status === 201) {
@@ -123,8 +133,8 @@ const Signup = () => {
     }
 
     return (
-        <Container component="main" maxWidth="xs" sx={{marginTop: 1}}>
-            <Card elevation={3}>
+        <Container component="main" maxWidth="xs" sx={{marginTop: 1 }}>
+            <Card elevation={10}>
                 <Box
                     sx={{
                         marginTop: 1,
@@ -132,16 +142,18 @@ const Signup = () => {
                         flexDirection: 'column',
                         alignItems: 'center',
                     }}>
-                    <Avatar sx={{mb: 0, bgcolor: 'primary.main'}}>
-                        <LockOutlinedIcon/>
+                    <Avatar >
+                        <DCSLogo sx={{
+                            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.3)'
+                        }} />
                     </Avatar>
-                    <Typography variant="h6" color="textPrimary" textAlign="center">
+                    <Typography variant="h6" color="textPrimary" textAlign="center" fontWeight="bold">
                         {/*Sign in {branding?.title ? `to ${branding.title}` : null}*/}
                         Sign up
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" textAlign="center">
-                        Welcome user, please sign up to continue
-                    </Typography>
+                    {/*<Typography variant="body2" color="textSecondary" textAlign="center">*/}
+                    {/*    Welcome user, please sign up to continue*/}
+                    {/*</Typography>*/}
 
                 </Box>
                 <CardContent>
@@ -317,7 +329,7 @@ const Signup = () => {
                                 key={"login"}
                                 variant={"body3"}
                             />
-                            <Typography variant="caption" gutterBottom>
+                            <Typography variant="caption" >
                                 By Signing Up, you agree to our
                                 <Link href="/terms-conditions" className="app__link">Terms & Condition | </Link>
                                 <Link href="/privacy-policy" className="app__link"> Privacy Policy</Link>
