@@ -1,13 +1,13 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
-from usrManApi.models imort CustomUser
+from usrManApi.models import CustomUser
 from .models import UserReset
 from rest_framework import status
-from rest_framework imort Response
+from rest_framework.response import Response
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import smart_bytes
-from django.core.mail imort send_mail
+from django.core.mail import send_mail
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
