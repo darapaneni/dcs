@@ -4,6 +4,6 @@ from .views import ChangePasswordView, ResetPasswordView, ResetPasswordConfirmVi
 urlpatterns = [
     path('password_change/', ChangePasswordView.as_view(), name = 'password_change'),
     path('password_reset/', ResetPasswordView.as_view(), name='password_reset'),
-    path('password_reset_confirm/', ResetPasswordConfirmView.as_view, name='password_reset_confirm'),
+    path('password_reset_confirm/', ResetPasswordConfirmView.as_view(), name='password_reset_confirm'),
 
 ]
