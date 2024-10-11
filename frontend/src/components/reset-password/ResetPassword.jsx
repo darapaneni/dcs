@@ -17,7 +17,7 @@ import {zodResolver} from "@hookform/resolvers/zod";
 import Avatar from "@mui/material/Avatar";
 import {DCSLogo} from "../logo/DCSLogo";
 
-const schema = z.object({
+const passwordSchema = z.object({
     password: z.string().min(1, MESSAGES.SIGNUP_ERROR_MESSAGES.password),
     confirm_password: z.string().min(1, MESSAGES.SIGNUP_ERROR_MESSAGES.confirmPassword)
 });
@@ -28,15 +28,15 @@ const ResetPassword = () => {
     const {
         register,
         getValues,
-        clearErrors,
         handleSubmit,
         formState: {errors,
             isSubmitting}} = useForm({
-        resolver: zodResolver(schema)
+        resolver: zodResolver(passwordSchema)
     });
     const onSubmit = async () => {
         const formData = getValues();
-        clearErrors();
+        console.log(formData)
+        // clearErrors();
         const data={
             "password":formData.password,
             "confirm_password":formData.confirm_password,
@@ -84,9 +84,8 @@ const ResetPassword = () => {
                                 margin="normal"
                                 size='small'
                                 fullWidth
-                                id="email"
                                 label="New Password"
-                                name="email"
+                                type={"password"}
                                 autoComplete="off"
                             />
                             <TextField
@@ -96,10 +95,9 @@ const ResetPassword = () => {
                                 margin="normal"
                                 size='small'
                                 fullWidth
-                                id="email"
                                 label="Confirm Password"
-                                name="email"
                                 autoComplete="off"
+                                type={"password"}
                             />
                             <Button
                                 type="submit"

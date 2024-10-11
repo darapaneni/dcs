@@ -2,20 +2,22 @@
 import React from 'react';
 import { Container, Grid2, Card, CardContent, Typography, Button, CardActions } from '@mui/material';
 import {QRCodeCanvas }   from 'qrcode.react';
-import { useNavigate} from "react-router-dom";
-import usePricingStore from "../../store/pricingStore";
+// import { useNavigate} from "react-router-dom";
+// import usePricingStore from "../../store/pricingStore";
+import PayPalButton from '../payment/PayPalButton';
+// import QrScanner from '../payment/QrScanner';
 const PricingPage = () => {
-    const navigate = useNavigate();
-    const {  setSelectedPricing } = usePricingStore();
-    const handleOnSelectClick = () => {
-        setSelectedPricing({
-            title: 'Basic',
-            price: '$9.99',
-            description: 'Basic plan with essential features',
-            qrValue: 'https://example.com/basic'
-        })
-          navigate('/user/dashboard')
-    }
+    // const navigate = useNavigate();
+    // const {  setSelectedPricing } = usePricingStore();
+    // const handleOnSelectClick = () => {
+    //     setSelectedPricing({
+    //         title: 'Basic',
+    //         price: '$9.99',
+    //         description: 'Basic plan with essential features',
+    //         qrValue: 'https://example.com/basic'
+    //     })
+    //       navigate('/user/dashboard')
+    // }
     const pricingPlans = [
         {
             title: 'Basic',
@@ -42,9 +44,9 @@ const PricingPage = () => {
             <Typography variant="h4" align="center" gutterBottom>
                 DCS Pricing Plans
             </Typography>
-            <Grid2 container spacing={6} sx={{justifyContent: 'center'}}>
+            <Grid2 container spacing={2} sx={{justifyContent: 'center'}}>
                 {pricingPlans.map((plan, index) => (
-                    <Grid2 item xs={12} sm={6} md={6} key={index}>
+                    <Grid2 item xs={12} sm={6} md={4} key={index}>
                         <Card>
                             <CardContent>
                                 <Typography variant="h5" component="div" gutterBottom>
@@ -58,15 +60,17 @@ const PricingPage = () => {
                                 </Typography>
                                 <div style={{ marginTop: 20, textAlign: 'center' }}>
                                     <QRCodeCanvas  value={plan.qrValue} size={100} />
+                                    {/*<QrScanner />*/}
                                 </div>
                             </CardContent>
-                            <CardActions sx={{gap:4}}>
+                            <CardActions sx={{gap:1}}>
                                 <Button size="small" color="primary" href={plan.qrValue}>
                                     Learn More
                                 </Button>
-                                <Button size="small" variant={"contained"} color="primary" onClick={handleOnSelectClick}>
-                                    Select
-                                </Button>
+                                {/*<Button size="small" variant={"contained"} color="primary" onClick={handleOnSelectClick}>*/}
+                                {/*    Select*/}
+                                {/*</Button>*/}
+                                <PayPalButton />
                             </CardActions>
                         </Card>
                     </Grid2>

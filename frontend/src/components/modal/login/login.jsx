@@ -22,7 +22,10 @@ import CardContent from "@mui/material/CardContent";
 import MESSAGES from "../../../constants/config";
 import GoogleIcon from "@mui/icons-material/Google";
 import GitHubIcon from "@mui/icons-material/GitHub";
-
+// Constants
+const GITHUB_CLIENT_ID = process.env.REACT_APP_GITHUB_CLIENT_ID;
+const GITHUB_REDIRECT_URL = process.env.REACT_APP_GITHUB_REDIRECT_URL;
+// const REACT_APP_DCS_API_BASE_URL = process.env.REACT_APP_DCS_API_BASE_URL;
 // const Login = ({onClose}) => {
 const schema = z.object({
     email: z.string().min(1, MESSAGES.SIGNUP_ERROR_MESSAGES.email).email(MESSAGES.SIGNUP_ERROR_MESSAGES.emailInvalid),
@@ -60,6 +63,12 @@ const Login = () => {
     };
     const handleClickOpen = () => {
         setOpen(true);
+    };
+    const handleGithubLogin = () => {
+        // window.location.assign(`https://github.com/login/oauth/authorize/?client_id=${GITHUB_CLIENT_ID}`);
+        const githubLoginUrl = `https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&redirect_uri=${GITHUB_REDIRECT_URL}`;
+        // window.location.href = githubLoginUrl;
+        window.location.assign(githubLoginUrl)
     };
     return (
         <>
@@ -146,6 +155,7 @@ const Login = () => {
                                     variant="contained"
                                     startIcon={<GitHubIcon/>}
                                     size="small"
+                                    onClick={handleGithubLogin}
                                 >
                                     GitHub
                                 </Button>

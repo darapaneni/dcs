@@ -1,260 +1,413 @@
-import React, {useState, useEffect} from 'react';
-import {Card, CardContent, Avatar, TextField, Button, Box, Typography,Tooltip} from '@mui/material';
-import {styled} from '@mui/system';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  Avatar,
+  TextField,
+  Grid2,
+  Box,
+  Typography,
+  Tooltip,
+  Button,
+} from "@mui/material";
+import { styled } from "@mui/system";
+import axios from "axios";
 import Cookies from "js-cookie";
-const storedUser = Cookies.get( 'user' );
-const initialUser = storedUser ? JSON.parse( storedUser ) : null;
+import MESSAGES from "../../constants/config";
+import { useForm } from "react-hook-form";
+import DcsMicroLoader from "../loader/DcsMicroLoader";
+import DcsInformationDisplay from "../info-display/DcsInfoDisplay";
+
+const storedUser = Cookies.get("user");
+const initialUser = storedUser ? JSON.parse(storedUser) : null;
 
 const StyledCard = styled(Card)({
-    margin: 'auto',
-    padding: '10px',
-    borderRadius: '10px',
-    minWidth:600
+  margin: "auto",
+  padding: "4px",
+  borderRadius: "10px",
+  minWidth: 600,
 });
 
 const StyledAvatar = styled(Avatar)({
-    width: 24,
-    height: 24,
-    margin: 'auto',
-    marginBottom: '6px',
+  width: 64,
+  height: 64,
+  margin: "auto",
+  marginBottom: "6px",
+  // variant: "rectangle"
+});
+
+// Define Zod schema for form validation
+const userProfileSchema = z.object({
+  first_name: z
+    .string()
+    .min(2, { message: "First name must be at least 2 characters long" }),
+  last_name: z
+    .string()
+    .min(2, { message: "Last name must be at least 2 characters long" }),
+  email: z.string().email({ message: MESSAGES.SIGNUP_ERROR_MESSAGES.email }),
+  address: z.string(),
+  phoneno: z.string(),
+  city: z.string(),
+  state: z.string(),
+  country: z.string(),
 });
 
 // User Profile Component
 const UserProfile = () => {
-    const [user, setUser] = useState({
-        first_name: '',
-        last_name: '',
-        email: '',
-        phoneno: '',
-        address: '',
-        city: '',
-        state: '',
-        country: '',
-        pincode: '',
-    });
+  const [isPageLoading, setIsLoading] = useState(false);
+  const [isDataSaved, setIsDataSaved] = useState(false);
+  const [profilePic, setProfilePic] = useState(null);
+  const [previewImage, setPreviewImage] = useState(null);
+  const [user, setUser] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    phoneno: "",
+    address: "",
+    city: "",
+    state: "",
+    country: "",
+    pincode: "",
+  });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, },
+    getValues,
+    setValue,
+    reset,
+  } = useForm({
+    resolver: zodResolver(userProfileSchema),
+    defaultValues: {
+      first_name: "",
+      last_name: "",
+      email: "",
+      phoneno: "",
+      address: "",
+      city: "",
+      state: "",
+      country: "",
+      pincode: "",
+    },
+  });
 
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState('');
-    const [successMessage, setSuccessMessage] = useState('');
-
-    useEffect(() => {
-        // Fetch user data from API when component mounts
-        const email= initialUser?.email;
-        axios.get(`http://127.0.0.1:8000/api/v1/auth/api/users/${email}/`)
-            .then(response => {
-                setUser(response.data);
-            })
-            .catch(error => {
-                console.error('Error fetching user data:', error);
-                setError('Failed to load user data.');
-            });
-    }, []);
-
-    const handleChange = (event) => {
-        const {name, value} = event.target;
-        setUser({...user, [name]: value});
+  useEffect(() => {
+    // Fetch user data from API when component mounts
+    const sUser = Cookies.get("user");
+    const user = sUser ? JSON.parse(sUser) : null;
+    const email = user?.email;
+    console.log(initialUser);
+    setIsLoading(true);
+    axios
+      .get(`http://127.0.0.1:8000/api/v1/auth/users/${email}/`)
+      .then((response) => {
+            setUser(response.data);
+        reset(response.data);
+        axios
+          .get(`http://localhost:8000/api/v1/auth/download/user/${response.data.id}/`, {
+            responseType: "blob", // Important for downloading files
+          })
+          .then((image) => {
+            setPreviewImage(URL.createObjectURL(new Blob([image.data])));
+            setIsLoading(false);
+          });
+      })
+      .catch((error) => {
+        console.error("Error fetching user data:", error);
+        setIsLoading(false);
+        // setError('Failed to load user data.');
+      });
+  }, [setUser, reset, setPreviewImage, setIsLoading]);
+  let accessToken=Cookies.get('token')
+  const csrfToken = Cookies.get("csrftoken");
+  const onSubmit = async () => {
+    const reqData = getValues();
+    const data = {
+      first_name: reqData.first_name,
+      last_name: reqData.last_name,
+      address: reqData.address,
+      phoneno:reqData.phoneno,
+      city: reqData.city,
+      state: reqData.state,
+      country: reqData.country,
     };
-
-    // const handleProfilePictureChange = (event) => {
-    //     const file = event.target.files[0];
-    //     const reader = new FileReader();
-    //
-    //     reader.onloadend = () => {
-    //         setUser({...user, profilePicture: reader.result});
-    //     };
-    //
-    //     if (file) {
-    //         reader.readAsDataURL(file);
-    //     }
-    // };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        setIsLoading(true);
-
-        // Simulate API call to update profile
-        axios.put('https://api.example.com/user/profile', user)
-            .then(response => {
-                console.log(response)
-                setIsLoading(false);
-                setSuccessMessage('Profile updated successfully!');
-            })
-            .catch(error => {
-                setIsLoading(false);
-                console.error('Error updating profile:', error);
-                setError('Failed to update profile.');
-            });
-    };
-
-    return (
-         <Box sx={{display: 'flex',  paddingTop: 1}}>
-            <StyledCard elevation={3}>
-                <CardContent>
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            flexDirection: 'row',
-                            alignItems: 'left',
-                            justifyContent: 'space-between'
-                        }}>
-
-                        <Typography variant="h6" color="textPrimary" textAlign="left">
-                            Edit Profile
-                        </Typography>
-                        <Tooltip title="Change Profile Picture">
-                            <Typography variant="h6" color="textPrimary" textAlign="right">
-                                <StyledAvatar alt={user.name} src={user.profilePicture}/>
-                            </Typography>
-                        </Tooltip>
-                        {/*<Button variant="outlined" component="label" size={"small"} sx={{marginBottom: 1,size:'small'}}>*/}
-                        {/*    Upload Profile Picture*/}
-                        {/*    <input type="file" hidden onChange={handleProfilePictureChange}/>*/}
-                        {/*</Button>*/}
-                    </Box>
-                    <form onSubmit={handleSubmit} noValidate>
-                        {/* Profile Picture */}
-
-                        <Box sx={{display: 'grid', gap: 1, gridTemplateColumns: 'repeat(2, 1fr)'}}>
-                            {/* Form Fields */}
-                            <TextField
-                                label="First Name"
-                                variant="outlined"
-                                margin="normal"
-                                size='small'
-                                fullWidth
-                                name="first_name"
-                                value={user.first_name}
-                                onChange={handleChange}
-                                required
-                            />
-                            <TextField
-                                label="Last Name"
-                                variant="outlined"
-                                margin="normal"
-                                fullWidth
-                                size='small'
-                                name="name"
-                                value={user.last_name}
-                                onChange={handleChange}
-                                required
-                            />
-                        </Box>
-                        <TextField
-                            label="Email"
-                            variant="outlined"
-                            name="email"
-                            margin="normal"
-                            size='small'
-                            fullWidth
-                            value={user.email}
-                            onChange={handleChange}
-                            required
-                            type="email"
-                        />
-                        <TextField
-                            label="Address"
-                            variant="outlined"
-                            name="address"
-                            margin="normal"
-                            size='small'
-                            fullWidth
-                            value={user.address}
-                            onChange={handleChange}
-                            required
-                            type="email"
-                        />
-                        <Box sx={{display: 'grid', gap: 1, gridTemplateColumns: 'repeat(2, 1fr)'}}>
-
-                            <TextField
-                                label="Mobile No"
-                                variant="outlined"
-                                name="mobileno"
-                                margin="normal"
-                                size='small'
-                                value={user.phoneno}
-                                onChange={handleChange}
-                                required
-                                type="email"
-                            />
-                            <TextField
-                                label="Gender"
-                                variant="outlined"
-                                name="mobileno"
-                                margin="normal"
-                                size='small'
-                                value={user.gender}
-                                onChange={handleChange}
-                                required
-                                type="email"
-                            />
-                            <TextField
-                                label="City"
-                                variant="outlined"
-                                name="city"
-                                margin="normal"
-                                size='small'
-                                value={user.city}
-                                onChange={handleChange}
-                                required
-                                type="email"
-                            />
-                            <TextField
-                                label="Country"
-                                variant="outlined"
-                                name="country"
-                                margin="normal"
-                                size='small'
-                                value={user.country}
-                                onChange={handleChange}
-                                required
-                                type="email"
-                            />
-                            <TextField
-                                label="Pin Code"
-                                variant="outlined"
-                                name="pincode"
-                                margin="normal"
-                                size='small'
-                                value={user.pincode}
-                                onChange={handleChange}
-                                required
-                                type="email"
-                            />
-                            <Box sx={{ alignContent: 'center' }}  offset={{ md: 'auto' }}>
-                            {/* Submit Button */}
-                            <Button
-                                type="submit"
-                                variant="contained"
-                                color="primary"
-                                size="small"
-                                disabled={isLoading} >
-                                {isLoading ? 'Saving...' : 'Update Profile'}
-                            </Button>
-                            </Box>
-                        </Box>
-
-
-
-                        {/* Error Message */}
-                        {error && (
-                            <Typography color="error" variant="body2" sx={{marginTop: 2}}>
-                                {error}
-                            </Typography>
-                        )}
-
-                        {/* Success Message */}
-                        {successMessage && (
-                            <Typography color="primary" variant="body2" sx={{marginTop: 2}}>
-                                {successMessage}
-                            </Typography>
-                        )}
-
-                    </form>
-                </CardContent>
-            </StyledCard>
-        </Box>
+    setIsDataSaved(false)
+    const res = await axios.patch(
+      `http://localhost:8000/api/v1/auth/profile/${reqData.id}/`,
+      data,{
+          headers: {
+            "X-CSRFToken": csrfToken,
+            'Content-type':'application/json',
+            Authorization: accessToken ? `Bearer ${ accessToken}` : ""
+          },
+        }
     );
+    if (res.status === 200) {
+      console.log(res.data);
+      setIsDataSaved(true)
+      // setEmailSent(res.data.message)
+    }
+
+    console.log(res);
+  };
+  const onError = (errors, e) => console.log(errors, e);
+
+  const handleProfilePictureChange = async (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    setProfilePic(file);
+    setPreviewImage(URL.createObjectURL(file));
+    reader.onloadend = () => {
+      setUser({ ...user, profilePicture: reader.result });
+      setValue("profile_pic", reader.result);
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+
+      const formData = new FormData();
+      formData.append("profile_pic", file);
+      try {
+        await axios
+          .post(
+            "http://localhost:8000/api/v1/auth/upload-profile-pic/",
+            formData,
+            {
+              headers: {
+                "X-CSRFToken": csrfToken,
+                "Content-Type": "multipart/form-data",
+                Authorization: accessToken ? `Bearer ${ accessToken}` : ""
+              },
+            },
+          )
+          .then((result) => {
+
+            console.log(result);
+          });
+      } catch (error) {
+        console.error("Error uploading image:", error);
+      }
+    }
+  };
+
+  return (
+    <Grid2 sx={{ display: "flex", paddingTop: 1 }}>
+      {isPageLoading ? (
+        <DcsMicroLoader
+          isCircular={false}
+          size={4}
+          showLabel={false}
+          color={"primary"}
+        />
+      ) : (
+        <>
+
+          <StyledCard elevation={3}>
+            <CardHeader
+              sx={{
+                padding: "6px",
+              }}
+              title={
+                <Typography variant="h6" color="textPrimary" textAlign="left">
+                  Edit Profile
+                </Typography>
+              }
+            ></CardHeader>
+            <CardContent
+              sx={{
+                paddingTop: "4px",
+              }}
+            >
+              <Box
+                component="form"
+                sx={{
+                  "& .MuiTextField-root": {
+                    display: "flex",
+                    flexDirection: "column",
+                  },
+                }}
+                noValidate
+                gap={2}
+                autoComplete="off"
+              >
+                {
+                    isDataSaved && (
+                        <DcsInformationDisplay
+                            message={"Profile updated successfully"}
+                            severity={"success"}
+                            duration={6000}
+                        />
+                    )
+                }
+                <Grid2 container size={12} spacing={1} paddingBottom={2}>
+                  <Grid2 size={6} container justifyContent="flex-start">
+                    <Tooltip title="Change Profile Picture">
+                      <Typography
+                        variant="h6"
+                        color="textPrimary"
+                        textAlign="right"
+                      >
+                        <StyledAvatar
+                          alt={user.name}
+                          variant={"rectangle"}
+                          src={previewImage}
+                        />
+                      </Typography>
+                    </Tooltip>
+                  </Grid2>
+                  <Grid2 size={6} paddingTop={4}>
+                    <Button
+                      variant="outlined"
+                      component="label"
+                      size={"small"}
+                      fullWidth
+                      sx={{ marginBottom: 1, size: "small" }}
+                    >
+                      Upload Profile Picture
+                      <input
+                        type="file"
+                        hidden
+                        onChange={handleProfilePictureChange}
+                      />
+                    </Button>
+                  </Grid2>
+                </Grid2>
+                <Grid2 container size={12} spacing={1} paddingBottom={2}>
+                  <Grid2 size={6}>
+                    <TextField
+                      {...register("first_name")}
+                      error={!!errors.first_name}
+                      helperText={errors.first_name?.message}
+                      label="Firs Name"
+                      id="first_name"
+                      size="small"
+                      fullWidth
+                      slotProps={{
+                        inputLabel: { shrink: true }, // Using slotProps.inputLabel instead of InputLabelProps
+                      }}
+                    />
+                  </Grid2>
+                  <Grid2 size={6}>
+                    <TextField
+                      {...register("last_name")}
+                      error={!!errors.last_name}
+                      helperText={errors.last_name?.message}
+                      label="Last Name"
+                      id="last_name"
+                      size="small"
+                      fullWidth
+                      slotProps={{
+                        inputLabel: { shrink: true }, // Using slotProps.inputLabel instead of InputLabelProps
+                      }}
+                    />
+                  </Grid2>
+                </Grid2>
+                <Grid2 container size={12} paddingBottom={2} spacing={1}>
+                  <TextField
+                    {...register("email")}
+                    error={!!errors.email}
+                    helperText={errors.email?.message}
+                    label="Email"
+                    id="email"
+                    fullWidth
+                    disabled={true}
+                    size="small"
+                    slotProps={{
+                      inputLabel: { shrink: true }, // Using slotProps.inputLabel instead of InputLabelProps
+                    }}
+                  />
+                </Grid2>
+                <Grid2 container size={12} paddingBottom={2} spacing={1}>
+                  <TextField
+                    {...register("address")}
+                    label="Address"
+                    id="address"
+                    multiline
+                    maxRows={4}
+                    fullWidth
+                    size="small"
+                    slotProps={{
+                      inputLabel: { shrink: true }, // Using slotProps.inputLabel instead of InputLabelProps
+                    }}
+                  />
+                </Grid2>
+                <Grid2 container size={12} spacing={1} paddingBottom={2}>
+                  <Grid2 size={6}>
+                    <TextField
+                      {...register("phoneno")}
+                      label="Phone"
+                      id="phoneno"
+                      size="small"
+                      fullWidth
+                      slotProps={{
+                        inputLabel: { shrink: true }, // Using slotProps.inputLabel instead of InputLabelProps
+                      }}
+                    />
+                  </Grid2>
+                  <Grid2 size={6}>
+                    <TextField
+                      {...register("city")}
+                      label="City"
+                      id="city"
+                      size="small"
+                      fullWidth
+                      slotProps={{
+                        inputLabel: { shrink: true }, // Using slotProps.inputLabel instead of InputLabelProps
+                      }}
+                    />
+                  </Grid2>
+                </Grid2>
+                <Grid2 container size={12} spacing={1} paddingBottom={2}>
+                  <Grid2 size={6}>
+                    <TextField
+                      {...register("state")}
+                      label="State"
+                      id="state"
+                      size="small"
+                      fullWidth
+                      slotProps={{
+                        inputLabel: { shrink: true }, // Using slotProps.inputLabel instead of InputLabelProps
+                      }}
+                    />
+                  </Grid2>
+                  <Grid2 size={6}>
+                    <TextField
+                      {...register("country")}
+                      label="Country"
+                      id="country"
+                      size="small"
+                      fullWidth
+                      slotProps={{
+                        inputLabel: { shrink: true }, // Using slotProps.inputLabel instead of InputLabelProps
+                      }}
+                    />
+                  </Grid2>
+                </Grid2>
+              </Box>
+
+              <Grid2 container size={12} spacing={1}>
+                <Grid2 size={6}></Grid2>
+                <Grid2 size={6} container justifyContent="flex-end">
+                  <Button
+                    variant="contained"
+                    size="small"
+                    onClick={handleSubmit(onSubmit, onError)}
+                  >
+                    Update
+                  </Button>
+                </Grid2>
+              </Grid2>
+            </CardContent>
+          </StyledCard>
+
+        </>
+
+      )}
+    </Grid2>
+  );
 };
 
 export default UserProfile;

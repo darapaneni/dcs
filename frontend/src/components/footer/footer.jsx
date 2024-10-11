@@ -24,7 +24,7 @@ const links = [
     }
     ,
     {
-        name: 'Phone: 080-69169760',
+        name: 'Contact',
         iconName: 'edit_note',
         href: 'tel:080-69169760',
         seq: 4
@@ -39,8 +39,11 @@ const Footer = () =>
                 bottom: 0,
                 left: 0,
                 right: 0,
-                flexGrow: 1  } }   >
-                <Grid2 container size={ 12 }>
+                flexGrow: 1,
+                zIndex: -1 } }   >
+                <Grid2 container size={ 12 } sx={{
+                    zIndex:-1
+                }}>
                     <Grid2 size={ 9 }>
 
                         { links.map( ( { seq, name, href } ) => (
@@ -57,6 +60,7 @@ const Footer = () =>
                         justifyContent:'flex-end',
                         alignItems:'flex-end',
                         alignContent:'flex-end',
+                        zIndex: -1
                     }}>
                         <Copyright year={ currentYear } />
                     </Grid2>

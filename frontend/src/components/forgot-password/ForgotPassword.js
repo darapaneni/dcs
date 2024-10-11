@@ -21,13 +21,18 @@ const schema = z.object({
     email: z.string().min(1, MESSAGES.SIGNUP_ERROR_MESSAGES.email).email(MESSAGES.SIGNUP_ERROR_MESSAGES.emailInvalid)
 });
 
-function ForgotPassword({open, handleClose}) {
+function ForgotPassword({
+                            email="",
+                            open,
+                            handleClose,
+                            isDisable=false}) {
 
     const {
         register,
         handleSubmit,
         getValues,
         reset,
+        setValue,
         clearErrors,
         formState: {errors,
             isSubmitting}} = useForm({
@@ -36,10 +41,11 @@ function ForgotPassword({open, handleClose}) {
     useEffect(() => {
         if (open) {
             reset();       // Reset form fields
+            setValue("email",email)
             clearErrors(); // Clear validation errors
             setEmailSent("")
         }
-    },[open, reset, clearErrors])
+    },[email,open, reset, clearErrors,setValue])
 
     const [emailSent, setEmailSent] = useState("")
 const onSubmit = async ( ) => {
@@ -81,6 +87,7 @@ return (
                 id="email"
                 {...register("email")}
                 error={!!errors.email}
+                disabled={isDisable}
                 helperText={errors.email ? errors.email.message : ''}
                 name="email"
                 autoComplete='off'
@@ -94,7 +101,7 @@ return (
                 fullWidth
             />
             {emailSent ? (
-            <Typography variant="caption" color={'primary'} font-size={'bold'}>
+            <Typography variant="caption" color={'primary'} fontSize={'bold'}>
                 {emailSent}
             </Typography>
                 ):(
@@ -122,6 +129,8 @@ return (
 }
 
 ForgotPassword.propTypes = {
+    email:PropTypes.string,
+    isDisable:PropTypes.bool,
     handleClose: PropTypes.func.isRequired,
     open: PropTypes.bool.isRequired,
 };

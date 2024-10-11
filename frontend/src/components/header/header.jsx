@@ -6,7 +6,6 @@ import {
     Avatar,
     Box,
     Button,
-    Divider,
     IconButton,
     Menu,
     MenuItem,
@@ -14,13 +13,17 @@ import {
     Tooltip,
     Typography
 } from '@mui/material';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import VpnKeyIcon from '@mui/icons-material/VpnKey';
+import LogoutIcon from '@mui/icons-material/Logout';
 import DcsConfirmationDialog from '../confirmation-dialog/DcsConfirmationDialog';
 import useAuthStore from '../../store/authStore';
 import Cookies from 'js-cookie';
 
 const Header = ({title = "Documents Consultancy Services"}) => {
     const location = useLocation();
-    const settings = ['Dashboard', 'Profile', 'Change Password', 'Logout'];
+    // const settings = ['Dashboard', 'Profile', 'Change Password', 'Logout'];
     const navigate = useNavigate();
     const {isAuthenticated, logout} = useAuthStore();
     const [dialogOpen, setDialogOpen] = useState(false);
@@ -76,9 +79,7 @@ const Header = ({title = "Documents Consultancy Services"}) => {
                 flexDirection: 'row',
                 paddingRight: '8px'
             }}>
-                {/*<Avatar sx={{mb: 0, bgcolor: 'primary.main'}}>*/}
-                {/*    <DCSLogo/>*/}
-                {/*</Avatar>*/}
+
                 <Typography variant="h6" component="div" sx={{flexGrow: 1,flexDirection:'row'}}>
                     {title}
                 </Typography>
@@ -137,13 +138,43 @@ const Header = ({title = "Documents Consultancy Services"}) => {
                                     open={Boolean(anchorElUser)}
                                     onClose={handleCloseUserMenu}
                                 >
-                                    {settings.map((setting) => (
-                                        <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                            <Typography sx={{textAlign: 'center'}}>{setting}</Typography>
-                                            <Divider></Divider>
-                                        </MenuItem>
+                                    <MenuItem  onClick={handleCloseUserMenu}>
+                                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                            <DashboardIcon sx={{ fontSize: 18, marginRight: 1 }} /> {/* Icon with margin */}
+                                            <Typography variant="body2">
+                                                Dashboard
+                                            </Typography>
+                                        </Box>
+                                    </MenuItem>
+                                    <MenuItem  onClick={handleCloseUserMenu}>
+                                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                            <AccountCircleIcon sx={{ fontSize: 18, marginRight: 1 }} /> {/* Icon with margin */}
+                                            <Typography variant="body2">
+                                                Profile
+                                            </Typography>
+                                        </Box>
+                                    </MenuItem>
+                                    <MenuItem  onClick={handleCloseUserMenu}>
 
-                                    ))}
+                                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                            <VpnKeyIcon sx={{ fontSize: 18, marginRight: 1 }} /> {/* Icon with margin */}
+                                            <Typography variant="body2">
+                                                Change Password
+                                            </Typography>
+                                        </Box>
+                                    </MenuItem>
+                                    <MenuItem  onClick={handleCloseUserMenu}>
+                                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                            <LogoutIcon sx={{ fontSize: 18, marginRight: 1 }} /> {/* Icon with margin */}
+                                            <Typography variant="body2">
+                                                Logout
+                                            </Typography>
+                                        </Box>
+                                    </MenuItem>
+                                    {/*{settings.map((setting) => (*/}
+                                    {/*   */}
+
+                                    {/*))}*/}
                                 </Menu>
                             </div>
                         </Box>
