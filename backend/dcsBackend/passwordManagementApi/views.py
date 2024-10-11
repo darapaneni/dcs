@@ -35,7 +35,13 @@ class ResetPasswordView(APIView):
         token = PasswordResetTokenGenerator().make_token(user)
         UserReset.objects.create(email=user, reset_token=token)
         resetLink = f"http://frontend/reset-password/{token}"
-        send_mail('Reset your password', resetLink, 'demo@gmail.com', [user.email])
+        # send_mail('Reset your password', resetLink, 'demo@gmail.com', [user.email])
+        send_mail(
+            subject = "Reset your password",
+            message = resetLink,
+            from_email = None,
+            recipient_list = [user.email]
+        )
         return Response({'success': 'Password reset link has been sent to your email.'}, status = status.HTTP_200_OK)
 
 class ResetPasswordConfirmView(APIView):
