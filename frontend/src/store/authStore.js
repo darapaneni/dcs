@@ -1,6 +1,7 @@
 import {create} from "zustand";
 import Cookies from 'js-cookie';
 import AxiosInstance from "../api/dcs_axios";
+// import data from "bootstrap/js/src/dom/data";
 // import { mockLoginApi } from '../api/mockApi';
 
 // const useAuthStoreOld = create( ( set ) => ( {
@@ -50,8 +51,8 @@ const useAuthStore = create((set) => {
                         'email': resp.data.email,
                         'names': resp.data.full_name
                     };
-                    const token = JSON.stringify(resp.data.access_token);
-                    const refresh_token = JSON.stringify(resp.data.refresh_token);
+                    const token = resp.data.access_token;
+                    const refresh_token =resp.data.refresh_token;
                     set({
                         user: JSON.stringify(user),
                         isAuthenticated: true,
@@ -59,9 +60,9 @@ const useAuthStore = create((set) => {
                         refresh_token
                     });
                     // Store user data and token in cookies
-                    Cookies.set('user', JSON.stringify(user), {expires: 7}); // Expires in 7 days
-                    Cookies.set('token', JSON.stringify(resp.data.access_token), {expires: 7});
-                    Cookies.set('refresh_token', JSON.stringify(resp.data.refresh_token), {expires: 7});
+                    Cookies.set('user', JSON.stringify(user), {expires: process.env.REACT_APP_EXPIRE_COOKIE_DAYS}); // Expires in 7 days
+                    Cookies.set('token', resp.data.access_token, {expires: process.env.REACT_APP_EXPIRE_COOKIE_DAYS});
+                    Cookies.set('refresh_token', resp.data.refresh_token, {expires: process.env.REACT_APP_EXPIRE_COOKIE_DAYS});
                     // localStorage.setItem('token', JSON.stringify(resp.data.access_token));
                     // localStorage.setItem('refresh_token', JSON.stringify(resp.data.refresh_token));
                     // localStorage.setItem('user', JSON.stringify(user));
@@ -78,6 +79,26 @@ const useAuthStore = create((set) => {
             Cookies.remove('token'); // Remove token from cookies
             Cookies.remove('refresh_token');
         },
+        setUser:  (resp)=>{
+            if(resp.data) {
+                const user = {
+                    'email': resp.data.email,
+                    'names': resp.data.full_name
+                };
+                const token = resp.data.tokens.access;
+                const refresh_token = resp.data.tokens.refresh;
+                set({
+                    user: JSON.stringify(user),
+                    isAuthenticated: true,
+                    token,
+                    refresh_token
+                });
+                // Store user data and token in cookies
+                Cookies.set('user', JSON.stringify(user), {expires: process.env.REACT_APP_EXPIRE_COOKIE_DAYS}); // Expires in 7 days
+                Cookies.set('token', token, {expires: process.env.REACT_APP_EXPIRE_COOKIE_DAYS});
+                Cookies.set('refresh_token', refresh_token, {expires: process.env.REACT_APP_EXPIRE_COOKIE_DAYS});
+            }
+        }
     };
 });
 

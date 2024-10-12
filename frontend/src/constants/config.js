@@ -66,6 +66,10 @@ const SIGNUP_ERROR_MESSAGES={
     confirmPassword:{
         title: "Error!",
         message: "Confirm Password is required"
+    },
+    newPassword:{
+        title: "Error!",
+        message: "New Password is required"
     }
 }
 const MESSAGES = {

@@ -69,7 +69,7 @@ const Signup = () => {
             localStorage.setItem('token', JSON.stringify(resp.data.access_token));
             localStorage.setItem('refresh_token', JSON.stringify(resp.data.refresh_token));
             localStorage.setItem('user', JSON.stringify(user));
-            navigate('/dashboard');
+            navigate('/welcome');
             toast.success('Login successful');
         }
     }, [navigate]);
@@ -84,7 +84,8 @@ const Signup = () => {
     const handleGithubLogin = () => {
         // window.location.assign(`https://github.com/login/oauth/authorize/?client_id=${GITHUB_CLIENT_ID}`);
         const githubLoginUrl = `https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&redirect_uri=${GITHUB_REDIRECT_URL}`;
-        window.location.href = githubLoginUrl;
+        // window.location.href = githubLoginUrl;
+        window.location.assign(githubLoginUrl)
     };
 
     const sendGithubCodeToServer = useCallback(async () => {
@@ -133,8 +134,12 @@ const Signup = () => {
     }
 
     return (
-        <Container component="main" maxWidth="xs" sx={{marginTop: 1 }}>
-            <Card elevation={10}>
+        <Container component="main" maxWidth="xs" sx={{
+            marginTop: 1,
+        zindex:2000}}>
+            <Card elevation={10} sx={{
+                zIndex:2000
+            }} >
                 <Box
                     sx={{
                         marginTop: 1,
@@ -149,7 +154,7 @@ const Signup = () => {
                     </Avatar>
                     <Typography variant="h6" color="textPrimary" textAlign="center" fontWeight="bold">
                         {/*Sign in {branding?.title ? `to ${branding.title}` : null}*/}
-                        Sign up
+                        Sign Up
                     </Typography>
                     {/*<Typography variant="body2" color="textSecondary" textAlign="center">*/}
                     {/*    Welcome user, please sign up to continue*/}
@@ -317,6 +322,7 @@ const Signup = () => {
                                 startIcon={<GitHubIcon/>}
                                 size="small"
                                 onClick={handleGithubLogin}
+                                type={"button"}
                             >
                                 GitHub
                             </Button>
