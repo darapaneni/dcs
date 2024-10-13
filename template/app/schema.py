@@ -469,6 +469,41 @@ class NLTRequest(Schema):
    foraloan_businessregistration_passportapplication_etc=fields.Str(default="foraloan_businessregistration_passportapplication_etc")
    ContactInformation=fields.Str(default="ContactInformation")
 
+class NCDRequest(Schema):
+   name=fields.Str(default='')
+   fathername=fields.Str(default='')
+   age=fields.Str(default='')
+   place=fields.Str(default='')
+   previousname=fields.Str(default='')
+   newname=fields.Str(default='')
+   usenewname=fields.Str(default='')
+   fomarrnamesurname=fields.Str(default='')
+   adoptednamesurname=fields.Str(default='')
+   date=fields.Str(default='')
+   year=fields.Str(default='')
+   fulldate=fields.Str(default='')
+   formername=fields.Str(default='')
+   witness1name=fields.Str(default='')
+   witness2name=fields.Str(default='')
+   witness1address=fields.Str(default='')
+   witness2address=fields.Str(default='')
+
+ 
+class NCAMDRequest(Schema):
+   applicantoldname=fields.Str(default='')
+   applicantfathername=fields.Str(default='')
+   applicanthusbandname=fields.Str(default='')
+   age=fields.Str(default='')
+   address=fields.Str(default='')
+   marriagedate=fields.Str(default='')
+   marriageplace=fields.Str(default='')
+   marriagecertificateno=fields.Str(default='')
+   marrcertissudate=fields.Str(default='')
+   certissueauthority=fields.Str(default='')
+   applnewname=fields.Str(default='')
+   aadharno=fields.Str(default='')
+   dateaffidavate=fields.Str(default='')
+
 class APIResponse(Schema):
    message=fields.Str(default="")
 

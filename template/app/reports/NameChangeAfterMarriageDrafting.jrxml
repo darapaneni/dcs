@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NameChangeAfterMarriageDrafting" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9324a59b-fd2a-4a0d-8024-eec5e0e238d7">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="applicantoldname" class="java.lang.String"/>
+	<parameter name="applicantfathername" class="java.lang.String"/>
+	<parameter name="applicanthusbandname" class="java.lang.String"/>
+	<parameter name="age" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="marriagedate" class="java.lang.String"/>
+	<parameter name="marriageplace" class="java.lang.String"/>
+	<parameter name="marriagecertificateno" class="java.lang.String"/>
+	<parameter name="marrcertissudate" class="java.lang.String"/>
+	<parameter name="certissueauthority" class="java.lang.String"/>
+	<parameter name="applnewname" class="java.lang.String"/>
+	<parameter name="aadharno" class="java.lang.String"/>
+	<parameter name="dateaffidavate" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="150" y="20" width="330" height="20" uuid="7680f46f-dec1-4c83-9a93-d83942a89604"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[AFFIDAVIT FOR CHANGE OF NAME AFTER MARRAIGE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="597" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="20" width="544" height="45" uuid="3f90f643-108a-4e44-bf95-3bc8e168e808"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[I,                                   Daughter of                                and wife of                                  aged                   residing at                             , do hereby solemnly affirm and declare as under:                                                                                                                                                                                                                                                           ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="72" width="370" height="20" uuid="83099803-a8bd-4c51-9ae4-55c0f25599d5"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[1.That my Maiden Name is]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="20" y="21" width="110" height="20" uuid="15dd6308-a916-4d25-906a-5bc73fe7ca3d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{applicantoldname}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="193" y="36" width="103" height="1" uuid="210289d9-8c87-43da-b882-67223ef1d3ea"/>
+			</line>
+			<line>
+				<reportElement x="370" y="37" width="90" height="1" uuid="fe7493b3-a504-4327-bfb2-985c2b04fb8e"/>
+			</line>
+			<textField>
+				<reportElement x="200" y="22" width="100" height="20" uuid="aa860f6b-d79b-470e-b315-2fdf27d68e1f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{applicantfathername}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="30" y="40" width="90" height="1" uuid="ed4cba2e-4403-4d2d-839c-6aafc4e76ed4"/>
+			</line>
+			<textField>
+				<reportElement x="365" y="18" width="100" height="20" uuid="f85109c2-d33b-4eb2-b71d-0f4a43cf56e4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{applicanthusbandname}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="500" y="41" width="40" height="1" uuid="fef2c67a-f0a2-4a50-8680-7961c0428026"/>
+			</line>
+			<textField>
+				<reportElement x="500" y="20" width="50" height="20" uuid="356298dc-7774-40ca-99fd-b8e52abb4c91"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{age}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="80" y="60" width="80" height="1" uuid="ed8b783c-e507-4247-a9b6-f0c01d620ab4"/>
+			</line>
+			<textField>
+				<reportElement x="80" y="42" width="100" height="20" uuid="369c4fbb-0afb-4283-9464-1738fe9bb115"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{address}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="160" y="91" width="110" height="1" uuid="4ce14650-68cf-4c3c-8018-4d98302f5abb"/>
+			</line>
+			<textField>
+				<reportElement x="160" y="72" width="100" height="20" uuid="56aeea84-1ad3-440c-9ffa-0a703f213b62"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{applicantoldname}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="420" y="82" width="110" height="1" uuid="616df0d1-b031-4b58-be7f-a73b1c4bef97"/>
+			</line>
+			<staticText>
+				<reportElement x="10" y="100" width="526" height="50" uuid="92e1ff7c-f577-4e14-8998-c0261e88556c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[2.That i got marrried to                               on                           at                                    vide marraige certificate number                            dated                           ,issued by                                     ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="150" y="116" width="70" height="1" uuid="ed5f05ef-d4db-4641-857b-ff1dd9f63920"/>
+			</line>
+			<line>
+				<reportElement x="240" y="115" width="80" height="1" uuid="5ceae722-b1d3-4f25-bd8f-40e61a95edda"/>
+			</line>
+			<line>
+				<reportElement x="350" y="115" width="100" height="1" uuid="947b9b35-bf46-4969-b351-a9c58494ee6f"/>
+			</line>
+			<textField>
+				<reportElement x="136" y="98" width="86" height="20" uuid="938cd097-50bf-4d4d-a473-fc30c83a136e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{applicanthusbandname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="95" width="72" height="20" uuid="049eb125-b9ee-428d-be3b-ac2bfcf8dd3a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{marriagedate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="365" y="98" width="105" height="20" uuid="3b7f8a24-0338-461a-a03a-f04001cc702a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{marriageplace}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="150" y="137" width="77" height="1" uuid="aeae6af9-4da5-4ef1-9704-7be3bb8e98cf"/>
+			</line>
+			<textField>
+				<reportElement x="160" y="116" width="62" height="16" uuid="2760f1b2-005c-4aac-8ff9-186e43bdae3d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{marriagecertificateno}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="290" y="140" width="80" height="1" uuid="8eddfd74-a0ba-47d2-8aa7-91bf3b6cb481"/>
+			</line>
+			<textField>
+				<reportElement x="290" y="118" width="60" height="20" uuid="132c4cb9-834c-4c81-9981-1fdeb0ad1fdc"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{marrcertissudate}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="440" y="138" width="80" height="1" uuid="13683115-0d4a-44a2-85bd-d9769058f4c4"/>
+			</line>
+			<textField>
+				<reportElement x="450" y="115" width="90" height="20" uuid="1ae9080c-7a92-48a5-bae6-1e518ca396b9"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{certissueauthority}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="14" y="153" width="306" height="20" uuid="123844d2-26aa-41c0-9a1d-ee1e33a0d52d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[3.After Marraige My Name is ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="180" y="171" width="110" height="1" uuid="d2face40-0539-4ec8-b889-bd1706612257"/>
+			</line>
+			<textField>
+				<reportElement x="180" y="149" width="100" height="20" uuid="ed707565-5086-4225-b899-ba633220a457"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{applnewname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="16" y="180" width="514" height="20" uuid="e65968f7-a1cc-4f42-9acd-dbed01c9ad60"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[4.That in my Marraige Certificate both names of mine and name of my husband are stated.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="16" y="206" width="444" height="20" uuid="1027418b-dff7-4a8a-9209-8584c75e5335"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[5.That my AADHAR number is]]></text>
+			</staticText>
+			<line>
+				<reportElement x="184" y="225" width="110" height="1" uuid="c84988f1-07e4-4d05-8a23-6b963ad2af8f"/>
+			</line>
+			<textField>
+				<reportElement x="194" y="206" width="100" height="20" uuid="61db29a1-e949-41bc-bc00-bfd2f4ef66ec"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{aadharno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="16" y="230" width="254" height="20" uuid="2988d796-6184-4f65-a80a-bb148d1e4236"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[6.Which is same before and after Marraige.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="37" y="254" width="508" height="46" uuid="34649e6b-ace1-473c-9170-6d82dda08eca"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[I stated that                                      and                              is the name of the one and the same person and that is myself.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="110" y="271" width="94" height="1" uuid="a4515c05-aaa7-42bb-8819-4f698b150524"/>
+			</line>
+			<line>
+				<reportElement x="250" y="276" width="97" height="1" uuid="be9e06e5-ad8c-4e89-82eb-33071d5fd77d"/>
+			</line>
+			<textField>
+				<reportElement x="111" y="252" width="91" height="20" uuid="1289e928-d74a-491d-b970-60274e2dc6a1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{applicantoldname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="255" width="70" height="20" uuid="b518962f-9a13-4c36-a336-5667946f684c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{applnewname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="37" y="306" width="500" height="34" uuid="d8ed22eb-38ae-40e0-bf92-ba474b6857e8"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[ I am executing this declaration to be submitted to the concerned authorities for the change of my name in membership database.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="35" y="343" width="435" height="20" uuid="e955a188-7477-4115-a9e1-59692f82cf69"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[ I hereby state that whatever is stated herein above are true to the best of my knowledge.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="20" y="410" width="114" height="20" uuid="46bab303-e51a-49c7-bbf7-572c4ac87a48"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{applicantoldname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="432" width="100" height="20" uuid="799d1343-72e6-41d2-9f15-3b67b674d77c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[ VERIFICATION:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="470" width="535" height="50" uuid="d5206c85-7a8f-4297-a787-1d562ca3594f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Verified on this                                  that the contents of the affidavit are true and correct, nothing material, nothing material has be concealed and no part of it is false.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="90" y="487" width="90" height="1" uuid="f5657ec9-ca7c-4d55-8fc0-3c850cd4f6b5"/>
+			</line>
+			<textField>
+				<reportElement x="100" y="470" width="85" height="18" uuid="5855c24a-c91b-4bf6-abe5-93fb6b3b43d5"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dateaffidavate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="13" y="540" width="114" height="20" uuid="8f6d0b73-c878-47d9-a891-70dc689fb7d5"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{applicantoldname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

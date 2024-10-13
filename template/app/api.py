@@ -547,3 +547,42 @@ class GenerateNLT(MethodResource, Resource):
             return schema.FileSchema().dump({'file':'excpetion occured'}),404
 api.add_resource(GenerateNLT,'/generateNLT')        
 docs.register(GenerateNLT)
+
+class GenerateNCD(MethodResource,Resource):
+    @doc(description="Name Change  Drafting",tags=['Name Change  Drafting API'])
+    @use_kwargs(schema.NCDRequest,location=('json'))
+    @marshal_with(schema.FileSchema)
+    def post(self ,**kwargs):
+         try:
+            print("generateNCD")
+            parameters=kwargs  
+            db_conn=""
+            utility.generateReport("Name_Change_drafting.jrxml","Name_Change_Drafting",parameters,db_conn) 
+            return schema.APIResponse().dump(dict(message="Report generated successfully")), 200
+         except Exception as e:
+            print(str(e))
+            return schema.APIResponse().dump(dict(message="not generated")), 404
+        
+api.add_resource(GenerateNCD,'/generateNCD')        
+docs.register(GenerateNCD)
+
+
+
+class GenerateNCAMD(MethodResource,Resource):
+    @doc(description="Name Change After Marriage  Drafting",tags=['Name Change After Marriage Drafting API'])
+    @use_kwargs(schema.NCAMDRequest,location=('json'))
+    @marshal_with(schema.FileSchema)
+    def post(self ,**kwargs):
+         try:
+            print("generateNCAMD")
+            parameters=kwargs  
+            db_conn=""
+            utility.generateReport("NameChangeAfterMarriageDrafting.jrxml","Name_Change_After_Marriage_Drafting",parameters,db_conn) 
+            return schema.APIResponse().dump(dict(message="Report generated successfully")), 200
+         except Exception as e:
+            print(str(e))
+            return schema.APIResponse().dump(dict(message="not generated")), 404
+        
+api.add_resource(GenerateNCAMD,'/generateNCAMD')        
+docs.register(GenerateNCAMD)
+
