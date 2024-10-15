@@ -4,17 +4,29 @@ import React, { useState } from 'react';
 import RichTextEditor from '../../components/Quill';
 
 /**
- * A demo page that renders text Editor with media options enabled
- * and the content of the editor is saved to state and the preview
- * is displayed below the editor.
+ * A demo page that renders a rich text editor with media options enabled.
+ * The content of the editor is saved to the component's state and is displayed 
+ * as a preview below the editor.
  * 
- * Included steps required to follow to get this editor in any page
-**/
+ * This component serves as an example of how to integrate the RichTextEditor 
+ * into a React application. It demonstrates how to manage editor content 
+ * using state and how to render a preview of the formatted content.
+ * 
+ * @component
+ * @example
+ * // Example usage of DemoPage component
+ * <DemoPage />
+ */
 const DemoPage = () => {
     // Step 2: Set up a constant to store the editor content using useState
     // State to manage the editor content
   const [value, setValue] = useState('');
-
+    /**
+     * Handles changes to the rich text editor's content.
+     * Updates the state with the new content.
+     * 
+     * @param {string} newValue - The new content value from the editor.
+     */
     // Step 3: Declare a function to handle changes to the editor content
   // Function to handle editor content changes
     const handleChange = (newValue) => {

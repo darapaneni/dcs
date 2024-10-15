@@ -1,7 +1,30 @@
+/**
+ * @fileoverview UserProfile component that allows users to view and edit their profile information.
+ * It includes fields for full name, username, email, phone number, and date of birth. 
+ * The component supports editing mode and form submission.
+ * 
+ * @component
+ */
+
 import React, { useState } from 'react';
 import './userprofile.css';
+/**
+ * UserProfile component renders a user profile view with fields for full name, 
+ * username, email, phone number, and date of birth. Users can edit their 
+ * profile information in a form and submit the changes.
+ * 
+ * @component
+ * 
+ * @returns {JSX.Element} A React component that displays the user's profile and an edit form.
+ * 
+ * @example
+ * // Example of using the UserProfile component
+ * return (
+ *   <UserProfile />
+ * );
+ */
 
-const userprofile = () => {
+const userprofile = () => {         // State to manage user profile information
   const [userInfo, setUserInfo] = useState({
     fullName: '',
     username: '',
@@ -9,13 +32,26 @@ const userprofile = () => {
     phone: '',
     dob: '',
   });
+  
+  const [editing, setEditing] = useState(false); // State to manage editing mode
 
-  const [editing, setEditing] = useState(false);
-
+  /**
+  * handleChange updates the userInfo state when the user edits input fields.
+  * 
+  * @param {Object} e - The event object.
+  * @param {string} e.target.name - The name of the input field being changed.
+  * @param {string} e.target.value - The new value for the input field.
+  */
   const handleChange = (e) => {
     setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
   };
 
+  /**
+   * handleSubmit processes the form submission, logging the user information
+   * to the console and switching the component out of editing mode.
+   * 
+   * @param {Object} e - The event object.
+   */
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('User Info Submitted:', userInfo);
