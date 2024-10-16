@@ -548,7 +548,6 @@ class GenerateNLT(MethodResource, Resource):
 api.add_resource(GenerateNLT,'/generateNLT')        
 docs.register(GenerateNLT)
 
-<<<<<<< Updated upstream
 class GenerateNCD(MethodResource,Resource):
     @doc(description="Name Change  Drafting",tags=['Name Change  Drafting API'])
     @use_kwargs(schema.NCDRequest,location=('json'))
@@ -587,7 +586,6 @@ class GenerateNCAMD(MethodResource,Resource):
 api.add_resource(GenerateNCAMD,'/generateNCAMD')        
 docs.register(GenerateNCAMD)
 
-=======
 class GenerateRLD(MethodResource,Resource):
     @doc(description="Residential Lease Drafting",tags=['Residential Lease Drafting'])
     @use_kwargs(schema.Residential_lease_Drafting,location=('json'))
@@ -627,4 +625,3 @@ class generateRoomAgreement(MethodResource, Resource):
 
 api.add_resource(generateRoomAgreement,'/generateRoomAgreement')
 docs.register(generateRoomAgreement)
->>>>>>> Stashed changes

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ResidentialRentalAgreement" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="026312fd-e391-4e11-80b5-c70cec24a5fd">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Base" isDefault="true" fontName="Times New Roman" fontSize="12" pdfFontName="Times-Roman" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<style name="Bold" style="Base" isBold="true"/>
+	<style name="Underline" style="Base" isUnderline="true"/>
+	<parameter name="city" class="java.lang.String"/>
+	<parameter name="state" class="java.lang.String"/>
+	<parameter name="date" class="java.lang.String"/>
+	<parameter name="month" class="java.lang.String"/>
+	<parameter name="year" class="java.lang.String"/>
+	<parameter name="landlordName" class="java.lang.String"/>
+	<parameter name="landlordAddress" class="java.lang.String"/>
+	<parameter name="tenantName" class="java.lang.String"/>
+	<parameter name="tenantAddress" class="java.lang.String"/>
+	<parameter name="propertyAddress" class="java.lang.String"/>
+	<parameter name="propertyType" class="java.lang.String"/>
+	<parameter name="bedrooms" class="java.lang.String"/>
+	<parameter name="bathrooms" class="java.lang.String"/>
+	<parameter name="carparks" class="java.lang.String"/>
+	<parameter name="squareFeet" class="java.lang.String"/>
+	<parameter name="leaseTerm" class="java.lang.String"/>
+	<parameter name="leaseStartDate" class="java.lang.String"/>
+	<parameter name="noticePeriod" class="java.lang.String"/>
+	<parameter name="rentAmount" class="java.lang.String"/>
+	<parameter name="rentDueDate" class="java.lang.String"/>
+	<parameter name="meterReading" class="java.lang.String"/>
+	<parameter name="depositAmount" class="java.lang.String"/>
+	<parameter name="lessorName" class="java.lang.String"/>
+	<parameter name="lessorAddress1" class="java.lang.String"/>
+	<parameter name="lessorAddress2" class="java.lang.String"/>
+	<parameter name="lessorCityStatePin" class="java.lang.String"/>
+	<parameter name="lesseeName" class="java.lang.String"/>
+	<parameter name="lesseeAddress1" class="java.lang.String"/>
+	<parameter name="lesseeAddress2" class="java.lang.String"/>
+	<parameter name="lesseeCityStatePin" class="java.lang.String"/>
+	<title>
+		<band height="50">
+			<staticText>
+				<reportElement style="Bold" x="0" y="0" width="555" height="30" uuid="b4f80e21-1024-45c5-b28c-178c48e5ccc3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[RESIDENTIAL RENTAL AGREEMENT]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="700" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="9" y="0" width="555" height="60" uuid="b0a1a5de-8b7b-4fac-9c98-862fac1e54af"/>
+				<textElement markup="html">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["This agreement made at <style isBold='true' pdfFontName='Times-Bold'>" + $P{city} + ", " + $P{state} + "</style> on this <style isBold='true' pdfFontName='Times-Bold'>" + $P{date} + ", " + $P{month} + ", " + $P{year} + "</style> between <style isBold='true' pdfFontName='Times-Bold'>" + $P{landlordName} + "</style>, residing at <style isBold='true' pdfFontName='Times-Bold'>" + $P{landlordAddress} + "</style> hereinafter referred to as the `LESSOR` of the One Part AND <style isBold='true' pdfFontName='Times-Bold'>" + $P{tenantName} + "</style>, residing at <style isBold='true' pdfFontName='Times-Bold'>" + $P{tenantAddress} + "</style> hereinafter referred to as the `LESSEE` of the other Part;"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="-1" y="60" width="555" height="70" uuid="6fea798b-0d4c-4564-8191-c31bcf61594e">
+					<property name="local_mesure_unity" value="pixel"/>
+				</reportElement>
+				<textElement markup="html">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["WHEREAS the Lessor is the lawful owner of, and otherwise well sufficiently entitled to <style isBold='true' pdfFontName='Times-Bold'>" + $P{propertyAddress} + "</style> falling in the category, <style isBold='true' pdfFontName='Times-Bold'>" + $P{propertyType} + "</style> and comprising of <style isBold='true' pdfFontName='Times-Bold'>" + $P{bedrooms} + "</style> bedrooms, " + $P{bathrooms} + "</style> bathrooms, " + $P{carparks} + "</style> carparks, with an extent of <style isBold='true' pdfFontName='Times-Bold'>" + $P{squareFeet} + " Square Feet</style>."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="130" width="555" height="40" uuid="a54056a7-61ff-4e12-b1d3-e56f8eb52bd8">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement markup="html">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["AND WHEREAS at the request of the Lessee, the Lessor has agreed to let the said premises to the tenant for a term of <style isBold='true' pdfFontName='Times-Bold'>" + $P{leaseTerm} + "</style> commencing from <style isBold='true' pdfFontName='Times-Bold'>" + $P{leaseStartDate} + "</style> in the manner hereinafter appearing."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-1" y="180" width="571" height="40" uuid="09436c08-24be-4794-a432-bba4f97e5316">
+					<property name="local_mesure_unity" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOW THIS AGREEMENT WITNESSETH AND IT IS HEREBY AGREED BY AND BETWEEN THE PARTIES AS UNDER:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="230" width="555" height="330" uuid="34f6381e-070b-4486-a86f-61a07a5a1dec"/>
+				<textElement markup="html">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[1. That the Lessor hereby grants to the Lessee, the right to enter into and use the said premises.<br/><br/>
+2. That the lease shall remain in force for a period of <br/><br/>
+3. That the Lessee may terminate this lease with notice <br/><br/>
+4. That the Lessee shall not sublet or transfer possession.<br/> <br/>5. That the Lessee shall use the premises for residential purposes.<br/> <br/>6. That the Lessor shall, before handing over the said premises, ensure the working of sanitary, electrical and water supply connections and other fittings pertaining to the said premises. It is agreed that it shall be the responsibility of the Lessor for their return in the working condition at the time of re-possession of the said premises (reasonable wear and tear and loss or damage by fire, flood, rains, accident, irresistible force or act of God excepted).<br/> <br/>7. That the Lessee is not authorized to make any alteration in the construction of the said premises. The Lessee may however install and remove his own fittings and fixtures, provided this is done without causing any excessive damage or loss to the said premises.<br/> <br/>8. That the day to day repair jobs such as fuse blow out, replacement of light bulbs/tubes, leakage of water taps, maintenance of the water pump and other minor repairs, etc., shall be effected by the Lessee at its own cost, and any major repairs, either structural or to the electrical or water connection, plumbing leaks, water seepage shall be attended to by the Lessor. In the event of the Lessor failing to carry out the repairs on receiving notice from the Lessee, the Lessee shall undertake the necessary repairs and the Lessor will be liable to immediately reimburse costs incurred by the Lessee.<br/>  <br/>]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="-1" y="630" width="555" height="70" uuid="db72d666-14d5-468e-8b16-7e725df2d2c5"/>
+				<textElement markup="html">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["11. That in consideration of use of the said premises the Lessee agrees that he shall pay to the Lessor during the period of this agreement, a monthly rent at the rate of <style isBold='true' pdfFontName='Times-Bold'>" + $P{rentAmount} + "</style> payable by the <style isBold='true' pdfFontName='Times-Bold'>" + $P{rentDueDate} + "</style> of each month."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-2" y="550" width="558" height="70" uuid="4a92ca2d-3b53-43e9-9a94-a2c6d154abc5"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[9. That the Lessor or its duly authorized agent shall have the right to enter into or upon the said premises or any part thereof at a mutually arranged convenient time for the purpose of inspection.
+
+10. That the Lessee shall use the said premises along with its fixtures and fitting in careful and responsible manner and shall handover the premises to the Lessor in working condition (reasonable wear and tear and loss or damage by fire, flood, rains, accidents, irresistible force or act of God excepted). <br/><br/>
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="235" y="254" width="100" height="20" uuid="fea488ce-d941-4ace-9abb-6e400aa8e228"/>
+				<textFieldExpression><![CDATA[$P{leaseTerm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="243" y="280" width="100" height="20" uuid="32634bec-505c-4720-a0de-75e1ba00eeda"/>
+				<textFieldExpression><![CDATA[$P{noticePeriod}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="230">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="120" uuid="3b02b8b8-15e1-4e65-b51c-8869321b2d83"/>
+				<textElement markup="html"/>
+				<text><![CDATA[
+                12. In case of rent default, the Lessor can terminate the lease. <br/><br/>
+                13. Lessee will pay utilities starting from meter reading <br/><br/>
+            14. Security deposit of <t> </t> <t> </t>  <t> </t> <t> </t>  <t> </t> 
+            is refundable upon lease termination.<br/><br/>
+                15.That the Lessor shall be responsible for the payment of all taxes and levies pertaining to the said premises including but not limited to House Tax, Property Tax, other cesses, if any, and any other statutory taxes, levied by the Government or Governmental Departments. During the term of this Agreement, the Lessor shall comply with all rules, regulations and requirements of any statutory authority, local, state and central government and governmental departments in relation to the said premises.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="130" width="555" height="30" uuid="a1f46237-573f-457e-9045-eb2e7e537880"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IN WITNESS WHEREOF, the parties hereto have set their hands on the day and year first hereinabove mentioned.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="-1" y="180" width="275" height="50" uuid="f76be122-2290-4366-90d6-8250d6f1bce3"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA["Lessor,<br/><style isBold='true' pdfFontName='Times-Bold'>" + $P{lessorName} + "</style><br/><style isBold='true' pdfFontName='Times-Bold'>" + $P{lessorAddress1} + "</style> <br/><style isBold='true' pdfFontName='Times-Bold'>" + $P{lessorAddress2} + "</style><br/><style isBold='true' pdfFontName='Times-Bold'>" + $P{lessorCityStatePin} + "</style>]"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="180" width="275" height="50" uuid="7b5573b8-be45-48f0-8974-6d1cddce9d66"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA["Lessee,<br/><style isBold='true' pdfFontName='Times-Bold'>" + $P{lesseeName} + "</style> <br/><style isBold='true' pdfFontName='Times-Bold'>" + $P{lesseeAddress1} + "</style> <br/><style isBold='true' pdfFontName='Times-Bold'>" + $P{lesseeAddress2} + "</style>]<br/><style isBold='true' pdfFontName='Times-Bold'>" + $P{lesseeCityStatePin} + "</style>]"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="272" y="27" width="100" height="20" uuid="31d8216c-3c52-4b0b-82f8-83aa6911861b"/>
+				<textFieldExpression><![CDATA[$P{meterReading}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="124" y="56" width="100" height="20" uuid="2844c711-1f7b-4c1f-a9c2-6bd86584c6cb"/>
+				<textFieldExpression><![CDATA[$P{depositAmount}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="200">
+			<staticText>
+				<reportElement x="200" y="10" width="100" height="20" uuid="63bdf183-2226-400f-b683-52d25169347e"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ANNEXURE I]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="45" width="550" height="134" uuid="0d321ebe-dce4-4a19-846f-7d08e1cb8a30"/>
+				<text><![CDATA[List of fixtures and fittings provided in [Lease Property Address Line 1, Address Line 2, City, State, Pin Code]:
+
+Item 1
+
+Item 2
+
+Item 3]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>
