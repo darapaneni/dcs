@@ -548,6 +548,7 @@ class GenerateNLT(MethodResource, Resource):
 api.add_resource(GenerateNLT,'/generateNLT')        
 docs.register(GenerateNLT)
 
+<<<<<<< Updated upstream
 class GenerateNCD(MethodResource,Resource):
     @doc(description="Name Change  Drafting",tags=['Name Change  Drafting API'])
     @use_kwargs(schema.NCDRequest,location=('json'))
@@ -586,3 +587,44 @@ class GenerateNCAMD(MethodResource,Resource):
 api.add_resource(GenerateNCAMD,'/generateNCAMD')        
 docs.register(GenerateNCAMD)
 
+=======
+class GenerateRLD(MethodResource,Resource):
+    @doc(description="Residential Lease Drafting",tags=['Residential Lease Drafting'])
+    @use_kwargs(schema.Residential_lease_Drafting,location=('json'))
+    @marshal_with(schema.APIResponse)
+    def post(self ,**kwargs):
+        try:
+            print("generateRLD")
+            parameters=kwargs
+            db_conn=""
+            output_file=utility.generateReport("Residential_lease_drafting.jrxml","Residential_lease_drafting",parameters,db_conn)
+            s = schema.FileSchema()
+            result = s.dump({'file': output_file})
+            return result['file']  
+        except Exception as e:
+            print(str(e))
+            return schema.APIResponse().dump(dict(message="not generated hai kya")), 404
+
+api.add_resource(GenerateRLD,'/generateRLD')
+docs.register(GenerateRLD)
+
+class generateRoomAgreement(MethodResource, Resource):
+    @doc(description="Room Agreement", tags=['Room Agreement Drafting'])
+    @use_kwargs(schema.RoomAgreementRequest, location=('json'))
+    @marshal_with(schema.APIResponse)
+    def post(self, **kwargs):
+       try:
+          print("generateRoomAgreement")
+          parameters=kwargs             
+          db_conn=""
+          output_file=utility.generateReport("Room_Agreement.jrxml","Room_Agreement",parameters,db_conn) 
+          s = schema.FileSchema()
+          result = s.dump({'file': output_file})
+          return result['file']
+       except Exception as e:
+            print(str(e))
+            return schema.APIResponse().dump(dict(message="not generated hai kya")), 404
+
+api.add_resource(generateRoomAgreement,'/generateRoomAgreement')
+docs.register(generateRoomAgreement)
+>>>>>>> Stashed changes
