@@ -196,6 +196,38 @@ paths:
           description: ""
           schema:
             $ref: "#/definitions/File"
+  /generateNCAMD:
+    post:
+      tags:
+      - Name Change After Marriage Drafting API
+      description: Name Change After Marriage  Drafting
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: "#/definitions/NCAMDRequest"
+      responses:
+        default:
+          description: ""
+          schema:
+            $ref: "#/definitions/File"
+  /generateNCD:
+    post:
+      tags:
+      - Name Change  Drafting API
+      description: Name Change  Drafting
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: "#/definitions/NCDRequest"
+      responses:
+        default:
+          description: ""
+          schema:
+            $ref: "#/definitions/File"
   /generateNDA:
     post:
       tags:
@@ -276,6 +308,38 @@ paths:
           description: ""
           schema:
             $ref: "#/definitions/File"
+  /generateRLD:
+    post:
+      tags:
+      - Residential Lease Drafting
+      description: Residential Lease Drafting
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: "#/definitions/Residential_lease_Drafting"
+      responses:
+        default:
+          description: ""
+          schema:
+            $ref: "#/definitions/APIResponse"
+  /generateRoomAgreement:
+    post:
+      tags:
+      - Room Agreement Drafting
+      description: Room Agreement
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: "#/definitions/RoomAgreementRequest"
+      responses:
+        default:
+          description: ""
+          schema:
+            $ref: "#/definitions/APIResponse"
   /generateSDD:
     post:
       tags:
@@ -339,6 +403,11 @@ definitions:
       witness_2:
         type: string
       zip_code:
+        type: string
+  APIResponse:
+    type: object
+    properties:
+      message:
         type: string
   CCDRequest:
     type: object
@@ -828,6 +897,72 @@ definitions:
         type: string
       page_header:
         type: string
+  NCAMDRequest:
+    type: object
+    properties:
+      aadharno:
+        type: string
+      address:
+        type: string
+      age:
+        type: string
+      applicantfathername:
+        type: string
+      applicanthusbandname:
+        type: string
+      applicantoldname:
+        type: string
+      applnewname:
+        type: string
+      certissueauthority:
+        type: string
+      dateaffidavate:
+        type: string
+      marrcertissudate:
+        type: string
+      marriagecertificateno:
+        type: string
+      marriagedate:
+        type: string
+      marriageplace:
+        type: string
+  NCDRequest:
+    type: object
+    properties:
+      adoptednamesurname:
+        type: string
+      age:
+        type: string
+      date:
+        type: string
+      fathername:
+        type: string
+      fomarrnamesurname:
+        type: string
+      formername:
+        type: string
+      fulldate:
+        type: string
+      name:
+        type: string
+      newname:
+        type: string
+      place:
+        type: string
+      previousname:
+        type: string
+      usenewname:
+        type: string
+      witness1address:
+        type: string
+      witness1name:
+        type: string
+      witness2address:
+        type: string
+      witness2name:
+        type: string
+      year:
+        type: string
   NDARequest:
     type: object
     properties:
@@ -1004,6 +1139,98 @@ definitions:
       tname:
         type: string
       to:
+        type: string
+  Residential_lease_Drafting:
+    type: object
+    properties:
+      bathrooms:
+        type: string
+      bedrooms:
+        type: string
+      carparks:
+        type: string
+      city:
+        type: string
+      date:
+        type: string
+      depositAmount:
+        type: string
+      landlordAddress:
+        type: string
+      landlordName:
+        type: string
+      leaseStartDate:
+        type: string
+      leaseTerm:
+        type: string
+      lesseeAddress1:
+        type: string
+      lesseeAddress2:
+        type: string
+      lesseeCityStatePin:
+        type: string
+      lesseeName:
+        type: string
+      lessorAddress1:
+        type: string
+      lessorAddress2:
+        type: string
+      lessorCityStatePin:
+        type: string
+      lessorName:
+        type: string
+      meterReading:
+        type: string
+      month:
+        type: string
+      noticePeriod:
+        type: string
+      propertyAddress:
+        type: string
+      propertyType:
+        type: string
+      rentAmount:
+        type: string
+      rentDueDate:
+        type: string
+      squareFeet:
+        type: string
+      state:
+        type: string
+      tenantAddress:
+        type: string
+      tenantName:
+        type: string
+      year:
+        type: string
+  RoomAgreementRequest:
+    type: object
+    properties:
+      Currentdate:
+        type: string
+      Father_Name:
+        type: string
+      Full_Name:
+        type: string
+      Lessee_Name:
+        type: string
+      Lessor_Name:
+        type: string
+      Line_Address:
+        type: string
+      Parameter1:
+        type: string
+      Signature1:
+        type: string
+      Signature2:
+        type: string
+      Start_Date:
+        type: string
+      Total_Amount:
+        type: string
+      Witness1_Name:
+        type: string
+      Witness2_Name:
         type: string
   SDDRequest:
     type: object
