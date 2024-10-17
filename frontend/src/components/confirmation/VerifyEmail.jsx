@@ -6,9 +6,30 @@ import 'react-toastify/dist/ReactToastify.css';
 import {Box, Button, TextField, Typography} from "@mui/material";
 import {MailOutline} from "@mui/icons-material";
 
+/**
+ * VerifyEmail is a React component that allows users to enter
+ * a One-Time Password (OTP) for email verification. Upon
+ * submission, the OTP is sent to the server for validation.
+ * It displays success or error messages based on the response.
+ *
+ * @component
+ *
+ * @returns {JSX.Element} The rendered OTP verification form.
+ *
+ * @example
+ * <VerifyEmail />
+ */
 const VerifyEmail = () => {
     const navigate = useNavigate();
     const [otp, setOtp]=useState("")
+
+/**
+ * Handles the submission of the OTP form.
+ * Sends the OTP to the server for verification.
+ *
+ * @param {React.FormEvent<HTMLFormElement>} e - The form event.
+ * @returns {Promise<void>} A promise that resolves when the OTP has been processed.
+ */
     const handleOtpSubmit = async(e)=>{
         e.preventDefault()
         if (otp) {

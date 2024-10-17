@@ -21,6 +21,28 @@ const schema = z.object({
     email: z.string().min(1, MESSAGES.SIGNUP_ERROR_MESSAGES.email).email(MESSAGES.SIGNUP_ERROR_MESSAGES.emailInvalid)
 });
 
+/**
+ * ForgotPassword component provides a dialog for users to request a password reset link via email.
+ *
+ * @component
+ *
+ * @param {Object} props - The props for the component.
+ * @param {string} props.email - The initial email address to populate the input field (default is an empty string).
+ * @param {boolean} props.open - Indicates whether the dialog is open.
+ * @param {function} props.handleClose - Function to close the dialog.
+ * @param {boolean} props.isDisable - Indicates whether the input field should be disabled (default is false).
+ *
+ * @returns {JSX.Element} The rendered ForgotPassword dialog.
+ *
+ * @example
+ * // Usage example
+ * <ForgotPassword 
+ *     email="user@example.com" 
+ *     open={true} 
+ *     handleClose={() => console.log('Closed')} 
+ *     isDisable={false} 
+ * />
+ */
 function ForgotPassword({
                             email="",
                             open,

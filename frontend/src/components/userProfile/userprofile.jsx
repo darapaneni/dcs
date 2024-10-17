@@ -1,3 +1,16 @@
+/**
+ * UserProfile component allows users to view and edit their profile information,
+ * including their name, email, address, phone number, and profile picture.
+ * The component fetches user data from an API on mount, displays it in a form,
+ * and allows updates to be submitted.
+ *
+ * @component
+ * @example
+ * return (
+ *   <UserProfile />
+ * )
+ */
+
 import React, { useState, useEffect } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -55,6 +68,11 @@ const userProfileSchema = z.object({
   country: z.string(),
 });
 
+/**
+ * UserProfile component.
+ * 
+ * @returns {JSX.Element} The rendered UserProfile component.
+ */
 // User Profile Component
 const UserProfile = () => {
   const [isPageLoading, setIsLoading] = useState(false);
@@ -155,6 +173,14 @@ const UserProfile = () => {
   };
   const onError = (errors, e) => console.log(errors, e);
 
+  /**
+   * Handles changes to the profile picture input.
+   * Updates the preview image and uploads the picture to the server.
+   * 
+   * @function
+   * @param {Event} event - The change event from the file input
+   */
+  
   const handleProfilePictureChange = async (event) => {
     const file = event.target.files[0];
     const reader = new FileReader();

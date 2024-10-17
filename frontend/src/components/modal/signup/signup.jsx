@@ -1,3 +1,15 @@
+/**
+ * Signup Component for handling user registration.
+ * This component provides a sign-up form for users to register with their details,
+ * and also offers options for signing up with GitHub or Google.
+ *
+ * @component
+ * @example
+ * // To use the Signup component, just import it and render in your JSX.
+ * import Signup from './Signup';
+ * <Signup />
+ */
+
 import React, {useEffect, useCallback} from 'react';
 import axios from 'axios';
 import {toast} from "react-toastify";
@@ -25,6 +37,14 @@ const REACT_APP_DCS_API_BASE_URL = process.env.REACT_APP_DCS_API_BASE_URL;
 // const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID; //TODO :
 
 axios.defaults.withCredentials = true
+
+/**
+ * Signup validation schema using Zod.
+ * This schema defines the validation rules for the signup form.
+ * It validates the email, first name, last name, password, and confirm password fields.
+ * The confirm password must match the password field.
+ */
+
 const signupSchema = z.object({
     email: z.string().min(1, MESSAGES.SIGNUP_ERROR_MESSAGES.email).email(MESSAGES.SIGNUP_ERROR_MESSAGES.emailInvalid),
     first_name: z.string().min(1, MESSAGES.SIGNUP_ERROR_MESSAGES.firstname),
@@ -45,7 +65,11 @@ const signupSchema = z.object({
     }
 });
 
-
+/**
+ * Signup component renders a form for user registration and provides GitHub and Google login options.
+ *
+ * @returns {JSX.Element} A signup form component.
+ */
 const Signup = () => {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
@@ -60,6 +84,12 @@ const Signup = () => {
     } = useForm({
         resolver: zodResolver(signupSchema)
     });
+
+    /**
+     * Handle successful server response for user authentication or registration.
+     *
+     * @param {Object} resp - The response object from the server.
+     */
     const handleServerResponse = useCallback((resp) => {
         if (resp.status === 200) {
             const user = {
@@ -74,6 +104,11 @@ const Signup = () => {
         }
     }, [navigate]);
 
+    /**
+     * Handle errors from the server during registration or authentication.
+     *
+     * @param {Object} error - The error object from the server response.
+     */
     const handleServerError = useCallback((error) => {
         if (error.response) {
             console.log(error.response.data);
@@ -81,13 +116,20 @@ const Signup = () => {
         }
     }, []);
 
+ 
+    /**
+     * Initiates the GitHub login by redirecting the user to GitHub OAuth.
+     */   
     const handleGithubLogin = () => {
         // window.location.assign(`https://github.com/login/oauth/authorize/?client_id=${GITHUB_CLIENT_ID}`);
         const githubLoginUrl = `https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&redirect_uri=${GITHUB_REDIRECT_URL}`;
         // window.location.href = githubLoginUrl;
         window.location.assign(githubLoginUrl)
     };
-
+    /**
+     * Sends GitHub authorization code to the server to complete the OAuth flow.
+     * This function is triggered when the GitHub OAuth redirects back with an authorization code.
+     */
     const sendGithubCodeToServer = useCallback(async () => {
         const urlParam = searchParams.get('code');
         if (urlParam) {
@@ -105,7 +147,12 @@ const Signup = () => {
             sendGithubCodeToServer();
         }
     }, [searchParams, sendGithubCodeToServer]);
-
+    /**
+     * Handles form submission for user registration.
+     * On successful registration, redirects to the OTP verification page.
+     *
+     * @param {Object} data - The form data from the user.
+     */
     const onSubmit = async (data) => {
 
         const dataToSend = {

@@ -1,4 +1,24 @@
 import  React from 'react'
+
+/**
+ * DCSLogo is a functional React component that renders an SVG logo for 
+ * Documents Consultancy Services (DCS). The logo is designed to be scalable 
+ * and can accept additional props to customize its attributes.
+ *
+ * @component
+ *
+ * @param {Object} props - The props for the DCSLogo component.
+ * @param {number} [props.width=48] - The width of the SVG logo. Defaults to 48 pixels.
+ * @param {number} [props.height=48] - The height of the SVG logo. Defaults to 48 pixels.
+ * @param {string} [props.className] - Optional CSS class name to apply to the SVG element.
+ * @param {Object} [props.style] - Optional inline styles to apply to the SVG element.
+ * 
+ * @returns {JSX.Element} The rendered DCSLogo component.
+ *
+ * @example
+ * // Usage example
+ * <DCSLogo width={100} height={100} className="custom-logo" style={{ margin: '10px' }} />
+ */
 export function DCSLogo(props) {
     return (
         <svg {...props} xmlns="http://www.w3.org/2000/svg"

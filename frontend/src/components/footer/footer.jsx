@@ -2,8 +2,20 @@ import React from "react";
 import { Grid2, Paper } from "@mui/material";
 import DcsCustomLink from "../link/DcsCustomLink";
 import Copyright from './../copyright/copyright';
+/**
+ * Footer component renders a fixed footer containing navigation links and copyright information.
+ * It provides links to support, privacy policy, terms and conditions, and contact details.
+ *
+ * @component
+ *
+ * @returns {JSX.Element} The rendered footer containing navigation links and copyright.
+ *
+ * @example
+ * // Usage example
+ * <Footer />
+ */
 
-const links = [
+const links = [    // List of links to be displayed in the footer
     {
         name: 'Support',
         iconName: 'help',

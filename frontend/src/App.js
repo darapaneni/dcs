@@ -1,3 +1,36 @@
+/**
+ * Main application component for handling routing and rendering of different pages
+ * in the application. This component manages the loading state, simulating a loading
+ * screen before rendering the main application routes.
+ *
+ * @module App
+ * @requires React
+ * @requires useEffect
+ * @requires useState
+ * @requires {Route} from 'react-router-dom'
+ * @requires DcsPageLoader from './components/loader/DcsPageLoader.js'
+ * @requires HomeLayout from './components/layouts/HomeLayout.jsx'
+ * @requires ProtectedLayout from './components/layouts/ProtectedLayout.jsx'
+ * @requires Login from './components/modal/login/login.jsx'
+ * @requires Signup from './components/modal/signup/signup.jsx'
+ * @requires SupportPage from './pages/additional-pages/SupportPage.js'
+ * @requires MailSendConfirmation from "./components/confirmation/MailSendConfirmation"
+ * @requires MailSendError from "./components/confirmation/MailSendError"
+ * @requires VerifyEmail from "./components/confirmation/VerifyEmail"
+ * @requires UserProfile from "./components/userProfile/userprofile"
+ * @requires WelcomePage from "./components/Welcome/WelcomePage"
+ * @requires PricingPage from "./components/pricing/PricingPage"
+ * @requires ChangePassword from "./components/userProfile/ChangePassword"
+ * @requires GitHubCallback from "./components/github/GitHubCallback"
+ * @requires ResetPassword from "./components/reset-password/ResetPassword"
+ *
+ * @component
+ * @example
+ * return (
+ *   <App />
+ * );
+ */
+
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Login from './components/modal/login/login.jsx';

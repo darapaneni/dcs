@@ -1,3 +1,8 @@
+/**
+ * @file ResetPassword.js
+ * @description This file contains the `ResetPassword` component which provides a user interface for resetting the password. It integrates form validation using Zod schema, form handling with React Hook Form, and an API call for submitting the new password. The component handles errors and feedback using toast notifications and displays loading states during form submission.
+ */
+
 import React from 'react'
 import {z} from 'zod';
 import { useParams, useNavigate } from "react-router-dom";
@@ -17,11 +22,37 @@ import {zodResolver} from "@hookform/resolvers/zod";
 import Avatar from "@mui/material/Avatar";
 import {DCSLogo} from "../logo/DCSLogo";
 
+/**
+ * @constant
+ * @type {ZodSchema}
+ * @description Schema for validating password and confirm password fields using Zod. It ensures that both fields are filled and validated according to predefined error messages.
+ */
 const passwordSchema = z.object({
     password: z.string().min(1, MESSAGES.SIGNUP_ERROR_MESSAGES.password),
     confirm_password: z.string().min(1, MESSAGES.SIGNUP_ERROR_MESSAGES.confirmPassword)
 });
 
+/**
+ * ResetPassword Component
+ * @component
+ * @description The `ResetPassword` component provides a form for users to reset their password. It validates the password and confirm password fields, ensures correct data submission, and sends an API request to update the password. In case of success, the user is redirected to the login page, and a success toast notification is shown. The component displays a loader during the submission process.
+ *
+ * @returns {JSX.Element} A form interface for resetting the password.
+ *
+ * @example
+ * // Usage in a React Router setup
+ * import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+ * 
+ * function App() {
+ *   return (
+ *     <Router>
+ *       <Routes>
+ *         <Route path="/reset-password/:uid/:token" element={<ResetPassword />} />
+ *       </Routes>
+ *     </Router>
+ *   );
+ * }
+ */
 const ResetPassword = () => {
     const navigate=useNavigate()
     const {uid, token}=useParams()
@@ -33,6 +64,13 @@ const ResetPassword = () => {
             isSubmitting}} = useForm({
         resolver: zodResolver(passwordSchema)
     });
+
+    /**
+     * onSubmit function
+     * @function
+     * @description Handles the form submission, collects form data, and sends a PATCH request to reset the password. If successful, it navigates the user to the login page and shows a success toast message.
+     * @returns {Promise<void>} An asynchronous function that triggers on form submission.
+     */
     const onSubmit = async () => {
         const formData = getValues();
         console.log(formData)

@@ -1,3 +1,10 @@
+/**
+ * @file PrivacyPolicy.js
+ * @description This component renders the Privacy Policy page of the application.
+ *              It outlines how user information is collected, used, and protected.
+ *              The policy is structured into sections with headings and descriptive text.
+ */
+
 import React from 'react';
 import
 {
@@ -8,6 +15,14 @@ import
     Divider,
 } from '@mui/material';
 
+/**
+ * @component PrivacyPolicy
+ * @description A functional component that displays the privacy policy of the application.
+ *              It includes various sections detailing information collection, usage, security,
+ *              user rights, and contact information for inquiries.
+ * @returns {JSX.Element} The Privacy Policy page rendered as a Material-UI Container
+ *                        containing typography elements and dividers for section separation.
+ */
 const PrivacyPolicy = () =>
 {
     return (

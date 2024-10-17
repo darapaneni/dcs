@@ -1,3 +1,55 @@
+/**
+ * A Zustand store for managing user authentication state in a React application.
+ * This store handles user login, logout, and state persistence using cookies.
+ * 
+ * @module useAuthStore
+ * 
+ * @requires create
+ * @requires js-cookie
+ * @requires AxiosInstance - Custom Axios instance for making API calls.
+ * 
+ * @typedef {Object} User
+ * @property {string} email - The email address of the user.
+ * @property {string} names - The full name of the user.
+ * 
+ * @typedef {Object} AuthState
+ * @property {boolean} isUserValid - Indicates if the user is valid.
+ * @property {function} setIsUserValid - Function to set the validity state of the user.
+ * @property {User|null} user - The authenticated user's data or null if not authenticated.
+ * @property {string|null} token - The access token for the authenticated user or null if not authenticated.
+ * @property {boolean} isAuthenticated - Indicates if the user is currently authenticated.
+ * @property {function} login - Function to log in a user.
+ * @param {string} email - The user's email address.
+ * @param {string} password - The user's password.
+ * 
+ * @returns {Promise<void>} - A promise that resolves when the login is successful, or throws an error if it fails.
+ * 
+ * @property {function} logout - Function to log out the user.
+ * @returns {void} - Resets the authentication state and removes user data from cookies.
+ * 
+ * @property {function} setUser - Function to set the user state based on API response.
+ * @param {Object} resp - The response object from the API containing user data.
+ * 
+ * @returns {void} - Sets the user state and stores user data in cookies.
+ * 
+ * @example
+ * const authStore = useAuthStore.getState();
+ * 
+ * // Log in a user
+ * authStore.login('example@example.com', 'password123')
+ *   .then(() => console.log('User logged in'))
+ *   .catch((error) => console.error('Login failed:', error));
+ * 
+ * @example
+ * // Log out the user
+ * authStore.logout();
+ * 
+ * @example
+ * // Set user state directly
+ * const response = await someApiCall();
+ * authStore.setUser(response);
+ */
+
 import {create} from "zustand";
 import Cookies from 'js-cookie';
 import AxiosInstance from "../api/dcs_axios";

@@ -1,8 +1,23 @@
+/**
+ * @file RentalAgreement.js
+ * @description This component represents a rental agreement form that allows users to fill in details
+ *              related to a rental agreement. It generates a preview of the filled agreement and enables
+ *              users to download it as a PDF.
+ */
+
 import React, { useState } from 'react';
 import html2pdf from 'html2pdf.js';
 import '../../css/Rental_agreement.css';
 import emblem from '../../images/emblem.jpeg'
 
+/**
+ * @component RentalAgreement
+ * @description A functional component that renders a rental agreement form and a preview of the filled
+ *              agreement. Users can fill in details such as landlord name, tenant name, property address,
+ *              lease period, dates, monthly rent, and deposit amount. The component provides functionality to
+ *              download the filled form as a PDF file.
+ * @returns {JSX.Element} The Rental Agreement form and preview rendered within a div container.
+ */
 // Step 1: Define the Document component input required
 const RentalAgreement = () => {
     const [formData, setFormData] = useState({
@@ -16,11 +31,23 @@ const RentalAgreement = () => {
       DepositAmount: ''
     });
   
+    /**
+     * Handles input changes for the form fields.
+     * @param {string} field - The field name of the form data being updated.
+     * @param {string|number} value - The value to be set for the specified field.
+     */
     //To handle input change
     const handleInputChange = (field, value) => {
       setFormData(prevData => ({ ...prevData, [field]: value }));
     };
   
+    /**
+     * Handles the download of the rental agreement as a PDF.
+     * @function handleDownload
+     * @description This function captures the HTML content of the rental agreement preview and uses html2pdf.js
+     *              to generate and download a PDF file. It hides the download button and the form while generating
+     *              the PDF and restores them afterward.
+     */
     //For downloading pdf
     const handleDownload = () => {
       const element = document.getElementById('preview');
@@ -50,6 +77,11 @@ const RentalAgreement = () => {
     });   
     };
   
+    /**
+     * Formats a date string into a more readable format (dd-mmm-yyyy).
+     * @param {string} dateString - The date string to be formatted.
+     * @returns {string} The formatted date string in the form of dd-mmm-yyyy.
+     */
     //To display date in dd-mmm-yyyy format
     const formatDate = (dateString) => {
       const date = new Date(dateString);

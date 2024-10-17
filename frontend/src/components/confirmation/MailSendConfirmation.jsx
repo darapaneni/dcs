@@ -5,6 +5,20 @@ import {Box, Typography, Button} from '@mui/material';
 import { MailOutline} from '@mui/icons-material';
 import {PropTypes} from "prop-types";
 
+/**
+ * MailSendConfirmation is a React component that displays a confirmation message
+ * indicating that an email has been successfully sent to the user. It includes
+ * a title, a success message, and a button to navigate back to the signup page.
+ *
+ * @component
+ * @param {Object} props - The properties passed to the component.
+ * @param {string} [props.title="   Email Sent Successfully!"] - The title displayed above the confirmation message.
+ *
+ * @returns {JSX.Element} The rendered confirmation message component.
+ *
+ * @example
+ * <MailSendConfirmation title="Email Verification" />
+ */
 const MailSendConfirmation = ({
                                   title = "   Email Sent Successfully!"}) => {
     const navigate = useNavigate(); // React Router's hook to navigate

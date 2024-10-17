@@ -1,6 +1,23 @@
+/**
+ * @file RecentDocuments.js
+ * @description This file contains the RecentDocuments component, which displays a list of recently edited documents.
+ * The component presents the documents in a grid layout using Material-UI components.
+ */
+
 import React from 'react';
 import {Box, Typography, Paper, Grid2} from '@mui/material';
 
+/**
+ * RecentDocuments component for displaying a list of recently edited documents.
+ * 
+ * @returns {JSX.Element} A Box component containing a title and a grid of document entries,
+ * each displaying the title and the last edited date of the document.
+ * 
+ * @example
+ * <RecentDocuments />
+ * 
+ * @todo Implement global search functionality for filtering recent documents.
+ */
 // function RecentDocuments({ searchQuery, filter }) { //TODO : Global search for recent documents- yet to impelempent
 const RecentDocuments=()=> {
     const documents = [

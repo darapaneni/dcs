@@ -3,39 +3,90 @@
   import './Rental_agreement.css';
   import emblem from '../../images/emblem.jpeg';
   import { Collapse, Grid2 } from '@mui/material';
+/**
+ * SaleDeed component that renders the form to input details related to a sale deed.
+ * @component
+ * @returns {JSX.Element} The SaleDeed form component.
+ */
 
   // Step 1: Define the Document component input required
   const SaleDeed = () =>
   { 
+  /**
+   * State to hold seller data.
+   * @type {Array}
+   */
     const sellers=[
-
+  
+      /**
+   * State to hold purchaser data.
+   * @type {Array}
+   */
     ]
     const purchasers= [
-    
+  
+  /**
+   * State to hold current seller information.
+   * @type {Array}
+   */  
     ]
+
+  /**
+   * State to hold current purchaser information.
+   * @type {Array}
+   */
+  /**
+   * State to track whether flat or land details are shown.
+   * @type {string}
+   */
+  /**
+   * State to track seller type (person or builder).
+   * @type {string}
+   */
+  /**
+   * State to track purchaser type (person or builder).
+   * @type {string}
+   */
+  /**
+   * Handles the visibility of flat/land input form.
+   * @param {Object} event - The event object from the select dropdown.
+   */
     const [data, setData]=useState(sellers);
     const [data1, setData1]=useState(purchasers);
     const [showFlat, setShowFlat]=useState('flat');
     const [showSeller, setShowSeller]=useState('person');
     const [showPurchaser, setShowPurchaser]= useState('person');
+  /**
+   * Handles the visibility of seller type input form (person/builder).
+   * @param {Object} event - The event object from the select dropdown.
+   */
     const handlesshowhide =(event)=>{
       const getuser = event.target.value;
       console.log(getuser);
       setShowFlat(getuser);
       console.log(showFlat);
     }
+
     const handlesshowhideSellerType =(event)=>{
       const getuser = event.target.value;
       console.log(getuser);
       setShowSeller(getuser);
       console.log(showFlat)
     }
+  /**
+   * Handles the visibility of purchaser type input form (person/builder).
+   * @param {Object} event - The event object from the select dropdown.
+   */
     const handlesshowhidePurchaserType =(event)=>{
       const getuser = event.target.value;
       console.log(getuser);
       setShowPurchaser(getuser);
       console.log(showFlat)
     }
+  /**
+   * State to store flat-related details.
+   * @type {Object}
+   */
     const [flatData, setFlatData] =useState({
       FlatNumber :'',
       Floorno:'',
@@ -48,6 +99,10 @@
 	    LandSqFeet:'',
 	    Percentage:''
     })
+  /**
+   * State to store land-related details.
+   * @type {Object}
+   */
     const [landData, setLandData ]=useState({
       Land:'',
       LandSize:'',
@@ -62,11 +117,19 @@
       Subdistrict:'',
       District:''
     })
+  /**
+   * State to store seller (builder) information.
+   * @type {Object}
+   */
     const [sellerBuilder , setSellerBuilder] = useState( {
       SellerBuilderFulladdress: '',
       SellerBuilderName: '',
       SellerBuilderRegNum: ''
     })
+  /**
+   * State to store purchaser (builder) information.
+   * @type {Object}
+   */
     const [purchaserBuilder, setPurchaserBuilder]= useState({
       PurchaserBuilderFulladdress: '',
       PurchaserBuilderName: '',
@@ -74,6 +137,10 @@
  
 
     })
+  /**
+   * State to store form details related to sale deed.
+   * @type {Object}
+   */
     const [ formData, setFormData ] = useState( {
       Day :'',
       Month: '',
@@ -102,6 +169,18 @@
       Witness1: '',
       Witness2: ''
     });
+  /**
+   * State to track selected seller type (person or builder).
+   * @type {Object}
+   */
+  /**
+   * State to track selected purchaser type (person or builder).
+   * @type {Object}
+   */
+  /**
+   * State to track the selected property type (flat or land).
+   * @type {Object}
+   */ //respectively jsdoc comments for below commands.
     const [ formDataSelect, setFormDataSelect ] = useState( {
       SellerType: ''
     })

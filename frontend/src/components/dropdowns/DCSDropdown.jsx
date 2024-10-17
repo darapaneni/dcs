@@ -1,6 +1,20 @@
 import React, { useState } from 'react';
 import { MenuItem, Select, FormControl, InputLabel } from '@mui/material';
 
+/**
+ * CustomizedDropdown component renders a dropdown (select) menu with predefined options.
+ * It allows the user to select a status from the available options.
+ *
+ * @component
+ *
+ * @param {Object} props - The properties passed to the component.
+ * @param {string} [props.label="Status"] - The label displayed above the dropdown menu.
+ *
+ * @returns {JSX.Element} The rendered dropdown menu with options.
+ *
+ * @example
+ * <CustomizedDropdown label="Select Gender" />
+ */
 const CustomizedDropdown=({label="Status"})=> {
     const [status, setStatus] = useState('');
 
