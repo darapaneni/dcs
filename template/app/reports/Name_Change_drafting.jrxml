@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Name_Change" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fc431950-a4a5-4875-9d59-b73f496b1868">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="fathername" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{fathername}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="age" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{age}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="place" class="java.lang.String"/>
+	<parameter name="previousname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{previousname}]]></defaultValueExpression>
+	</parameter>
+
+
+	<parameter name="newname" class="java.lang.String"/>
+	<parameter name="usenewname" class="java.lang.String"/>
+	<parameter name="fomarrnamesurname" class="java.lang.String"/>
+	<parameter name="adoptednamesurname" class="java.lang.String"/>
+	<parameter name="date" class="java.lang.String"/>
+	<parameter name="year" class="java.lang.String"/>
+	<parameter name="fulldate" class="java.lang.String"/>
+	<parameter name="formername" class="java.lang.String"/>
+	<parameter name="witness1name" class="java.lang.String"/>
+	<parameter name="witness2name" class="java.lang.String"/>
+	<parameter name="witness1address" class="java.lang.String"/>
+	<parameter name="witness2address" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="145" y="10" width="255" height="20" uuid="0f5ecb05-cfff-4db9-a656-2dbe1db36943"/>
+				<text><![CDATA[PECIMEN AFFIDAVIT FOR CHANGE IN NAME 
+(On non-judicial stamp paper of minimum value) ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="32" width="240" height="20" uuid="e022b229-d2f9-4117-bca2-24cc5674d750"/>
+				<text><![CDATA[(On non-judicial stamp paper of minimum value) ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="590" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="12" width="29" height="20" uuid="891a7e55-34e0-4e81-8ae2-26f2bb13973d"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[I Mr. ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="29" y="12" width="147" height="20" uuid="1a579e69-654c-481e-8544-7ebb3bc632c4"/>
+				<textElement>
+					<font fontName="SansSerif" size="12" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="174" y="11" width="36" height="20" uuid="421a01bf-9e9f-4b64-95e2-544b54b44b2d"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[S/o ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="212" y="12" width="128" height="20" uuid="5c6b698c-ac30-427d-9b71-21714f4c12e9"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fathername}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="340" y="11" width="80" height="20" uuid="867f3618-c29a-4093-89c0-2883fbe9eac1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[ aged   about]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="420" y="12" width="40" height="20" uuid="2dd077ef-4cbc-42a6-b843-5a219d8c7d46"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{age}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="463" y="11" width="87" height="20" uuid="df134de1-1055-4b09-9fbe-a6770889826c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[yrs., resided at]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="-1" y="33" width="81" height="20" uuid="a615513c-7513-4e87-8421-a34419552fa2"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{place}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="80" y="33" width="240" height="20" uuid="b4feecb8-ccbc-4aa8-9e3c-d245f51aab52"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Do hereby solemnly affirm and state as follows: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="55" width="217" height="20" uuid="c648814f-528e-4760-ac71-0491594c1046"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[1.That my recorded name in school and college is ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="221" y="54" width="80" height="20" uuid="acb73e12-e4dc-4b6a-94e9-77161bbab444"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{previousname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="301" y="54" width="259" height="20" uuid="6a84c9bb-8a52-4091-b0a4-12ed5286ea5d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[ but I myself popularly known as]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="3" y="76" width="157" height="20" uuid="ae882470-7a67-44b1-94da-30b7adfacca6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{newname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="161" y="75" width="79" height="20" uuid="10500341-be4e-44ef-b66a-9a8a988250f2"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[(New name).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="164" width="553" height="20" uuid="73e4472d-2277-45e3-9b51-f648601866c7"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[3.That for the purpose of evidencing such my determination declare that I shall at all times hereafter in]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="183" width="547" height="20" uuid="da0013dc-4577-4d9a-a573-3bd23ec906eb"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[ all records,deeds and writings and in all proceedings, ealings and transactions,private as well as upon ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="205" width="288" height="20" uuid="079f07d9-1cc5-4d4d-b972-8a1c4b40c2b4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[ all occasions whatsoever, use and sign the name of ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="290" y="206" width="120" height="20" uuid="13c86a03-bebb-4e40-b887-1bd2dd093cde"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{usenewname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="410" y="207" width="136" height="20" uuid="8390917f-ce9e-41aa-a7b5-1dd3f21df30a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[ as my name/surname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="227" width="428" height="20" uuid="6552ddb5-62da-4d16-a3b8-0768b040f29f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[ in place and in substitution of my  former Name/surname. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="247" width="456" height="20" uuid="ee8d0ac7-0cd8-4f39-9d9b-9ac3a8bf3ed6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[4.That the facts stated above are true to the best of my knowledge and belief. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="269" width="525" height="20" uuid="364f847b-f900-49ef-907f-a7ef40697a1e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[5.In witness whereof I have hereunto subscribed my former and adopted name/surname of ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="12" y="292" width="110" height="20" uuid="259a8f5a-fd88-48e8-9471-ed326c87aee8"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fomarrnamesurname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="137" y="292" width="37" height="20" uuid="f3bdf191-8fb2-459d-abff-42e80c01ea92"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[and ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="181" y="293" width="127" height="20" uuid="b72ca8ac-375f-495e-b605-ea4b5bf36b83"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{adoptednamesurname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="314" y="292" width="226" height="20" uuid="be45a633-a220-43a0-8985-29238aa663c1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[ affix my signature and seal, if any, this]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="17" y="313" width="50" height="20" uuid="b87a2d0a-5364-4134-bde5-8b7f6873ae2b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="70" y="313" width="50" height="20" uuid="753dce57-bbbc-4535-bb14-8699a98b3cf1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[ Day of]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="122" y="314" width="81" height="20" uuid="0caaf099-9655-4216-a7a8-626e8a1c1860"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{year}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="333" width="266" height="20" uuid="4f6c10e5-7ff2-4052-b261-8dc0bca4ab5d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Signed sealed and delivered by the above name ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="353" width="38" height="20" uuid="54475ef0-b767-4444-9274-7b84fd2d01e9"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="40" y="353" width="100" height="20" uuid="f741bd27-fa08-44b9-aab1-c657aa774683"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fulldate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="373" width="76" height="20" uuid="0623372c-de3e-4277-9ad1-ec280f603f74"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Former name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="373" width="132" height="20" uuid="e656819e-a733-4ea0-b42b-11f48f8fc34a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{formername}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="393" width="117" height="20" uuid="0d202994-c364-467d-9aab-9511bb10278c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[In the presence of: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="413" width="48" height="20" uuid="042adf98-d57e-44a6-aae0-e7d27fa12dde"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="434" width="134" height="20" uuid="2f51320d-1e1b-4c7b-9226-a9457ac171a5"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{witness1address}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="340" y="413" width="51" height="20" uuid="75a73549-b1bb-4c59-9a5c-f3947929d5b3"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="413" width="140" height="20" uuid="e89f8c00-7722-4f90-9eeb-371593988836"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{witness2name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="340" y="438" width="50" height="20" uuid="2a111da5-1e7f-42d3-acb1-d24882b00979"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="399" y="435" width="140" height="20" uuid="b07f73c9-6ba7-46e2-8314-54714831bca1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{witness2address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="413" width="150" height="20" uuid="cccd0c7c-1613-4a63-a3ef-ce83c79502e6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{witness1name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="434" width="48" height="20" uuid="fa9c12e4-133c-4c06-82b0-fce32bda3944"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="472" width="543" height="20" uuid="f9a313dd-3775-4b99-87e3-32486eb3d4d6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[(This affidavit may be signed and attested in presence of a Judicial Magistrate or Executive ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="494" width="345" height="20" uuid="df55a63b-ef6a-42b2-9b8c-bb8213f27f0e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Magistrate/Notary Public or Consular Officer in an Indian Mission abroad)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="530" width="541" height="20" uuid="ccf55ab5-cf7f-4e39-b069-638b7dc9c3fd"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Note: In case of change of name, applicant should insert advertisements in two reputed newspapers]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="550" width="534" height="20" uuid="5ca75541-b157-449c-89b3-78f3022c983b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[ (one  local  newspaper  of  the  area  in  which  he/she  is  residing  and  2nd  in newspaper of the ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="570" width="528" height="20" uuid="c10bc514-8e5e-4ef5-87e5-e4c5879241e0"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[area of permanent address) and submit original newspapers at the time of applying to Institute.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="101" width="519" height="59" uuid="98d4914b-7baa-4c44-8e0e-47e89dbc37d4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[2.  (New name).That by virtue of this affidavit, I changed my name from                                 (old name)  to                                          (new name) and henceforth I shall be known as the                           (new name) for all purposes. ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="100" width="100" height="20" uuid="99dc73b7-a3e2-4cfc-930a-e4ff0a328bcb"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="72" y="113" width="100" height="20" uuid="072130dd-c7eb-4bf9-a3c7-24ccd1fca1f4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{newname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

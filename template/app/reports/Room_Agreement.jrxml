@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Roomagreement_A4" pageWidth="595" pageHeight="7508" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="be502631-1c9b-44f9-a676-088176bb677a">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="Total_Amount" class="java.lang.String"/>
+	<parameter name="Parameter1" class="java.lang.String"/>
+	<parameter name="Line_Address" class="java.lang.String"/>
+	<parameter name="Currentdate" class="java.lang.String"/>
+	<parameter name="Start_Date" class="java.lang.String"/>
+	<parameter name="Signature2" class="java.lang.String"/>
+	<parameter name="Signature1" class="java.lang.String"/>
+	<parameter name="Lessee_Name" class="java.lang.String"/>
+	<parameter name="Father_Name" class="java.lang.String"/>
+	<parameter name="Lessor_Name" class="java.lang.String"/>
+	<parameter name="Witness2_Name" class="java.lang.String"/>
+	<parameter name="Witness1_Name" class="java.lang.String"/>
+	<parameter name="Full_Name" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="92" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<staticText>
+				<reportElement x="160" y="30" width="240" height="50" uuid="44bfa41b-d614-4f11-991a-afa8e3286fb2"/>
+				<textElement textAlignment="Center">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Room Agreement]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="10" width="81" height="21" uuid="99a953a7-9a40-4139-9499-a284e409ac4a"/>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="30" y="10" width="100" height="30" uuid="f0a7bf41-855b-479c-bf1f-49fe44b642a1"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Currentdate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="802" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="550" height="792" uuid="cc52d889-fa4a-4096-85c0-407818c0bb0a"/>
+				<textElement>
+					<font fontName="SansSerif" size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[This Rent   Agreement is made on __________  by ________________ S/o _______________ , Add: ___________________________________________________. Herein after called the Lessor / Owner, Party Of the first part 
+AND
+__________ called Lessee/Tenant, Party of the Second Part
+
+That  the  expression  of  the   term ,   Lessor/Owner and  the Lessee/Tenant    Shall mean   and    include   their   legal    heirs   successors ,  assigns , representative  etc. Whereas the Lessor /Owner is the owner and   in possession of the property   No: ______________
+_________________________________________________________________________________  and  has  agreed  to  let  out   the one office  Room, one Toilet & Bathroom Set on said property, to the Lessee/Tenant and  the Lessee/Tenant   has  agreed  to  take  the  same  on  rent  of Rs. ______/-  per month.
+
+   NOW THIS RENT AGREEMENT WITNESSETH AS UNDER:- 
+
+1.	That the Tenant/Lessee shall pay as the monthly rent of RS. _________/-  per  month,  excluding  electricity  and  water charge.
+
+2.	That the Tenant /Lessee shall not sub–let any part of the above said demised premised premises to anyone else under any circumstances without the consent of Owner.
+
+3.	That  the  Tenant  / Lessee  shall   abide  by   all  the  bye  -  laws ,  rules  and regulation, of the local authorities in respect  of the demised premises
+
+4.	That   this   Lease   is   granted  for  a  period   of   Eleven  (11)  months  only commencing from ___________  and  this  lease   can  be  extended further by   both   the   parties  with   their  mutual  consent on the basis of  prevailing rental value  in the market .
+
+5.	That the Lessee shall pay Electricity & Water charge as per   the proportionate consumption of the meter to the Lessor /Owner.
+
+6.	That  the  Tenant/lessee  can neither  make  addition/alteration in  the said premises without  the  written  consent of the owner, nor the lessee can sublet       part or entire  premises to any person(s)/firm(s)/company(s).
+
+7.	That  this Agreement  may  be  terminated   before  the expiry of this tenancy period by serving One month prior notice by either  party  for  this intention .
+
+8.	That the Lessee shall use the above said premises for Official Purpose Only.
+
+10.	That the Lessee shall pay the one month’s advance rent to the Lessor the same shall be adjusted in monthly rent.
+
+11.	That both the parties have read over and understood all the contents of this agreement and have signed the same without any force or pressure from any side.
+
+In WITNESS WHEREOF  the  lessor/Owner  and  the Tenant / Lessee have hereunto subscribed  Mentioned in presents of the following Witnesses   
+ 
+WITNESSES:-
+
+1. _____________                              2. _____________
+
+									
+  
+Lessor					Lessee		
+
+
+			
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="170" y="10" width="80" height="30" uuid="167ee0c1-7b16-4c48-8dcc-7e6ccc3f3205"/>
+				<textElement>
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Currentdate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="10" width="90" height="30" uuid="e8ae92ec-ca34-4b28-b8c2-88f91ea81b25"/>
+				<textElement>
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Lessor_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="10" width="80" height="30" uuid="7973907f-976e-4c8e-aca4-996ead5493e7"/>
+				<textElement>
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Father_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="20" width="168" height="30" uuid="988866d2-a73a-4dd5-81da-29410906deea"/>
+				<textElement>
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Line_Address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="60" width="81" height="30" uuid="540c88d8-8dbe-4cce-b90f-32020f5209e1"/>
+				<textElement>
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Lessee_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="130" width="270" height="30" uuid="aed167e1-54f7-4b6a-9a8f-46e9d2c7fcc1"/>
+				<textElement>
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Line_Address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="160" width="70" height="30" uuid="62d060b6-0046-4367-a1f0-3996683f9260"/>
+				<textElement>
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Total_Amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="210" width="80" height="30" uuid="20ead9d1-3eda-4289-980c-10a3e5566451"/>
+				<textElement>
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Total_Amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="350" width="100" height="30" uuid="38658a83-6e48-41ff-ab43-6988a9938121"/>
+				<textElement>
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Start_Date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="701" width="100" height="30" uuid="4a66b074-7d84-4c9b-b7b9-9f033c802ec0"/>
+				<textElement>
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Witness1_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="700" width="100" height="30" uuid="08469e17-2a65-467d-81e6-faddaf69ee0d"/>
+				<textElement>
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Witness2_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="740" width="100" height="30" uuid="4710557d-9e16-4058-bb36-29f4dc9a3038"/>
+				<textElement>
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Signature1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="740" width="100" height="30" uuid="9fa6a441-4f9d-491a-8a97-ba746e0ed0f7"/>
+				<textElement>
+					<font fontName="SansSerif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Signature2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
