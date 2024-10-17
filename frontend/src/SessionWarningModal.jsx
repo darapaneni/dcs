@@ -1,5 +1,26 @@
 import React from 'react';
 
+/**
+ * A modal component that displays a warning message when the user's session is about to expire.
+ * It provides options to either continue the session or log out.
+ *
+ * @component
+ * @param {Object} props - The props for the component.
+ * @param {Function} props.onContinue - Callback function to be executed when the "Continue Session" button is clicked.
+ * @param {Function} props.onLogout - Callback function to be executed when the "Logout" button is clicked.
+ *
+ * @example
+ * // Usage of SessionWarningModal
+ * const handleContinue = () => {
+ *   // Logic to extend the session
+ * };
+ *
+ * const handleLogout = () => {
+ *   // Logic to log the user out
+ * };
+ *
+ * <SessionWarningModal onContinue={handleContinue} onLogout={handleLogout} />
+ */
 const SessionWarningModal = ({ onContinue, onLogout }) => {
   return (
     <div style={modalStyle}>

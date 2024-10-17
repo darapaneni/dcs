@@ -1,9 +1,26 @@
+/**
+ * @file QrScanner.js
+ * @description This file contains a React component that combines QR code scanning with PayPal payment functionality. The QR code scanner captures an order ID, which is then used to process a payment via PayPal. It provides real-time feedback to users with success, error, and loading states.
+ */
+
 // QrScanner.js
 import React, { useState } from 'react';
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 import { Box, Typography, CircularProgress, Grid2, Card, CardContent } from '@mui/material';
 import { QrReader } from 'react-qr-reader';
 
+/**
+ * QrScanner Component
+ * @component
+ * @description A QR code scanner that captures payment-related information and processes the payment via PayPal. The component scans a QR code, retrieves the order ID, and uses the PayPal API to handle the payment process. It shows real-time feedback during the payment lifecycle.
+ *
+ * @returns {JSX.Element} The QR scanner interface with PayPal payment functionality.
+ *
+ * @example
+ * return (
+ *   <QrScanner />
+ * );
+ */
 const QrScanner = () => {
     const [result, setResult] = useState('');
     const [loading, setLoading] = useState(false);
@@ -21,6 +38,12 @@ const QrScanner = () => {
     //     }
     // };
 
+
+    /**
+     * Handles the approval of the PayPal order by capturing the order ID and verifying it on the backend.
+     *
+     * @param {string} orderID - The ID of the approved PayPal order, obtained from the QR code or PayPal API.
+     */
     const handleApprove = (orderID) => {
         fetch('http://localhost:8000/api/paypal/capture-order/', {
             method: 'POST',

@@ -21,20 +21,47 @@ import DcsConfirmationDialog from '../confirmation-dialog/DcsConfirmationDialog'
 import useAuthStore from '../../store/authStore';
 import Cookies from 'js-cookie';
 
-const Header = ({title = "Documents Consultancy Services"}) => {
-    const location = useLocation();
-    // const settings = ['Dashboard', 'Profile', 'Change Password', 'Logout'];
-    const navigate = useNavigate();
-    const {isAuthenticated, logout} = useAuthStore();
-    const [dialogOpen, setDialogOpen] = useState(false);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
-    const storedUser = Cookies.get('user');
-    const initialUser = storedUser ? JSON.parse(storedUser) : null;
+/**
+ * Header component for the application, providing navigation and user authentication features.
+ * It displays the application title, user options, and handles user interactions such as login,
+ * signup, and logout.
+ *
+ * @component
+ *
+ * @param {Object} props - The component props.
+ * @param {string} [props.title="Documents Consultancy Services"] - The title displayed in the header.
+ *
+ * @returns {JSX.Element} The rendered Header component.
+ *
+ * @example
+ * // Usage example
+ * <Header title="My Application Title" />
+ */
 
+const Header = ({title = "Documents Consultancy Services"}) => {
+    const location = useLocation();  // Hook to access the current location
+    // const settings = ['Dashboard', 'Profile', 'Change Password', 'Logout'];
+    const navigate = useNavigate();  // Hook to programmatically navigate to different routes
+    const {isAuthenticated, logout} = useAuthStore();  // Access user authentication state and logout function
+    const [dialogOpen, setDialogOpen] = useState(false);  // State to manage the confirmation dialog
+    const [anchorElUser, setAnchorElUser] = React.useState(null);  // State for managing user menu anchor element
+    const storedUser = Cookies.get('user');  // Retrieve the stored user data from cookies
+    const initialUser = storedUser ? JSON.parse(storedUser) : null;  // Parse user data or set to null
+
+/**
+ * Handles opening the user menu by setting the anchor element.
+ *
+ * @param {React.MouseEvent} event - The mouse event triggering the menu opening.
+ */
     const handleOpenUserMenu = (event) => {
         setAnchorElUser(event.currentTarget);
     };
 
+/**
+ * Handles closing the user menu and navigating to the selected option.
+ *
+ * @param {React.MouseEvent} event - The mouse event triggering the menu item selection.
+ */    
     const handleCloseUserMenu = (event) => {
         let logout = event.currentTarget.innerText;
         setAnchorElUser(null);
@@ -54,18 +81,36 @@ const Header = ({title = "Documents Consultancy Services"}) => {
             navigate('/user/profile')
         }
     };
+
+/**
+ * Handles the login button click by navigating to the home page.
+ *
+ * @param {React.MouseEvent} event - The mouse event triggering the login action.
+ */
     const handleLogInClick = (event) => {
         event.preventDefault();
 
         navigate('/');
     };
+/**
+ * Handles the signup button click by navigating to the signup page.
+ *
+ * @param {React.MouseEvent} event - The mouse event triggering the signup action.
+ */
     const handleSignupClick = (event) => {
         event.preventDefault();
         navigate('/signup');
     };
+/**
+ * Closes the confirmation dialog.
+ */
     const handleCloseDialog = () => {
         setDialogOpen(false);
     };
+/**
+ * Handles the confirmation of logout action.
+ * It closes the dialog, calls the logout function, and navigates to the home page.
+ */
     const handleConfirm = () => {
         handleCloseDialog();
         logout();

@@ -1,3 +1,8 @@
+/**
+ * @file PricingPage.js
+ * @description This file contains the `PricingPage` component that displays different pricing plans for DCS services. Each pricing plan is presented with its title, price, description, a QR code, and a PayPal payment button. It provides users with options to learn more about the plans and initiate payment via PayPal.
+ */
+
 // PricingPage.js
 import React from 'react';
 import { Container, Grid2, Card, CardContent, Typography, Button, CardActions } from '@mui/material';
@@ -6,6 +11,20 @@ import {QRCodeCanvas }   from 'qrcode.react';
 // import usePricingStore from "../../store/pricingStore";
 import PayPalButton from '../payment/PayPalButton';
 // import QrScanner from '../payment/QrScanner';
+
+/**
+ * PricingPage Component
+ * @component
+ * @description The `PricingPage` component displays three pricing plans: Basic, Pro, and Enterprise. Each plan includes a title, price, description, a QR code for quick access, and a PayPal payment button. The component uses Material-UI components to create a clean and responsive layout.
+ *
+ * @returns {JSX.Element} The JSX for rendering the pricing plans page.
+ *
+ * @example
+ * // Example usage of PricingPage component
+ * return (
+ *   <PricingPage />
+ * );
+ */
 const PricingPage = () => {
     // const navigate = useNavigate();
     // const {  setSelectedPricing } = usePricingStore();

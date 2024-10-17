@@ -1,7 +1,30 @@
+/**
+ * @file PayPalButton.js
+ * @description This file contains a React component for integrating PayPal payments using the PayPal Buttons from the
+ * `@paypal/react-paypal-js` library. The component allows users to complete a payment via PayPal, with status messages for
+ * success, failure, or loading. The component communicates with a Django backend to verify and capture the payment on the server side.
+ */
+
+
 // PayPalButton.js
 import React, { useState } from 'react';
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 import { CircularProgress, Typography, Card, CardContent, Grid2 } from '@mui/material';
+
+/**
+ * PayPalButton Component
+ * @component
+ * @description A PayPal payment button component that allows users to complete transactions. It handles payment creation, 
+ * approval, and communicates with the backend to capture the payment. It also provides loading, success, and error states 
+ * for user feedback.
+ *
+ * @returns {JSX.Element} PayPal payment button with handling for approval, error, and loading states.
+ *
+ * @example
+ * return (
+ *   <PayPalButton />
+ * );
+ */
 
 const PayPalButton = () => {
     const initialOptions = {
@@ -14,6 +37,14 @@ const PayPalButton = () => {
     //     shape: "rect",
     //     layout: "vertical",
     // };
+
+    /**
+     * Handles payment approval by capturing the PayPal order.
+     * Sends the order ID to the backend to verify and capture the payment.
+     *
+     * @param {string} orderID - The ID of the approved PayPal order.
+     */
+    
     const handleApprove = (orderID) => {
         // Here, you will send the orderID to your Django backend to verify and capture the payment
         fetch('http://localhost:8000/api/paypal/capture-order/', {

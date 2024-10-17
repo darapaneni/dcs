@@ -6,9 +6,31 @@ import { Grid2 } from '@mui/material';
 import DcsTooltip from '../tooltip/DcsTooltip';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import SaveAsIcon from '@mui/icons-material/SaveAs';
+
+/**
+ * RentalAgreement component.
+ * This component is a form for creating a rental agreement. It allows users to input details about the landlord, tenant, 
+ * property, lease period, rent, and deposit amount, and then preview the agreement.
+ * The user can download the agreement as a PDF using the html2pdf.js library.
+ * 
+ * @component
+ * @returns {JSX.Element} A form and a preview for the rental agreement, with the ability to download it as a PDF.
+ */
 // Step 1: Define the Document component input required
 const RentalAgreement = () =>
 {
+   /**
+   * State that stores the form data for the rental agreement.
+   * @typedef {Object} FormData
+   * @property {string} LandlordName - The name of the landlord.
+   * @property {string} TenantName - The name of the tenant.
+   * @property {string} PropertyAddress - The address of the rental property.
+   * @property {string} LeasePeriod - The lease duration.
+   * @property {string} FromDate - The start date of the lease.
+   * @property {string} ToDate - The end date of the lease.
+   * @property {string} MonthlyRent - The monthly rent amount.
+   * @property {string} DepositAmount - The deposit amount.
+   */
   const [ formData, setFormData ] = useState( {
     LandlordName: '',
     TenantName: '',
@@ -20,12 +42,25 @@ const RentalAgreement = () =>
     DepositAmount: ''
   } );
 
+  /**
+   * Handles changes in input fields and updates the formData state.
+   * 
+   * @function handleInputChange
+   * @param {string} field - The name of the form field being updated.
+   * @param {string} value - The new value for the form field.
+   */
   //To handle input change
   const handleInputChange = ( field, value ) =>
   {
     setFormData( prevData => ( { ...prevData, [ field ]: value } ) );
   };
 
+  /**
+   * Handles downloading the agreement as a PDF using html2pdf.js.
+   * It modifies the layout temporarily, hides form elements, and generates a PDF.
+   * 
+   * @function handleDownload
+   */
   //For downloading pdf
   const handleDownload = () =>
   {
@@ -57,6 +92,13 @@ const RentalAgreement = () =>
     } );
   };
 
+  /**
+   * Formats a given date string to 'dd-mmm-yyyy' format.
+   * 
+   * @function formatDate
+   * @param {string} dateString - The date string to format.
+   * @returns {string} The formatted date string in 'dd-mmm-yyyy' format.
+   */
   //To display date in dd-mmm-yyyy format
   const formatDate = ( dateString ) =>
   {

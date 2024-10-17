@@ -1,3 +1,8 @@
+/**
+ * @file ChangePassword.js
+ * @description This file defines the `ChangePassword` component, which allows users to change their passwords. It includes fields for the current password, the new password, and a confirmation of the new password. The component utilizes form validation with Zod and manages user authentication through API requests.
+ */
+
 import React from "react";
 import {
   TextField,
@@ -44,6 +49,28 @@ const schema = z.object({
     }
 });
 
+/**
+ * ChangePassword Component
+ * @component
+ * @description The `ChangePassword` component allows users to change their password. It contains fields for the current password, a new password, and confirmation of the new password. The component validates the input using Zod and submits the data to the backend via an API request.
+ * 
+ * @returns {JSX.Element} A form with input fields for changing the user's password, including validation and a button to submit the change.
+ * 
+ * @example
+ * // Example usage:
+ * import ChangePassword from './ChangePassword';
+ * 
+ * function App() {
+ *     return (
+ *         <div>
+ *             <ChangePassword />
+ *         </div>
+ *     );
+ * }
+ * 
+ * // Output:
+ * // A form that allows users to change their password.
+ */
 const ChangePassword = () => {
   const user = Cookies.get("user") ? JSON.parse(Cookies.get("user")) : null;
   const [open, setOpen] = React.useState(false);
@@ -58,6 +85,12 @@ const ChangePassword = () => {
     resolver: zodResolver(schema),
   });
 
+  /**
+   * onSubmit function
+   * @function
+   * @description Handles the submission of the form. It retrieves the form values, constructs the data object, and sends a PATCH request to update the password. If successful, it navigates the user to the home page.
+   * @param {Object} e - The event object from the form submission.
+   */
   const onSubmit = async (e) => {
     e.preventDefault()
     // Handle password change logic here

@@ -1,3 +1,11 @@
+/**
+ * @file SupportPage.js
+ * @description This component represents the support page of the application,
+ *              providing a form for users to submit questions or requests for assistance.
+ *              It captures user input for name, email, and a message, and handles form submission.
+ */
+
+
 import React, { useState } from 'react';
 import
 {
@@ -8,12 +16,24 @@ import
     Grid2,
 } from '@mui/material';
 
+/**
+ * @component SupportPage
+ * @description A functional component that displays a support form allowing users to submit their name, email, and a message.
+ *              Upon submission, the form data is logged to the console, and the input fields are cleared.
+ * @returns {JSX.Element} The Support Page rendered as a Material-UI Container
+ *                        containing typography elements and a form for user input.
+ */
 const SupportPage = () =>
 {
     const [ name, setName ] = useState( '' );
     const [ email, setEmail ] = useState( '' );
     const [ message, setMessage ] = useState( '' );
 
+
+    /**
+     * Handles the form submission event.
+     * @param {React.FormEvent<HTMLFormElement>} e - The event triggered on form submission.
+     */
     const handleSubmit = ( e ) =>
     {
         e.preventDefault();

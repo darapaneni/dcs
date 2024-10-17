@@ -5,6 +5,19 @@ import {Box, Typography, Button} from '@mui/material';
 import {ErrorOutline} from '@mui/icons-material';
 import {PropTypes} from "prop-types";
 
+/**
+ * MailSendError is a React component that displays an error message
+ * indicating that there was an issue sending an email. It includes
+ * an error icon, a title, a dynamic error message, and a button 
+ * to navigate back to the home page.
+ *
+ * @component
+ *
+ * @returns {JSX.Element} The rendered error message component.
+ *
+ * @example
+ * <MailSendError />
+ */
 const MailSendError = () => {
     const navigate = useNavigate();
     const location = useLocation();

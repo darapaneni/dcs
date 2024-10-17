@@ -4,9 +4,26 @@ import useAuthStore from '../../store/authStore';
 import Header from "../header/header";
 import Footer from "../footer/footer";
 import {Container} from "@mui/material";
+
+/**
+ * ProtectedLayout component is designed to wrap protected routes
+ * that require user authentication. If the user is not authenticated,
+ * they are redirected to the home page.
+ * 
+ * This layout includes a Header and Footer, and the content of
+ * the route is displayed in the main Container area.
+ *
+ * @component
+ * 
+ * @returns {JSX.Element} The rendered ProtectedLayout component.
+ *
+ * @example
+ * // Usage example
+ * <ProtectedLayout />
+ */
 export const ProtectedLayout = () =>
 {
-    const { isAuthenticated } = useAuthStore();
+    const { isAuthenticated } = useAuthStore();   // If the user is not authenticated, navigate to the home page
     const outlet = useOutlet();
 
     if ( !isAuthenticated )

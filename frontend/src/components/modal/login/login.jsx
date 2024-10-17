@@ -1,3 +1,52 @@
+/**
+ * Login component for user authentication.
+ * 
+ * This component allows users to log in to the application using their email and password, 
+ * or through GitHub authentication. It utilizes React Hook Form for form handling and Zod for 
+ * validation. The component also provides visual feedback during the login process 
+ * and options for forgotten passwords and user registration.
+ *
+ * @component
+ * @example
+ * return (
+ *   <Login />
+ * )
+ *
+ * @returns {JSX.Element} The rendered Login component.
+ * 
+ * @typedef {Object} FormData
+ * @property {string} email - The user's email address.
+ * @property {string} password - The user's password.
+ * 
+ * @function onSubmit
+ * @async
+ * @description Handles form submission and user authentication.
+ * @throws {Error} If login fails due to invalid credentials.
+ * 
+ * @function handleClose
+ * @description Closes the Forgot Password dialog.
+ * 
+ * @function handleClickOpen
+ * @description Opens the Forgot Password dialog.
+ * 
+ * @function handleGithubLogin
+ * @description Initiates the GitHub OAuth login process by redirecting the user.
+ * 
+ * @const {Object} schema - Zod validation schema for form validation.
+ * @property {z.ZodString} email - Must be a valid email address.
+ * @property {z.ZodString} password - Must be at least 6 characters long.
+ * 
+ * @const {Function} register - Function from react-hook-form to register input fields.
+ * @const {Function} handleSubmit - Function from react-hook-form to handle form submission.
+ * @const {Object} errors - Contains validation errors for the form fields.
+ * @const {boolean} isSubmitting - Indicates if the form is currently being submitted.
+ * 
+ * @const {Function} navigate - Function from react-router-dom for navigation after successful login.
+ * @const {Function} login - Function from auth store to authenticate the user.
+ * @const {string} error - Holds the error message for invalid login attempts.
+ * @const {boolean} open - State variable to manage the visibility of the Forgot Password dialog.
+ */
+
 import React, {useState} from 'react';
 import {useForm} from 'react-hook-form';
 import {z} from 'zod';
