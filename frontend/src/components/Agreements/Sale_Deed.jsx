@@ -3,6 +3,7 @@
   import './Rental_agreement.css';
   import emblem from '../../images/emblem.jpeg';
   import { Collapse, Grid2 } from '@mui/material';
+  import DownloadButton from '../DownloadBtn/DownloadButton';
 /**
  * SaleDeed component that renders the form to input details related to a sale deed.
  * @component
@@ -521,7 +522,7 @@
   <div >On the North	:{formData.OnNorth || '________'} <br/>On the South	:{formData.OnSouth || '________'} <br/>On the East	:{formData.OnEast || '________'} <br/>On the West	:{formData.OnWest || '________'} <br/>&nbsp;	 IN WITNESS WHEREOF the SELLER and the PURCHASER have set their signatures on the day month and year first above written.<br/></div>
   <div >SELLER ________	<br/>&nbsp;						 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br/>PURCHASER &nbsp; &nbsp; &nbsp;  ________<br/>						 &nbsp; &nbsp; &nbsp; &nbsp;<br/>WITNESSES:<br/><br/>1.{formData.Witness1} <br/><br/>2.{formData.Witness2}  <br/></div>
   </div>
-              <button id="downloadBtn" onClick={ handleDownload }>Download PDF</button>
+            <DownloadButton pageName="SaleDeed"/>
           
           </Grid2>
           {/* </div> */ }
