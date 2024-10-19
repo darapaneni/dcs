@@ -1,8 +1,1 @@
-# virtual environments
-*venv
-
-# json
-*.json
-
-#pyc
-*.pyc
+node_modules

@@ -1,0 +1,13 @@
+.dashboard__header {
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    height: 100px; /* Full viewport height to center vertically */
+}
+
+.dashboard__dropdown{
+    display: flex;
+    margin-left: 400px;
+    width: 500px !important;
+    box-shadow: 0 0 5px rgba(63, 81, 181, 0.5);
+}
