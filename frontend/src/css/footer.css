@@ -1,0 +1,25 @@
+.app__footer{
+    font-size: smaller;
+    background-color: bisque;
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 30px;
+}
+
+.app__copyright{
+    padding-top: 20px;
+    background-color: bisque;
+    text-align: center;
+}
+
+.app_navigations{
+    padding-top: 20px;
+    background-color: bisque;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
