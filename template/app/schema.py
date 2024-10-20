@@ -445,19 +445,19 @@ class JobOfferRequest(Schema):
 
 class PayingGuestAgreement(Schema):
    "jurisdictioncity=fields.Str(default="")
-	"ebillinwords=fields.Str(default="")
-	"ebillinRs=fields.Str(default="")
-	"securitydepositinwords=fields.Str(default="")
-	"securitydepositinRs=fields.Str(default="")
-	"rentinwords=fields.Str(default="")
-	"rentinRs=fields.Str(default="")
-	"minimumdays=fields.Str(default="")
-	"address=fields.Str(default="")
-	"accomodationname=fields.Str(default="")
-	"payingguestname=fields.Str(default="")
-	"ownername=fields.Str(default="")
-	"date=fields.Str(default="")
-	"place=fields.Str(default="")
+   "ebillinwords=fields.Str(default="")
+   "ebillinRs=fields.Str(default="")
+   "securitydepositinwords=fields.Str(default="")
+   "securitydepositinRs=fields.Str(default="")
+   "rentinwords=fields.Str(default="")
+   "rentinRs=fields.Str(default="")
+   "minimumdays=fields.Str(default="")
+   "address=fields.Str(default="")
+   "accomodationname=fields.Str(default="")
+   "payingguestname=fields.Str(default="")
+   "ownername=fields.Str(default="")
+   "date=fields.Str(default="")
+   "place=fields.Str(default="")
    
 
 class QRDRequest(Schema):
