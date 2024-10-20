@@ -441,7 +441,23 @@ class JobOfferRequest(Schema):
    titlefrom=fields.Str(default="")
    employeeaddress=fields.Str(default="")
    signdate=fields.Str(default="")
-   witness=fields.Str(default="")   
+   witness=fields.Str(default="")  
+
+class PayingGuestAgreement:
+   jurisdictioncity=fields.Str(default="")
+	ebillinwords=fields.Str(default="")
+	ebillinRs=fields.Str(default="")
+	securitydepositinwords=fields.Str(default="")
+	securitydepositinRs=fields.Str(default="")
+   rentinwords=fields.Str(default="")
+	rentinRs=fields.Str(default="")
+	minimumdays=fields.Str(default="")
+	address=fields.Str(default="")
+	accomodationname=fields.Str(default="")
+	payingguestname=fields.Str(default="")
+	ownername=fields.Str(default="")
+	date=fields.Str(default="")
+	place=fields.Str(default="")
 
 class QRDRequest(Schema):
    lname= fields.Str(default="NY")
