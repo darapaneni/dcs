@@ -1,0 +1,295 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="commercial rent agreement" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7f4532a5-948a-4d60-bbcb-febb6390ea20">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="LoggedInUser" forPrompting="false" class="com.jaspersoft.jasperserver.api.metadata.user.domain.client.UserImpl">
+		<description><![CDATA[Not usable in query input control, but is used as parameter to report]]></description>
+		<defaultValueExpression><![CDATA[new com.jaspersoft.jasperserver.api.metadata.user.domain.client.UserImpl()]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LoggedInUsername" forPrompting="false" class="java.lang.String">
+		<description><![CDATA[Of logged in user]]></description>
+		<defaultValueExpression><![CDATA["joeuser"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LoggedInUserFullName" forPrompting="false" class="java.lang.String">
+		<description><![CDATA[Of logged in user]]></description>
+		<defaultValueExpression><![CDATA["Joe Smith"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LoggedInUserEmailAddress" forPrompting="false" class="java.lang.String">
+		<description><![CDATA[Of logged in user]]></description>
+		<defaultValueExpression><![CDATA["joe@some.email"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LoggedInUserEnabled" forPrompting="false" class="java.lang.Boolean">
+		<description><![CDATA[Is logged in user enabled?]]></description>
+		<defaultValueExpression><![CDATA[Boolean.TRUE]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LoggedInUserExternallyDefined" forPrompting="false" class="java.lang.Boolean">
+		<description><![CDATA[Is logged in user externally defined? ie. authenticated externally]]></description>
+		<defaultValueExpression><![CDATA[Boolean.FALSE]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LoggedInUserTenantId" forPrompting="false" class="java.lang.String">
+		<description><![CDATA[Of logged in user. Only relevant in Pro/Enterprise.]]></description>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LoggedInUserRoles" forPrompting="false" class="java.util.Collection" nestedType="java.lang.String">
+		<description><![CDATA[Current set of roles of logged in user. Useful for $X parameter]]></description>
+		<defaultValueExpression><![CDATA[new ArrayList()]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LoggedInUserAttributes" forPrompting="false" class="java.util.Map" nestedType="java.lang.String">
+		<description><![CDATA[Not usable in query input control, but is used as parameter to report. Empty map if no attributes]]></description>
+		<defaultValueExpression><![CDATA[new HashMap()]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LoggedInUserAttributeNames" forPrompting="false" class="java.util.Collection" nestedType="java.lang.String">
+		<description><![CDATA[User profile attribute names. Useful for $X parameters. Empty collection if no attributes]]></description>
+		<defaultValueExpression><![CDATA[new ArrayList()]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LoggedInUserAttributeValues" forPrompting="false" class="java.util.Collection">
+		<description><![CDATA[]]></description>
+		<defaultValueExpression><![CDATA[new ArrayList()]]></defaultValueExpression>
+	</parameter>
+	<parameter name="agreementLocation" class="java.lang.String"/>
+	<parameter name="agreementDate" class="java.lang.String"/>
+	<parameter name="landlordName" class="java.lang.String"/>
+	<parameter name="fathersName" class="java.lang.String"/>
+	<parameter name="age" class="java.lang.String"/>
+	<parameter name="residentialAddress" class="java.lang.String"/>
+	<parameter name="companyName" class="java.lang.String"/>
+	<parameter name="registeredOfficeAddress" class="java.lang.String"/>
+	<parameter name="companyRepresentativeName" class="java.lang.String"/>
+	<parameter name="companyRepresentativePosition" class="java.lang.String"/>
+	<parameter name="officeName" class="java.lang.String"/>
+	<parameter name="officeLocation" class="java.lang.String"/>
+	<parameter name="propertyfloorNumber" class="java.lang.String"/>
+	<parameter name="propertyDoorNumber" class="java.lang.String"/>
+	<parameter name="carpetArea" class="java.lang.String"/>
+	<parameter name="leaseStartDate" class="java.lang.String"/>
+	<parameter name="leaseEndDate" class="java.lang.String"/>
+	<parameter name="monthlyRentAmount" class="java.lang.String"/>
+	<parameter name="ratepersquarefoot" class="java.lang.String"/>
+	<parameter name="rateIncrement" class="java.lang.String"/>
+	<parameter name="advanceDepositAmount" class="java.lang.String"/>
+	<query language="sql"><![CDATA[]]></query>
+	<background splitType="Stretch"/>
+	<title height="748" splitType="Stretch">
+		<element kind="staticText" uuid="daa01d32-73e8-4cbe-ba81-383a35814724" x="160" y="0" width="230" height="40">
+			<text><![CDATA[Commercial Office Agreement]]></text>
+		</element>
+		<element kind="staticText" uuid="6a5682d3-b819-45d0-b946-f27bda9fa7d6" x="30" y="30" width="480" height="710" fontSize="12.0">
+			<text><![CDATA[THIS DEED OF LEASE entered into at .......................... on the.........................day of........................... 202…
+BETWEEN…............................................. s/d/o……..........................., aged………........years, residing
+at………………………………………… hereinafter referred to as the LESSOR on the one part
+AND
+M/s. …………………………………………………. rated under Companies Act, 1956 having its 
+Registered office at ……………………………………………………… represented herein by 
+………................(Emp name),………………........(Emp Position) of..………................... (Office Name with 
+Location), hereinafter referred to as the LESSEE on the other part.
+The expressions LESSOR and LESSEE shall wherever the context so require be deemed to include 
+their heirs, executors, legal representatives, successors-in- interest and assigns.
+WHEREAS
+a) The LESSOR represents that he is the sole and absolute owner of the property on
+…............. floor in door no...........................................and entitled to lease out the same;
+b) The LESSEE required the afore-mentioned property / portion thereof comprising an extent of
+...................... Sq.ft. Carpet area more fully described in the schedule hereunder and hereinafter
+referred to as the PREMISES for use as its Office.
+c) the LESSOR has agreed to provide and the LESSEE has agreed to take on lease the PREMISES, 
+subject to terms set out hereunder;
+NOW THIS INDENTURE OF LEASE WITNESSETH: -
+1. The lease shall be for a period of .................... years commencing from................................ and ends on..........................and
+shall be renewed at the option of the Lessee.
+2. The rent is agreed and fixed at Rs...........p.m. (at the rate of Rs........per Sq.ft.) for a period of
+....... years initially and shall be increased by .........% of the rent being paid thereafter, 
+for ........... terms of.......... years each.
+The rent shall be payable for each month on or before the 10th day of every succeeding 
+month. The lessee shall pay in addition to the rent a sum of as maintenance charges every
+month.(if applicable)
+3. The LESSEE has paid to the LESSOR an advance / deposit of Rs......... which shall be
+refunded to the LESSEE at the time of surrendering or handing over vacant possession 
+of the PREMISES by the LESSEE.
+4. Besides rent, LESSEE shall pay Electricity charges and Water charges in respect of
+leased premises as levied by the Municipal or other statutory authorities.
+5. Unless otherwise agreed in writing, the LESSEE shall not be liable for any other payment 
+and LESSOR shall bear the Property Tax and all other taxes, levies or outgo in respect of the 
+PREMISES.
+6. The LESSOR shall provide sufficient parking space for cars, Scooters, & other vehicles for 
+LESSEES .
+7. This Lease may be terminated by the LESSEE at any time by giving three months notice in 
+writing to the LESSOR.
+8. The LESSEE shall deduct income Tax deduction at source, which shall be on the rent paid
+by the LESSEE, and necessary Certificate shall be provided at the end of each financial
+year.
+9. It is mutually agreed between the parties that the cost of Stamp papers and expenses of 
+registration of lease deed in respect of this lease and its renewals if any shall be shared 
+equally by the LESSORS and LESSEES.
+10. The LESSOR COVENANTS as follows: -
+i) On the LESSEE paying the rents and other charges as stipulated herein, it shall be entitled to 
+hold and enjoy the PREMISES on lease without any let or hindrance from the LESSOR or 
+any one claiming through or under him.
+ii) Not to do or cause to be done anything within or outside the PREMISES preventing, 
+obstructing or interrupting business of the LESSEE or its use and occupation of the 
+PREMISES including free ingress or egress.
+iii) The LESSEE, its employees, customers, visitors or servants shall be entitled to unfettered
+use of all entrances, passages, common areas, parking areas, staircases, lifts, amenities and 
+conveniences in and outside the PREMISES in common with other occupants as the case 
+may be.
+iv) To maintain the PREMISES in good and tenantable condition including provision 
+of uninterrupted electricity, water supply and other amenities and to perform necessary 
+repairs to the PREMISES whenever necessary without delay. Lessor shall arrange 
+painting / white washing of premises every 3 years.
+v) The LESSEE shall be entitled to put up fixtures and fittings in or upon the PREMISES 
+including Name Boards or Sign Boards, Partitions, Cabins, Lightings, Fans, Air onditioners, 
+provisions for computers or other interior work of a removable nature including incidental 
+electrical works for the same for the purpose of using the PREMISES.
+vi)That at the time of LESSEE surrendering vacant possession of the PREMISES, the LESSOR 
+shall forthwith refund the advance/deposit without any delay or default.
+vii) In the event that the LESSOR fails or neglects to
+a) Perform necessary maintenance or repairs despite intimation by the LESSEE,
+b) Pay any property Tax /other taxes, levies or outgo in respect of the PREMISES which
+The LESSOR is thereby required to pay, the LESSEE is hereby permitted and authorised to effect 
+necessary repairs and / or maintenance and the costs thereof or any other payments made by it shall 
+be adjusted from the rent payable to the LESSOR.
+11) THE LESSEE agrees and undertakes as follows: -
+i. To pay the rent, electricity and water charges punctually as and when falling due.
+ii. Not to sub-let, assign or part with his leasehold estate or interest in the said 
+PREMISES.
+iii. To maintain the PREMISES in a clean, tidy, healthy and good condition as may be 
+practicable, normal wear and tear excepted.
+iv. Not to do or cause any major modifications, additions or alterations in the building of the 
+PREMISES without the permission of the LESSOR.
+v. To permit the LESSOR or his/her/their duly authorized agent, representative to enter 
+the PREMISES at all reasonable times without interrupting or disrupting the functioning of 
+LESSEE’s office.
+vi. To remove all fixtures and fittings put up by it in the PREMISES at the time of acation of 
+the premises.
+A sketch / plan of premises is attached in case of new premises leased for the first time.]]></text>
+		</element>
+		<element kind="textField" uuid="b9c1692d-d83f-4080-b21f-d214bd5baf5d" x="250" y="30" width="100" height="30" fontSize="8.0">
+			<expression><![CDATA[$P{agreementLocation}]]></expression>
+		</element>
+		<element kind="textField" uuid="24e53e23-01d5-4119-af6c-03c48fb985fd" x="360" y="30" width="100" height="30">
+			<expression><![CDATA[$P{agreementDate}]]></expression>
+		</element>
+		<element kind="textField" uuid="1115ce0e-ae0c-4ac9-9b45-c7e36fe00b60" x="40" y="50" width="100" height="30">
+			<expression><![CDATA[$P{agreementDate}]]></expression>
+		</element>
+		<element kind="textField" uuid="b40e3be4-18e2-43ea-8f8a-d6a77ae4c2cf" x="320" y="60" width="100" height="30">
+			<expression><![CDATA[$P{age}]]></expression>
+		</element>
+		<element kind="textField" uuid="7befef3c-ff19-49db-9af8-dcc8def7421e" x="430" y="60" width="100" height="30">
+			<expression><![CDATA[$P{age}]]></expression>
+		</element>
+		<element kind="textField" uuid="460ba8f7-fa28-4858-ad17-0f864618992e" x="70" y="80" width="100" height="30">
+			<expression><![CDATA[$P{residentialAddress}]]></expression>
+		</element>
+		<element kind="textField" uuid="004d816b-aa74-4efb-8765-37d5b1355bd3" x="100" y="120" width="100" height="30">
+			<expression><![CDATA[$P{fathersName}]]></expression>
+		</element>
+		<element kind="textField" uuid="55bfc366-f44c-423f-87dd-782d40dab3eb" x="160" y="120" width="100" height="30">
+			<expression><![CDATA[$P{registeredOfficeAddress}]]></expression>
+		</element>
+		<element kind="textField" uuid="4c725d21-d9ee-4665-ad80-d9abdc4328a4" x="50" y="150" width="100" height="30">
+			<expression><![CDATA[$P{companyRepresentativeName}]]></expression>
+		</element>
+		<element kind="textField" uuid="d3e757c6-1e2b-4317-93d6-9be29add7118" x="190" y="140" width="100" height="30">
+			<expression><![CDATA[$P{companyRepresentativePosition}]]></expression>
+		</element>
+		<element kind="textField" uuid="8803b136-8b01-472a-a66e-ea67bda2dc40" x="360" y="150" width="100" height="30">
+			<expression><![CDATA[$P{officeName}]]></expression>
+		</element>
+		<element kind="textField" uuid="494cda7f-3b64-4fb0-b959-76d6985568d7" x="50" y="270" width="100" height="30">
+			<expression><![CDATA[$P{propertyfloorNumber}]]></expression>
+		</element>
+		<element kind="textField" uuid="0478f4fa-b1b3-4d2c-949d-c2005bc003b1" x="190" y="260" width="100" height="30">
+			<expression><![CDATA[$P{propertyDoorNumber}]]></expression>
+		</element>
+		<element kind="textField" uuid="d6526236-03e6-417d-a32c-0a455386074d" x="30" y="320" width="100" height="30">
+			<expression><![CDATA[$P{carpetArea}]]></expression>
+		</element>
+		<element kind="textField" uuid="b08fe65f-b2a1-4e2d-8558-a0a4e8952453" x="80" y="440" width="100" height="30">
+			<expression><![CDATA[$P{leaseStartDate}]]></expression>
+		</element>
+		<element kind="textField" uuid="6ef96d8e-6e06-4f1c-8d1c-572db037c712" x="220" y="440" width="100" height="30">
+			<expression><![CDATA[$P{leaseEndDate}]]></expression>
+		</element>
+		<element kind="textField" uuid="4ac4ed06-caf6-40c4-9150-a20a85103995" x="240" y="420" width="100" height="30">
+			<expression><![CDATA[$P{monthlyRentAmount}]]></expression>
+		</element>
+		<element kind="textField" uuid="919879d3-3d07-4396-8b29-bf323a968283" x="230" y="455" width="100" height="30">
+			<expression><![CDATA[$P{monthlyRentAmount}]]></expression>
+		</element>
+		<element kind="textField" uuid="59fa761b-000c-4ec2-b066-c575e60d93aa" x="380" y="470" width="100" height="30">
+			<expression><![CDATA[$P{ratepersquarefoot}]]></expression>
+		</element>
+		<element kind="textField" uuid="970ee8c0-8631-4773-a1fa-13a0db6d62c8" x="270" y="500" width="100" height="30">
+			<expression><![CDATA[$P{rateIncrement}]]></expression>
+		</element>
+		<element kind="textField" uuid="22d2b574-94eb-4d22-ad5d-8530f3504c15" x="400" y="580" width="100" height="30" fontSize="12.0">
+			<expression><![CDATA[$P{advanceDepositAmount}]]></expression>
+		</element>
+	</title>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="150" splitType="Stretch">
+		<element kind="staticText" uuid="92c21475-9492-4998-8359-4eeb535dc7e5" x="35" y="-170" width="480" height="320">
+			<text><![CDATA[6. The LESSOR shall provide sufficient parking space for cars, Scooters, & other vehicles for 
+LESSEES .
+7. This Lease may be terminated by the LESSEE at any time by giving three months notice in 
+writing to the LESSOR.
+8. The LESSEE shall deduct income Tax deduction at source, which shall be on the rent paid
+by the LESSEE, and necessary Certificate shall be provided at the end of each financial
+year.
+9. It is mutually agreed between the parties that the cost of Stamp papers and expenses of 
+registration of lease deed in respect of this lease and its renewals if any shall be shared 
+equally by the LESSORS and LESSEES.
+10. The LESSOR COVENANTS as follows: -
+i) On the LESSEE paying the rents and other charges as stipulated herein, it shall be entitled to 
+hold and enjoy the PREMISES on lease without any let or hindrance from the LESSOR or 
+any one claiming through or under him.
+ii) Not to do or cause to be done anything within or outside the PREMISES preventing, 
+obstructing or interrupting business of the LESSEE or its use and occupation of the 
+PREMISES including free ingress or egress.
+iii) The LESSEE, its employees, customers, visitors or servants shall be entitled to unfettered
+use of all entrances, passages, common areas, parking areas, staircases, lifts, amenities and 
+conveniences in and outside the PREMISES in common with other occupants as the case 
+may be.
+iv) To maintain the PREMISES in good and tenantable condition including provision 
+of uninterrupted electricity, water supply and other amenities and to perform necessary 
+repairs to the PREMISES whenever necessary without delay. Lessor shall arrange 
+painting / white washing of premises every 3 years.
+v) The LESSEE shall be entitled to put up fixtures and fittings in or upon the PREMISES 
+including Name Boards or Sign Boards, Partitions, Cabins, Lightings, Fans, Air onditioners, 
+provisions for computers or other interior work of a removable nature including incidental 
+electrical works for the same for the purpose of using the PREMISES.
+vi)That at the time of LESSEE surrendering vacant possession of the PREMISES, the LESSOR 
+shall forthwith refund the advance/deposit without any delay or default.
+vii) In the event that the LESSOR fails or neglects to
+a) Perform necessary maintenance or repairs despite intimation by the LESSEE,
+b) Pay any property Tax /other taxes, levies or outgo in respect of the PREMISES which
+The LESSOR is thereby required to pay, the LESSEE is hereby permitted and authorised to effect 
+necessary repairs and / or maintenance and the costs thereof or any other payments made by it shall 
+be adjusted from the rent payable to the LESSOR.
+11) THE LESSEE agrees and undertakes as follows: -
+i. To pay the rent, electricity and water charges punctually as and when falling due.
+ii. Not to sub-let, assign or part with his leasehold estate or interest in the said 
+PREMISES.
+iii. To maintain the PREMISES in a clean, tidy, healthy and good condition as may be 
+practicable, normal wear and tear excepted.
+iv. Not to do or cause any major modifications, additions or alterations in the building of the 
+PREMISES without the permission of the LESSOR.
+v. To permit the LESSOR or his/her/their duly authorized agent, representative to enter 
+the PREMISES at all reasonable times without interrupting or disrupting the functioning of 
+LESSEE’s office.
+vi. To remove all fixtures and fittings put up by it in the PREMISES at the time of acation of 
+the premises.
+A sketch / plan of premises is attached in case of new premises leased for the first time.
+LIST OF FIXTURES & FITTINGS
+IN WITNESS WHEREOF the parties hereto have executed this LEASE DEED on the day, month
+and year first above written.
+LESSOR LESSEE
+WITNESSES : -
+1. Signatures 1. Signatures
+Name & Address : Name & Address :
+2. Signatures 2. Signatures
+Name & Address : Name & Address ]]></text>
+		</element>
+	</summary>
+</jasperReport>
