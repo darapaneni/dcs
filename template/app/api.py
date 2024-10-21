@@ -632,7 +632,7 @@ class generatePayingGuestAgreement(MethodResource, Resource):
     @marshal_with(schema.APIResponse)
     def post(self, **kwargs):
        try:
-          print("generatePayingGuestAgreemen")
+          print("generatePayingGuestAgreement")
           parameters=kwargs             
           db_conn=""
           output_file=utility.generateReport("Paying_Guest_Agreement.jrxml","Paying_Guest_Agreement",parameters,db_conn) 
@@ -643,5 +643,5 @@ class generatePayingGuestAgreement(MethodResource, Resource):
             print(str(e))
             return schema.APIResponse().dump(dict(message="not generated hai kya")), 404
 
-api.add_resource(generatePayingGuestAgreemen,'/generatePayingGuestAgreemen')
-docs.register(generatePayingGuestAgreemen)
+api.add_resource(generatePayingGuestAgreement,'/generatePayingGuestAgreement')
+docs.register(generatePayingGuestAgreement)
