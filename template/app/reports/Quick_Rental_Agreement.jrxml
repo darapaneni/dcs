@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 9.0.0.final using JasperReports Library version 6.21.0-4f56c4f36cd19e17675219a9ac4692d5f0f13b06  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Quick_Rental_Agreement" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="c3334374-95d4-4d07-ab23-8b76b130f995">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="agreementDate" class="java.lang.String"/>
+	<parameter name="landlordName" class="java.lang.String"/>
+	<parameter name="tenantName" class="java.lang.String"/>
+	<parameter name="rentAmount" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="propertyOtherDetails" class="java.lang.String"/>
+	<parameter name="propertyArea" class="java.lang.String"/>
+	<parameter name="bedrooms" class="java.lang.String"/>
+	<parameter name="fixedRentStartDate" class="java.lang.String"/>
+	<parameter name="Name,Sign,Date" class="java.lang.String"/>
+	<parameter name="Yes/No" class="java.lang.String"/>
+	<parameter name="ManualInput1" class="java.lang.String"/>
+	<parameter name="bathrooms" class="java.lang.String"/>
+	<parameter name="fixedRentEndDate" class="java.lang.String"/>
+	<parameter name="securityDepositDueDate" class="java.lang.String"/>
+	<parameter name="guestPolicy" class="java.lang.String"/>
+	<parameter name="additionalConditions" class="java.lang.String"/>
+	<parameter name="securityDepositAmount" class="java.lang.String"/>
+	<parameter name="paymentMethod" class="java.lang.String"/>
+	<parameter name="rentDueDate" class="java.lang.String"/>
+	<parameter name="paymentAddress" class="java.lang.String"/>
+	<parameter name="monthToMonthRentStartDate" class="java.lang.String"/>
+	<parameter name="noticePeriod" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="140" y="0" width="240" height="30" uuid="2ea0f386-2dc0-4bf4-a85e-fdd4fa7ae9e6"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quick Rental Agreement
+]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="802" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="802" uuid="27edceea-1b6f-415d-82a4-6e7faf5b422a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<text><![CDATA[
+1. The parties
+
+This Rental Agreement, made ____________________________ is between:
+Lessor: ________________________________________________
+and Tenant: _____________________________________________
+The Lessor, _________________ , agrees to rent the Property to the Tenant,
+_______________________ according to the terms and conditions outlined in this Agreement.
+
+2. The property
+
+Address: ________________________________________________
+Property Type: ____________
+Square Feet: ___________
+Bedroom(s): ________
+Bathroom(s): _______
+Other Details: ____________________________________________
+
+3. Term of Rent
+
+This Rental Agreement is a: [check one]
+○ Fixed rent beginning on ____________ and ending on ____________
+○ Month-to-Month rent beginning on _________ and continuing until either Lessor or Tenant(s) terminate this Agreement by providing the other party with ___ days written notice.
+
+4. Rent
+
+The Tenant(s) will pay the Lessor the amount of ____________ on the ______ of each calendar month. 
+Payments will be made in the form of _____________ to the following address:
+_____________________________________________________________
+
+In case of delay or failure to pay, 5% of rent amount will be charged extra.
+
+5. Security deposit [check one]
+
+○ The Lessor requires a Security Deposit in the amount of ________, to be paid by __________. The Security Deposit will be returned to the Tenant within _____ of the move-out date, provided the Property is not damaged beyond usual wear and tear.
+○ The Lessor does NOT require a Security Deposit.
+
+6. Use of property
+
+The Tenant(s) confirms that the Property will only be occupied by the Tenant(s) and their immediate family and only used for residential purposes. The Tenant(s) will be liable for any damages to the Property they or their guests cause.
+
+Guest/Visitor Policy: ______________________________________
+
+7. Lead disclosure
+
+○ The Property was built prior to 1978 and a ‘Lead-Based Paint Disclosure’ will be 
+attached to this Agreement, signed by the Lessor and Tenant(s).
+○ The Property was NOT built prior to 1978.
+
+8. Additional conditions
+
+
+Additional information on any further terms and conditions, such as guarantors, smoking and pets on the Property, etc.
+
+
+
+
+
+Lessor’s name and signature(Date Signed)                                              Tenant’s name signature (Date Signed)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="40" y="51" width="230" height="10" uuid="f395ad89-25f8-4175-a2c6-78a12736b9b6">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{landlordName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="90" width="110" height="10" uuid="55b8436c-62a5-4b2d-bed0-07d82f30871c">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{tenantName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="140" width="240" height="10" uuid="609055a9-2beb-4de0-8090-4e9cadd5d503">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="154" width="65" height="10" uuid="2c180121-2542-4af2-9b46-31ad58773f44">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{propertyOtherDetails}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="166" width="60" height="10" uuid="d046a929-1ea1-4e79-bc5b-f58b9075cefa">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{propertyArea}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="180" width="46" height="10" uuid="c3d49972-1435-427b-bb08-ecdb062b1475">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{bedrooms}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="204" width="220" height="10" uuid="5ac57818-6a25-43e9-b17e-0d0c9ea15aa2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{propertyOtherDetails}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="267" width="60" height="10" uuid="126bb904-8d0d-42d9-a0a6-ef101ac08d44">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{fixedRentStartDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="343" width="55" height="10" uuid="50c4ad95-f591-4332-bef4-6cd370b2a2d6">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{rentAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="125" y="40" width="130" height="10" uuid="54b3ec39-7bc9-4974-a09f-2e0de19075ca">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{agreementDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="620" width="30" height="10" uuid="cdeb6bb7-e1d4-4e45-9f12-985d33c86fbd">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{Yes/No}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="640" width="30" height="10" uuid="78ae3d0d-5c32-4982-85ce-871aa7d7ce3b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{Yes/No}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="720" width="170" height="50" uuid="10b22182-1c67-4206-92fd-b9c3e827b461">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</textField>
+			<textField>
+				<reportElement x="283" y="720" width="160" height="50" uuid="23aa3c83-4d99-4141-8cf3-81b1834fc60e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</textField>
+			<textField>
+				<reportElement x="50" y="78" width="80" height="10" uuid="6f040013-cde6-4397-83aa-a40a67193ef5">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{landlordName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="54" y="192" width="39" height="10" uuid="46fe49ee-4b36-4fae-b4c8-69f480b1df7f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{bathrooms}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="230" y="266" width="60" height="10" uuid="8a0eeb77-67d2-464c-8900-59c041620024">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{fixedRentEndDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="458" width="27" height="10" uuid="d41fae27-62ef-4e77-b0a8-df79b1fb2314">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{securityDepositDueDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="560" width="186" height="10" uuid="197e9573-aa9b-4c89-9f2f-325319634f2e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{guestPolicy}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="675" width="460" height="23" uuid="f27bec67-6451-46c6-9849-6db63c7401ee">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{additionalConditions}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="445" width="36" height="10" uuid="ca70a1c0-648c-4fdb-86d3-2c46e1d4c06c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{securityDepositAmount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="445" width="45" height="10" uuid="ea16c41a-f495-4df4-96fe-3969b1cae4cb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{paymentMethod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="283" y="343" width="30" height="10" uuid="5f8f21e8-f8f2-4840-a4a0-1ef901d22852">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{rentDueDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="357" width="45" height="10" uuid="16e3f5cc-379b-4136-bdc8-bf8d722b4f90">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{paymentMethod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="370" width="295" height="10" uuid="85dfb472-3c05-4666-b9f4-d3079637462f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{paymentAddress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="157" y="280" width="43" height="10" uuid="7d01a0e4-bf5d-427b-82bc-8226fe88d4c5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{monthToMonthRentStartDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="81" y="292" width="15" height="10" uuid="9668a8d0-d0b7-4fde-848d-fe0f84a04ce9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$P{noticePeriod}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

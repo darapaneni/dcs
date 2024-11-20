@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Simple_Will_Drafting" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bfc3059a-95c9-4317-b179-c575199ea095">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<subDataset name="Dataset1" uuid="1bca8c1d-e79a-43bf-b871-81102693d196">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="S. No" class="java.lang.String"/>
+		<field name="Family Member Name" class="java.lang.String"/>
+		<field name="Relation with the will maker" class="java.lang.String"/>
+		<variable name="S. No1" class="java.lang.Integer" resetType="Column" calculation="Count">
+			<variableExpression><![CDATA[$F{S. No}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<parameter name="name_simplewill" class="java.lang.String"/>
+	<parameter name="sonof_simplewill" class="java.lang.String"/>
+	<parameter name="residing_city_simplewill" class="java.lang.String"/>
+	<parameter name="age_simplewill" class="java.lang.String"/>
+	<parameter name="religion_simplewill" class="java.lang.String"/>
+	<parameter name="occupation_simplewill" class="java.lang.String"/>
+	<parameter name="executor_name_simplewill" class="java.lang.String"/>
+	<parameter name="executor_sonof_simplewill" class="java.lang.String"/>
+	<parameter name="executor_city_simplewill" class="java.lang.String"/>
+	<parameter name="executor_age_simplewill" class="java.lang.String"/>
+	<parameter name="executor_religion_simplewill" class="java.lang.String"/>
+	<parameter name="executor_occupation_simplewill" class="java.lang.String"/>
+	<parameter name="trustee_name_simplewill" class="java.lang.String"/>
+	<parameter name="trustee_sonof_simplewill" class="java.lang.String"/>
+	<parameter name="trustee_city_simplewill" class="java.lang.String"/>
+	<parameter name="trustee_age_simplewill" class="java.lang.String"/>
+	<parameter name="trustee_religion_simplewill" class="java.lang.String"/>
+	<parameter name="trustee_occupation_simplewill" class="java.lang.String"/>
+	<parameter name="wife_name_simplewill" class="java.lang.String"/>
+	<parameter name="day_simplewill" class="java.lang.String"/>
+	<parameter name="month_simplewill" class="java.lang.String"/>
+	<parameter name="year_simplewill" class="java.lang.String"/>
+	<parameter name="testator_name_simplewill" class="java.lang.String"/>
+	<parameter name="witness1_name_simplewill" class="java.lang.String"/>
+	<parameter name="witness2_name_simplewill" class="java.lang.String"/>
+	<parameter name="executor2_name_simplewill" class="java.lang.String"/>
+	<parameter name="executor2_sonof_simplewill" class="java.lang.String"/>
+	<parameter name="executor2_city_simplewill" class="java.lang.String"/>
+	<parameter name="executor2_age_simplewill" class="java.lang.String"/>
+	<parameter name="executor2_religion_simplewill" class="java.lang.String"/>
+	<parameter name="executor2_occupation_simplewill" class="java.lang.String"/>
+	<parameter name="CollectionBeanFamily" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="Familymember1_simplewill" class="java.lang.String"/>
+	<parameter name="Familymember2_simplewill" class="java.lang.String"/>
+	<parameter name="Familymember3_simplewill" class="java.lang.String"/>
+	<parameter name="Familymember4_simplewill" class="java.lang.String"/>
+	<parameter name="Familymember5_simplewill" class="java.lang.String"/>
+	<parameter name="Property1_simplewill" class="java.lang.String"/>
+	<parameter name="Property2_simplewill" class="java.lang.String"/>
+	<parameter name="Property3_simplewill" class="java.lang.String"/>
+	<parameter name="Property4_simplewill" class="java.lang.String"/>
+	<parameter name="Property5_simplewill" class="java.lang.String"/>
+	<parameter name="Child1_simplewill" class="java.lang.String"/>
+	<parameter name="Child2_simplewill" class="java.lang.String"/>
+	<parameter name="Child3_simplewill" class="java.lang.String"/>
+	<parameter name="witness1_address_simplewill" class="java.lang.String"/>
+	<parameter name="witness2_address_simplewill" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="152" splitType="Stretch">
+			<staticText>
+				<reportElement x="107" y="100" width="340" height="31" uuid="6c9709be-900f-4f76-8e66-2140515d4cef"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SIMPLE WILL]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="754" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="30" width="30" height="20" uuid="45fa0dce-a7de-4452-b1cc-940e12938806"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[I, ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="30" y="30" width="220" height="20" uuid="5f78321f-fc36-4ffb-a0e8-447d4cabc3ed"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{name_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="250" y="30" width="30" height="20" uuid="91925dce-7ffa-48fb-9da1-a19fcdbb7d99"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[S/o.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="30" width="214" height="20" uuid="dbde4a97-ca18-40b6-adba-6f973ec53dee"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{sonof_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="494" y="30" width="60" height="20" uuid="221a41ea-1320-4012-a23c-fbeb44e680d5"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[residing at]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="50" width="310" height="20" uuid="0dd300e3-9c44-44cb-b71e-4d58623e0537"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{residing_city_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="310" y="50" width="60" height="20" uuid="494672bc-f09c-4e59-894d-207fa5a02bc6"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[aged about]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="370" y="50" width="184" height="20" uuid="1748f2f9-83fd-4462-8567-65bcf1a40302"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{age_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="70" width="30" height="20" uuid="26fc4c05-ffbf-43bd-bc00-c252c7d3d2c7"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[years]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="30" y="70" width="150" height="20" uuid="01fab64d-5a1a-4ea6-9490-45e0c70fcbd5"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{religion_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="70" width="100" height="20" uuid="cdb640ec-0ff5-4e33-b1fd-48f171a8a366"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[by religion, occupation]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="70" width="167" height="20" uuid="d872bafa-1bc2-4289-ade1-7dcd536e9e18"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{occupation_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="447" y="70" width="107" height="20" uuid="3d5549cb-9a19-4a58-923b-7fa57e799300"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[do make this my last]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="90" width="107" height="20" uuid="841572eb-43aa-4bc5-9e9b-d1094ce8eeda"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[will and testament.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="130" width="554" height="40" uuid="34b42df4-264a-48f2-b8ec-37be43ad09fc"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[1. I have not made any will or other testamentary document, but if any made, I hereby revoke all previous wills and codicils, if any and declare this to be my last will and testament. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="170" width="90" height="20" uuid="422bbd7a-1618-4fcd-a701-e10ba6ef0f11"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[2. I appoint (1) Sri]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="90" y="170" width="230" height="20" uuid="a0f81804-d1e4-48ea-a425-a800ec9542bd"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{executor_name_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="320" y="170" width="30" height="20" uuid="f81053c1-676a-484d-b8f2-f65a767de5f2"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[S/o.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="350" y="170" width="204" height="20" uuid="05a30b7b-cb4e-4f52-a5b3-e19da808f118"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{executor_sonof_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="190" width="60" height="20" uuid="5ae9ed09-4227-432d-bfc9-213e1875dabe"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[residing at]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="60" y="190" width="420" height="20" uuid="e1357add-b411-4fdf-8aba-86f9c85cd4bc"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{executor_city_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="480" y="190" width="74" height="20" uuid="645735e8-b9a3-431f-ab73-480373b53092"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[aged about]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="210" width="80" height="20" uuid="5e678673-9209-4ccc-bf12-44d7b12971ba"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{executor_age_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="80" y="210" width="30" height="20" uuid="b919f204-5913-4b2f-80cc-b14c2c88cdb2"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[years]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="210" width="150" height="20" uuid="e422c149-0dbe-43cb-bd33-d2198a443a86"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{executor_religion_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="260" y="210" width="100" height="20" uuid="16a6550a-f154-437a-b94a-83d9ef768744"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[by religion, occupation]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="360" y="210" width="194" height="20" uuid="49964a4c-5aab-4a95-9557-7309da2f37d5"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{executor_occupation_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="230" width="40" height="20" uuid="3d210e2f-611e-4b81-9790-d841addb6f7f"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[(2) Sri]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="230" width="30" height="20" uuid="d851f871-4520-4804-a0dc-a3689f30cb47"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[S/o.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="250" width="60" height="20" uuid="0d044141-232d-4543-a86a-777516515cda"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[residing at]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="250" width="74" height="20" uuid="4c6647fa-39ec-432a-b6a3-234bbcb48c2f"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[aged about]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="270" width="30" height="20" uuid="0b1c857e-50d1-40ea-b0fe-f85bd48c334f"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[years]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="270" width="100" height="20" uuid="af419d1e-c462-4862-98d1-68a00edea6ea"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[by religion, occupation]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="40" y="230" width="280" height="20" uuid="f8dbeb46-cb75-47f4-b54d-1c69e5e7eae6"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{executor2_name_simplewill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="230" width="204" height="20" uuid="c81b76c3-6640-48af-9919-a93cb73e09d9"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{executor2_sonof_simplewill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="250" width="420" height="20" uuid="80230bf6-7039-41f4-b520-aa51bd135d4d"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{executor2_city_simplewill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="270" width="80" height="20" uuid="8ce2a168-0833-47a7-8be1-fb2135831714"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{executor2_age_simplewill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="270" width="150" height="20" uuid="0d1b362b-cf71-4472-aad8-97379bf2c5dc"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{executor2_religion_simplewill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="270" width="194" height="20" uuid="e9777501-2f6d-47c3-9e11-b77a099df764"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{executor2_occupation_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="290" width="40" height="20" uuid="50366c75-1639-40d3-9d41-3698d50dd56f"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[(3) Sri]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="290" width="30" height="20" uuid="b067f059-422a-4e22-aa7d-5ade8bcc9055"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[S/o.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="310" width="60" height="20" uuid="345ebf20-e46a-4017-bb4c-ebba95750b7d"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[residing at]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="310" width="74" height="20" uuid="a9dabf37-2d00-493f-a3cc-0a25d821a1b8"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[aged about]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="330" width="30" height="20" uuid="3e02bd0c-4f85-4ce5-8c43-332a57a26c35"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[years]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="330" width="100" height="20" uuid="ae46736f-ff91-4255-b37e-88aec6df68d2"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[by religion, occupation]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="40" y="290" width="280" height="20" uuid="48492a96-3e84-4575-af53-1b649336cdd0"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{trustee_name_simplewill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="290" width="204" height="20" uuid="67d1d642-d60b-4060-9087-95517eee55e9"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{trustee_sonof_simplewill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="310" width="420" height="20" uuid="714d27d0-3752-4270-aeb3-a1be1e68a715"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{trustee_city_simplewill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="330" width="80" height="20" uuid="6343ccb1-bbaa-4e48-85e5-6d08957339e5"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{trustee_age_simplewill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="330" width="150" height="20" uuid="32702583-c433-450d-b6e1-89c49128999a"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{trustee_religion_simplewill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="330" width="194" height="20" uuid="6a0db9c3-b707-45d0-9a37-3cba9cd30cce"/>
+				<textFieldExpression><![CDATA[$P{trustee_occupation_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="350" width="554" height="20" uuid="1de0a453-7426-40c2-b942-f23bfc0d0d61"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[3. My family consists of: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="370" width="300" height="20" uuid="54843940-6dea-461e-9067-033fae4a956e"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{Familymember1_simplewill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="390" width="300" height="20" uuid="6098250d-bda1-4654-bec1-5e351ed82860"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{Familymember2_simplewill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="410" width="300" height="20" uuid="da3500f6-e5c7-4985-b40a-f3fe68ac4055"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{Familymember3_simplewill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="430" width="300" height="20" uuid="f1905100-f773-4f74-a90a-880089ba7857"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{Familymember4_simplewill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="450" width="300" height="20" uuid="338814e7-29f8-4904-af6d-ce98167904ca"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{Familymember5_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="480" width="554" height="20" uuid="ef6a8703-3560-447a-9a73-ce947c6813a3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[4. My preperty consists of: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="500" width="300" height="20" uuid="d9a9b48f-00fc-4af7-9c4a-be6253476720"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{Property1_simplewill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="520" width="300" height="20" uuid="5167f504-c298-4b7f-be9b-30cc036a516f"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{Property2_simplewill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="540" width="300" height="20" uuid="c33a6c91-d4ee-4d93-8a5f-44babcef7ef5"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{Property3_simplewill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="560" width="300" height="20" uuid="258678fa-719b-47c9-9c9a-494e156f9c03"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{Property4_simplewill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="580" width="300" height="20" uuid="7d8058fd-18eb-42fb-9e64-19dadee0f734"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{Property5_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="610" width="554" height="20" uuid="4a37e97a-19b6-4962-a0a8-7b36017f421a"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[5. I bequeath all my property in whatever form existing at the time of my death to the said executor and trustees to hold the]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="630" width="200" height="20" uuid="a40b46ee-5c26-4c1f-8240-fe814dc8c5aa"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[same on trust for the benefit of my wife Smt.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="630" width="160" height="20" uuid="c0e02230-c9b7-489f-a827-15d458b6e13d"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{wife_name_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="360" y="630" width="194" height="20" uuid="62e1fd8f-d8f1-4ea1-9377-7add8a2dd56d"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[ for her life time and till her death as herein]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="650" width="80" height="20" uuid="07dd5808-717d-4414-8ce2-e48a4b3177f5"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[after provided.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="670" width="554" height="70" uuid="f73591d7-7579-46d7-8441-1dc786bebd7c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[6. My executors and trustees shall, after spending the necessary money for the management of the said property out of the income thereof, pay the net income to my wife and the same will belong to her absolutely without liability to account for the same. My executor and trustees will also spend out of the corpus of estate such amounts as may be required by my wife for medical expenses or for pilgrimage. But my executor and trustees will not be entitled to sell my immovable property above mentioned or mortgage the same. ]]></text>
+			</staticText>
+		</band>
+		<band height="712">
+			<staticText>
+				<reportElement x="0" y="10" width="554" height="40" uuid="5c2b232b-e7e0-4637-9020-80a9bc9ebe07"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[7. On the death of my and if she predeceases me then on my death all my estate then existing whether mentioned in this will or not, will belongs to my children,  ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="155" y="50" width="205" height="20" uuid="7b43fc86-6771-4a60-a387-7890ca9e412d"/>
+				<textFieldExpression><![CDATA[$P{Child1_simplewill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="155" y="70" width="205" height="20" uuid="485f0c5d-ac2f-44a0-9167-c180969792e5"/>
+				<textFieldExpression><![CDATA[$P{Child2_simplewill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="155" y="90" width="205" height="20" uuid="ac992bde-e713-4efa-8314-6a04a420660d"/>
+				<textFieldExpression><![CDATA[$P{Child3_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="110" width="554" height="40" uuid="b17f0ed4-b8c1-4aed-bb86-047592a640e8"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[absolutely in equal shares and the trustees for the time being of the said estate under this will shall transfer the same among said children by executing proper document or documents. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="150" width="554" height="50" uuid="427a7be0-c784-4c64-a82d-7e6af3fe9799"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[8. Provided that, if at the time of death of my wife or myself as the case may be any of the said children is a minor, the trustees shall hold the said property on trust until the youngest attains the age of majority and till then the net income of the said property will given or spend for maintenance and education of the said children. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="200" width="554" height="50" uuid="6b301f09-e8b7-4b2c-832f-e421aebe3425"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[9. My executor and trustees shall obtain probate of this will from a competent court, if required in law and shall pay all the probate duty and other expenses required for such probate and also pay as first charge all my other liabilities by way of taxes or otherwise howsoever. ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="250" width="554" height="20" uuid="fbd374a2-5b01-418e-9ef8-b58265fe2e74"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[10.  I have made this will out of my free will and when I am in sound health and in good understanding and in witness thereof]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="270" width="320" height="20" uuid="5253da3a-7614-457c-a7fe-7d8cafa2d56b"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[I have put my signature hereunder in the presence of witnesses on this]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="320" y="270" width="90" height="20" uuid="a6a22f57-7375-4708-a4e4-248decf7d335"/>
+				<textFieldExpression><![CDATA[$P{day_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="410" y="270" width="37" height="20" uuid="22753fc7-bcbf-4f9d-a84e-f5afff630b1e"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[day of]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="447" y="270" width="107" height="20" uuid="3ff0939b-8070-4252-8bb6-062f3a67cdeb"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{month_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="290" width="50" height="20" uuid="67731e82-4805-40a3-9ded-d8c1d3434267"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[month of]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="290" width="100" height="20" uuid="95871e71-a8af-44a2-83a2-70c00e23acbb"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{month_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="150" y="290" width="50" height="20" uuid="80dda271-2bbd-41b7-8862-77c3ca8bb8c7"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[year.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="340" width="210" height="20" uuid="5a6646fa-cefb-4823-aabb-b2f06ffa2915"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Signed by the within named testator }]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="360" width="20" height="20" uuid="cc97f3a8-fb35-45a1-b00d-53e1945096c4"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Sri.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="20" y="360" width="135" height="20" uuid="2d9fcdf2-69b3-4789-bcdd-44d300a08819"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{testator_name_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="155" y="360" width="20" height="20" uuid="5ef7208b-aac2-4e70-afec-3cd8448ef9ca"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[   }]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="380" width="210" height="20" uuid="a14c43c1-4857-4bc3-bb59-83d6e0da6a93"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[opposite in the presence of witnesses, }]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="402" width="210" height="20" uuid="85041b4b-7cf3-4f5d-8604-54f7738be1d0"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[who in presence and at his request and }]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="422" width="210" height="20" uuid="9bf568f5-77f6-41c2-9bc4-ed0dff4f313c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[in the presence of each other have put }]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="442" width="210" height="20" uuid="54a5eb5d-6c7c-491f-b7e1-c4d19a4c9f35"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[there signature as witnesses hereunder. }]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="390" width="90" height="28" uuid="2d7d163c-7e12-4145-9a31-b7445eed8f6c"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[TESTATOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="510" width="100" height="20" uuid="5e88edbc-a035-4c72-bb54-051a5a20f75e"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Wintness-1 Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="530" width="100" height="20" uuid="47c367b6-b3e5-41af-8b70-3ef271cc3ea6"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Wintness-1 Address:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="510" width="280" height="20" uuid="bb137310-7287-4129-8333-6e5a430e35a7"/>
+				<textFieldExpression><![CDATA[$P{witness1_name_simplewill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="530" width="280" height="20" uuid="c6de92c7-cd49-4416-ad5a-685141ac5508"/>
+				<textFieldExpression><![CDATA[$P{witness1_address_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="580" width="100" height="20" uuid="ddd81070-31bd-4506-a0e2-fbd7a22f79f3"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Wintness-2 Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="600" width="100" height="20" uuid="9d9edb38-1d79-491a-aede-413b0875881f"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Wintness-2 Address:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="582" width="280" height="18" uuid="6bb7aa7c-9235-49f8-8f8d-23250401a50a"/>
+				<textFieldExpression><![CDATA[$P{witness2_name_simplewill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="600" width="280" height="20" uuid="f64fba83-ebc5-4a0c-bcd6-587f240248b1"/>
+				<textFieldExpression><![CDATA[$P{witness2_address_simplewill}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="400" y="480" width="150" height="20" uuid="c898ba90-4e4f-4bce-b65b-07eb2c731309"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Witness-1 Signature]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="560" width="150" height="20" uuid="9de68959-6bfc-4370-9b92-e5966f95eebe"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Witness-2 Signature]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

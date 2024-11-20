@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b1fc7812-bf54-443e-8339-347bc5e33912">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="your_name_codicil" class="java.lang.String"/>
+	<parameter name="name_codicil" class="java.lang.String"/>
+	<parameter name="address_codicil" class="java.lang.String"/>
+	<parameter name="city_codicil" class="java.lang.String"/>
+	<parameter name="state_codicil" class="java.lang.String"/>
+	<parameter name="will_date_codicil" class="java.lang.String"/>
+	<parameter name="will_effective_date_codicil" class="java.lang.String"/>
+	<parameter name="article_codicil" class="java.lang.String"/>
+	<parameter name="modified_to_read_codicil" class="java.lang.String"/>
+	<parameter name="article_ii_codicil" class="java.lang.String"/>
+	<parameter name="article_add_codicil" class="java.lang.String"/>
+	<parameter name="modified_to_read_add_codicil" class="java.lang.String"/>
+	<parameter name="testator_or_testatrix_codicil" class="java.lang.String"/>
+	<parameter name="witness1_codicil" class="java.lang.String"/>
+	<parameter name="witness2_codicil" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="137" splitType="Stretch">
+			<staticText>
+				<reportElement x="107" y="39" width="340" height="31" uuid="7d7c7c84-dc6c-405e-a401-3d64ba9a8d19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CODICIL TO LAST WILL AND TESTAMENT OF]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="107" y="78" width="340" height="29" uuid="3ef214c2-b99b-4f06-a2e5-563014f654c3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{your_name_codicil}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="692" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="31" width="30" height="19" uuid="f92cece2-6ff8-4bd7-bd7e-56ce903f5050"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[I, ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="31" width="100" height="19" uuid="61b640bc-5a31-4489-b30a-10a5216acc99"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[, an adult residing at, ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="30" y="31" width="220" height="19" uuid="8e01d715-c47c-4d5f-95fa-9ee6fe811d5d"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{name_codicil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="31" width="200" height="19" uuid="059c4c94-ec30-41ba-bc92-98eed51a0d1f"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{address_codicil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="50" width="180" height="20" uuid="9c1fd192-99e7-4219-8f23-74897e9a8bd1"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{city_codicil}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="51" width="10" height="19" uuid="44bc454f-9b4c-4aca-a4a6-6aca7f715c98"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[, ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="50" width="240" height="20" uuid="d1fabf83-4b5f-43d1-a8db-b65ad5b3bb0a"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{state_codicil}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="430" y="51" width="120" height="19" uuid="b4bad504-ce8c-4652-b426-fda12c1ba32e"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[, being of sound mind,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="70" width="290" height="19" uuid="18b07bbf-586c-4b17-8ca1-64caf89fe90a"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[declare this codicil to my Last Will and Testamnet ("Will") dated]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="290" y="70" width="100" height="19" uuid="160be1fc-510b-4b31-a533-dfac10421238"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{will_date_codicil}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="390" y="70" width="160" height="19" uuid="6cbd7c8a-20e2-42c2-9709-dca737216b29"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[, efective as of today]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="90" width="160" height="20" uuid="3f9ed5f8-dd17-4e49-8b86-d6f07fc6faee"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{will_effective_date_codicil}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="160" y="89" width="20" height="19" uuid="c7382618-0c43-46cb-af61-578a9812181b"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="120" width="90" height="19" uuid="cd6233e1-b152-4051-97b8-ce7fb25640aa"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ITEM I]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="150" width="30" height="19" uuid="a3cd2842-bf58-4075-9481-704bc47aedcd"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Article]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="30" y="150" width="80" height="19" uuid="89564167-fafe-482f-a881-df4c04cbf68f"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{article_codicil}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="110" y="150" width="170" height="19" uuid="aac74b44-1bca-4d06-8510-cbe81a701577"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[of my will shall be modified to read:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="169" width="550" height="81" uuid="b8ad32e5-b177-4a76-91b4-65d6e41c744d"/>
+				<textFieldExpression><![CDATA[$P{modified_to_read_codicil}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="361" width="30" height="19" uuid="01cb7ea5-3dfb-49c1-95cf-c9d7f9d5e968"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Article]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="331" width="90" height="19" uuid="c438fa32-796b-4df5-bd93-5e1a96434363"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ITEM III]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="361" width="170" height="19" uuid="030c2899-dd3b-42c6-8984-3e7509a73349"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[of my will shall be modified to read:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="290" width="30" height="19" uuid="1a1455e7-a5f4-41b0-8843-42a2794ae3d5"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Article]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="260" width="90" height="19" uuid="bf2c09c8-53b1-456f-9d90-7b16bb638f79"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ITEM II]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="290" width="220" height="19" uuid="cb063711-cec7-4c2b-8983-f9a5f3fd6ddc"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[of my will shall be stricken in its entirety.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="30" y="290" width="100" height="19" uuid="05918f68-e6bb-46ac-bdb3-116ec67f5fbb"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{article_ii_codicil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="361" width="110" height="19" uuid="10ea1204-fbf0-41fd-b008-120849653044"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{article_add_codicil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="380" width="550" height="81" uuid="1c72ffb7-319c-444d-9194-25826f55b334"/>
+				<textFieldExpression><![CDATA[$P{modified_to_read_add_codicil}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="380" y="520" width="175" height="19" uuid="4eec23df-b651-4ca7-a5c5-b7fb9b09917b"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[YOUR NAME, Testator/Testarix]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="590" width="175" height="19" uuid="9b22c7a2-f8da-4be9-be07-02895cb48543"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Witness-1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="650" width="175" height="19" uuid="be871c4d-4c44-4754-a641-17bc461ea76d"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle"/>
+				<text><![CDATA[Witness-2]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="500" width="175" height="20" uuid="27de8990-70c9-4702-856e-d4cc31f6443a"/>
+				<textFieldExpression><![CDATA[$P{testator_or_testatrix_codicil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="570" width="175" height="20" uuid="37c0ae53-0bd5-4d52-9f1f-71c4b91dbf3b"/>
+				<textFieldExpression><![CDATA[$P{witness1_codicil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="630" width="175" height="20" uuid="a6ecdb72-dec3-41ff-96e9-b02adb338b5f"/>
+				<textFieldExpression><![CDATA[$P{witness2_codicil}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="92" splitType="Stretch"/>
+	</summary>
+</jasperReport>

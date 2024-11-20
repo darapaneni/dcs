@@ -625,3 +625,23 @@ class generateRoomAgreement(MethodResource, Resource):
 
 api.add_resource(generateRoomAgreement,'/generateRoomAgreement')
 docs.register(generateRoomAgreement)
+
+class generatePayingGuestAgreement(MethodResource, Resource):
+    @doc(description="Paying Guest Agreement", tags=['Paying Guest Agreement'])
+    @use_kwargs(schema.PayingGuestAgreement, location=('json'))
+    @marshal_with(schema.APIResponse)
+    def post(self, **kwargs):
+       try:
+          print("generatePayingGuestAgreement")
+          parameters=kwargs             
+          db_conn=""
+          output_file=utility.generateReport("Paying_Guest_Agreement.jrxml","Paying_Guest_Agreement",parameters,db_conn) 
+          s = schema.FileSchema()
+          result = s.dump({'file': output_file})
+          return result['file']
+       except Exception as e:
+            print(str(e))
+            return schema.APIResponse().dump(dict(message="not generated hai kya")), 404
+
+api.add_resource(generatePayingGuestAgreement,'/generatePayingGuestAgreement')
+docs.register(generatePayingGuestAgreement)
